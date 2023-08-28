@@ -17,8 +17,7 @@ constexpr void libreria::setData(int i){//CARGA DE LOS DATOS...
 	float hum = 0, temp = 0;//humedad , temperatura variables de la estructura timestamp
 	char name[50] = {' '};//nombre de ciudad ,variable estructura city
 	
-	FILE *fp;
-	fp = fopen("data_set.txt","r");
+	FILE *fp{fopen("data_set.txt","r")};
 	
 	CHECK_NULL(fp);
 	
@@ -36,14 +35,14 @@ constexpr void libreria::setData(int i){//CARGA DE LOS DATOS...
 			this->filtro->m.time.month = month;
 			this->filtro->m.time.hh= hh;
 			this->filtro->m.time.mm= mm;
-			this->filtro->next= NULL;
+			this->filtro->next= nullptr;
 			
 			if(Empty(General)){
 				General = filtro;
 			}else{
-				city *aux = General;
+				city *aux {General};
 				
-				while (aux->next!= NULL){
+				while (aux->next!= nullptr){
 					aux = aux->next;
 				}
 				aux->next = filtro;
@@ -53,7 +52,7 @@ constexpr void libreria::setData(int i){//CARGA DE LOS DATOS...
 		if(codP==1){
 			
 			filtro = (struct city *)malloc(sizeof(struct city));
-			filtro = (struct city *) filtro;
+
 			
 			this->filtro->cityId= codC;
 			strcpy(this->filtro->city_name, name);
@@ -68,7 +67,7 @@ constexpr void libreria::setData(int i){//CARGA DE LOS DATOS...
 			if(Empty(Cordoba)){
 				Cordoba = filtro;
 			}else{
-				city *aux = Cordoba;
+				city *aux{Cordoba};
 				
 				while (aux->next!= nullptr){
 					aux = aux->next;
@@ -96,7 +95,7 @@ constexpr void libreria::setData(int i){//CARGA DE LOS DATOS...
 			if(Empty(Mendoza)){
 				Mendoza =filtro;
 			}else{
-				city *aux= Mendoza;
+				city *aux{Mendoza};
 			
 			
 				while (aux->next!= nullptr){
@@ -126,7 +125,7 @@ constexpr void libreria::setData(int i){//CARGA DE LOS DATOS...
 			if(Empty(Santa_fe)){
 				Santa_fe = filtro;
 			}else{
-				city *aux = Santa_fe;
+				city *aux {Santa_fe};
 				
 				while (aux->next!= nullptr){
 					aux = aux->next;
@@ -368,19 +367,13 @@ void libreria::pimientos(){//MEJOR PROVINCIA PARA EL CULTIVO DE PIMIENTOS...
 	prom_temp_provincia(2,prom_Stafe);
 	prom_temp_provincia(3,prom_Men);
 	
-	if(prom_Cba<0){
-		prom_Cba=prom_Cba*-1;
-	}
-	if(prom_Stafe<0){
-		prom_Stafe=prom_Stafe*-1;
-	}
-	if(prom_Men<0){
-		prom_Men=prom_Men*-1;
-	}
-	
-	diferencia1=23-prom_Cba;
-	diferencia2=23-prom_Stafe; //CALCULA QUE TEMPERATURA ES MAS SIMILAR A LOS 25�...
-	diferencia3=23-prom_Men;
+	abs((int)prom_Cba);
+	abs((int)prom_Men);
+	abs((int)prom_Stafe);
+
+	diferencia1 = 23 - (float)prom_Cba;
+	diferencia2 = 23 - (float)prom_Stafe; //CALCULA QUE TEMPERATURA ES MAS SIMILAR A LOS 25�...
+	diferencia3 = 23 - (float)prom_Men;
 
 	if(diferencia1<diferencia2 && diferencia1<diferencia3){
 		cout<<"Cordoba es la mejor provincia para cultivar pimientos"<<endl;
@@ -405,7 +398,7 @@ void libreria::ciud_frio(){//CALCULO DE LA CIUDAD MAS FRIA...
 	if(Empty(this->Cordoba)){
 		cout<<"La lista Cordoba esta vacia."<<endl;
 	}else{		
-		city *aux = this->Cordoba;
+		city *aux{this->Cordoba};
 		
 		auxid=aux->cityId;
 		
