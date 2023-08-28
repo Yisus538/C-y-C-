@@ -6,7 +6,7 @@ using namespace std;
 struct Persona{
     char nombre[30];
     int edad;
-}persona, *puntero_persona = &persona;
+}persona, *puntero_persona{&persona};
 
 void Pedirdatos();
 void Mostrar(Persona *);

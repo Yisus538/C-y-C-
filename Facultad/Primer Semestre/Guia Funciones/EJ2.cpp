@@ -10,10 +10,10 @@ d. Dividir dos numeros.
 #include <stdio.h>
 using namespace std;
 
-void sumar(int, int);
-void restar(int, int);
-void multiplicar(int, int);
-void dividir(int, int);
+static void sumar(int, int);
+static void restar(int, int);
+static void multiplicar(int, int);
+static void dividir(int, int);
 
 int main(int argc, char *argv[]) {
 	
@@ -57,16 +57,16 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-void sumar(int numero1, int numero2){
+static void sumar(int numero1, int numero2){
 	printf("\n%d + %d = %d\n", numero1, numero2, (numero1+numero2));
 }
-void restar(int numero1, int numero2){
+static void restar(int numero1, int numero2){
 	printf("\n%d - %d = %d\n", numero1, numero2, (numero1-numero2));
 }
 	
-void multiplicar(int numero1, int numero2){
+static void multiplicar(int numero1, int numero2){
 	printf("\n%d * %d = %d\n", numero1, numero2, (numero1*numero2));
 }
-void dividir(int numero1, int numero2){
+static void dividir(int numero1, int numero2){
 	printf("\n%d / %d = %d\n", numero1, numero2, (numero1/numero2));
 }

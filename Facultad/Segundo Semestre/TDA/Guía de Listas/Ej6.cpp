@@ -4,6 +4,7 @@ la lista resultante. */
 
 #include <iostream>
 #include <string.h>
+#include <ctime>
 using namespace std;
 
 struct node{
@@ -13,26 +14,26 @@ struct node{
 
 int main(int argc, char *argv[]) {
 	
-	struct node* head=NULL;
-	struct node* temp= NULL;
-	struct node *new_node=NULL;
+	struct node* head{nullptr};
+	struct node* temp{nullptr};
+	struct node *new_node{nullptr};
 	srand(time(NULL));
 	int dato=0, i=0;
 	do{
 		dato=rand()%10+1;
 		new_node = (struct node*)malloc(sizeof(struct node));
 		new_node = (struct node *) new_node;
-		if(new_node==NULL){
+		if(new_node==nullptr){
 			printf("No hay memoria disponible");
 			exit(1);
 		}
 		new_node->data=dato;
-		new_node->next=NULL;
-		if(head==NULL){
+		new_node->next=nullptr;
+		if(head==nullptr){
 			head=new_node;
 		}else{
 			temp=head;
-			while(temp->next!=NULL){
+			while(temp->next!=nullptr){
 				temp=temp->next;
 			}
 			temp->next=new_node;
@@ -40,13 +41,13 @@ int main(int argc, char *argv[]) {
 		i++;
 	}while(i!=5);
 	temp=head;
-	if(head==NULL){
+	if(head==nullptr){
 		printf("Lista vacia\n");
 		exit(1);
 	}else{
 		node*temp=head;
 		printf("\nLista completa\n");
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			printf("%d\t", temp->data);
 			temp=temp->next;
 		}
@@ -54,12 +55,12 @@ int main(int argc, char *argv[]) {
 	}
 	
 	temp=head;
-	if(head==NULL){
+	if(head==nullptr){
 		printf("Lista vacia\n");
 		exit(1);
 	}else{
-		struct node* prev=NULL;
-		struct node* current=NULL;
+		struct node* prev=nullptr;
+		struct node* current=nullptr;
 		printf("\nIngrese el dato a borrar\n");
 		scanf("%d",&dato);
 		if(dato==head->data){
@@ -69,11 +70,11 @@ int main(int argc, char *argv[]) {
 		}else{
 			prev=head;
 			current=head->next;
-			while(current!=NULL and current->data!=dato){
+			while(current!=nullptr and current->data!=dato){
 				prev=current;
 				current=current->next;
 			}
-			if(current!=NULL){
+			if(current!=nullptr){
 				temp=current;
 				prev->next = current->next;
 				free(temp);
@@ -82,13 +83,13 @@ int main(int argc, char *argv[]) {
 	}
 	
 	temp=head;
-	if(head==NULL){
+	if(head==nullptr){
 		printf("Lista vacia\n");
 		exit(1);
 	}else{
 		node*temp=head;
 		printf("\nLista completa\n");
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			printf("%d\t", temp->data);
 			temp=temp->next;
 		}

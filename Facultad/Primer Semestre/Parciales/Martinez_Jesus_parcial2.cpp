@@ -17,7 +17,7 @@ una funcion para tal fin:
 Luego crear un menu de opciones que muestre los siguientes datos por medio de funciones:
 
 - Mostrar la cantidad de encargados. (Funcion retorna valor)
-- Mostrar un listado de los operarios. (Funcion void)
+- Mostrar un listado de los operarios. (Funcion static void)
 - Mostrar el monto total pagado en sueldos de la empresa. (Retorna valor)
 - Mostrar un listado completo de la liquidez de los sueldos (Funcion void)
 
@@ -28,12 +28,12 @@ Nota: las notas pueden ser cargadas utilizando numeros aleatorios o carga manual
 #include <ctime>
 using namespace std;
 
-void cargar_datos(float [10][6]);
-void calcular_sueldo_neto(float [10][6]);
-int contar_encargado(float [10][6]);
-void mostrar_lista_operario(float [10][6]);
-float calcular_monto_total(float [10][6]);
-void mostrar_liquidez(float [10][6]);
+static void cargar_datos(float [10][6]);
+static void calcular_sueldo_neto(float [10][6]);
+static int contar_encargado(float [10][6]);
+static void mostrar_lista_operario(float [10][6]);
+static float calcular_monto_total(float [10][6]);
+static void mostrar_liquidez(float [10][6]);
 
 int main(int argc, char *argv[]) {
 	
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-void cargar_datos(float sueldos[10][6]){
+static void cargar_datos(float sueldos[10][6]){
 	//carga de datos: legajo, tipo cargo, antiguedad
 	int i=0, cargo=0;
 	for(i=0;i<10;i++)
@@ -101,7 +101,7 @@ void cargar_datos(float sueldos[10][6]){
 	}
 }
 
-void calcular_sueldo_neto(float sueldos[10][6]){
+static void calcular_sueldo_neto(float sueldos[10][6]){
 	int i=0;
 	for(i=0;i<10;i++){
 		sueldos[i][2]=sueldos[i][1]*0.16;
@@ -110,7 +110,7 @@ void calcular_sueldo_neto(float sueldos[10][6]){
 	}
 }
 	
-int contar_encargado(float sueldos[10][6]){
+static int contar_encargado(float sueldos[10][6]){
 	int i=0,cont=0;	
 	for(i=0;i<10;i++){
 		if(sueldos[i][1]==180000){
@@ -120,7 +120,7 @@ int contar_encargado(float sueldos[10][6]){
 	return cont;
 }
 		
-void mostrar_lista_operario(float sueldos[10][6]){
+static void mostrar_lista_operario(float sueldos[10][6]){
 	int i=0;
 	printf("\nListado de operarios:\n");
 	printf("Legajo\tBasico\tAportes\tObra S.\tAntig.\tSueldo Neto\n");
@@ -131,7 +131,7 @@ void mostrar_lista_operario(float sueldos[10][6]){
 	}
 }
 			
-float calcular_monto_total(float sueldos[10][6]){
+static float calcular_monto_total(float sueldos[10][6]){
 	int i=0;
 	float total=0;
 	for(i=0;i<10;i++){
@@ -140,7 +140,7 @@ float calcular_monto_total(float sueldos[10][6]){
 	return total;
 }
 				
-void mostrar_liquidez(float sueldos[10][6]){
+static void mostrar_liquidez(float sueldos[10][6]){
 	int i=0, j=0;
 	printf("\nLegajo\tBasico\tAportes\tObra S.\tAntig.\tSueldo Neto\n");
 	for(i=0;i<10;i++){

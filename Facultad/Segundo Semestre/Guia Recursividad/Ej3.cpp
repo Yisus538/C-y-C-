@@ -17,10 +17,11 @@ int main(int argc, char *argv[]) {
 }
 
 int calcular_potencia(int base,int exp){
-	if(exp==0) 
+	if(exp==0){
 		return 1;
-	if(exp==1) 
+	}if(exp==1) {
 		return base;
-	else 
+	}else{ 
 		return base*calcular_potencia(base,exp-1);
+	}
 }

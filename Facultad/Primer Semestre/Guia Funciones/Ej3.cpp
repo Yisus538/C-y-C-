@@ -7,9 +7,9 @@ perimetros de las figuras geometricas. Para cada calculo implementar una funcion
 
 using namespace std;
 
-void cuadrado();
-void rectangulo();
-void circulo();
+static void cuadrado();
+static void rectangulo();
+static void circulo();
 
 int main(int argc, char *argv[]) {
 	
@@ -50,19 +50,19 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-void cuadrado(){
+static void cuadrado(){
 	float lado=0;
 	printf("\nCUADRADO\nIngrese lado: \n");
 	scanf("%f",&lado);
 	printf("\nPerimetro: %0.2f \nArea: %0.2f\n\n",(lado*4),(pow(lado,2)));
 }
-void rectangulo(){
+static void rectangulo(){
 	float base=0, altura=0;
 	printf("\nRECTANGULO\nIngrese base y altura: \n");
 	scanf("%f%f",&base, &altura);
 	printf("\nPerimetro: %0.2f \nArea: %0.2f\n\n", (2*base+2*altura), (base*altura));
 }
-void circulo(){
+static void circulo(){
 	float radio=0;
 	printf("\nCIRCULO\nIngrese radio: \n");
 	scanf("%f",&radio);

@@ -15,11 +15,11 @@ int main(int argc, char *argv[]) {
 }
 
 void invertir(int num){
-	//se utiliza el 10 porque estamos en el sistema decimal.
-	// % se obtiene el resto de la division.
+
 	cout<<num%10;
 	
-	if (num>10) //caso recursivo
+	if (num>10){
 		
 		invertir(num/10);
+	}
 }

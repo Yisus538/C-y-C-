@@ -31,16 +31,16 @@ class libreria{
 private:
 	
 	
-	city *filtro = NULL; //New Node	
-	city *General = NULL;//Lista General
-	city *Cordoba = NULL;//Lista Cba
-	city *Mendoza = NULL;//Lista Mendoza
-	city *Santa_fe = NULL;//Lista Santa Fe
+	city *filtro = nullptr; //New Node	
+	city *General = nullptr;//Lista General
+	city *Cordoba = nullptr;//Lista Cba
+	city *Mendoza = nullptr;//Lista Mendoza
+	city *Santa_fe = nullptr;//Lista Santa Fe
 	
 	
 public://EN ESTE PUNTO, SE ENCUENTRAN TODOS LOS METODOS DE LA CLASE.**
 	libreria();
-	void setData(int i);
+	constexpr void setData(int i);
 	int Get_Total(int i);
 	bool Empty(city *);
 	void CHECK_NULL(FILE *);

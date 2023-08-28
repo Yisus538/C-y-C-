@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc,char*argv[]){
 
-    int tam,*ptr,menor= 9999;
+    int tam,*ptr,menor{9999};
 
     printf("Ingrese el tamaño del arreglo: \n");
     scanf(" %d", &tam);

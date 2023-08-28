@@ -11,53 +11,54 @@ struct node{
 
 int main(int argc, char *argv[]) {
 	
-	struct node* head=NULL;
-	struct node* temp= NULL;
-	struct node *new_node=NULL;
+	struct node* head{nullptr};
+	struct node* temp{nullptr};
+	struct node *new_node{nullptr};
 	
 	char dato=0, i=0;
 	do{
 		printf("Ingrese un dato:");
 		scanf(" %c", &dato);
+		
 		new_node = (struct node*)malloc(sizeof(struct node));
-		new_node = (struct node *) new_node;
-		if(new_node==NULL){
+		
+		if(new_node==nullptr){
 			printf("No hay memoria disponible");
 			exit(1);
 		}
 		new_node->data=dato;
-		new_node->next=NULL;
-		if(head==NULL){
+		new_node->next=nullptr;
+		if(head==nullptr){
 			head=new_node;
 		}else{
 			temp=head;
-			while(temp->next!=NULL){
+			while(temp->next!=nullptr){
 				temp=temp->next;
 			}
 			temp->next=new_node;
 		}
 		i++;
 	}while(i!=10);
-	if(head==NULL){
+	if(head==nullptr){
 		printf("Lista vacia\n");
 		exit(1);
 	}else{
 		node*temp=head;
 		printf("\nLista completa\n");
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			printf("%c\t", temp->data);
 			temp=temp->next;
 		}
 		
 	}
 	
-	if(head==NULL){
+	if(head==nullptr){
 		printf("Lista vacia\n");
 		exit(1);
 	}else{
 		node*temp=head;
 		printf("\nLista de consonantes\n");
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			if((temp->data!='a') && (temp->data!='A') && 
 			   (temp->data!='e') && (temp->data!='E') && 
 			   (temp->data!='i') && (temp->data!='I') && 

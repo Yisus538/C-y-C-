@@ -1,5 +1,5 @@
-/*Realizar un programa que solicite el ingresar de un número y mostrar su 
-equivalente en binario usando una función recursiva.
+/*Realizar un programa que solicite el ingresar de un nï¿½mero y mostrar su 
+equivalente en binario usando una funciï¿½n recursiva.
 Por ejemplo:
 SISTEMA DECIMAL	SISTEMA BINARIO
 2				10
@@ -23,12 +23,12 @@ int main(int argc, char *argv[]) {
 }
 		
 int pasar_binario(int numero){	
-	//si numero es mayor que 1, puedo seguir dividiendo por 2
-	if(numero>1)
+	
+	if(numero>1){
 		pasar_binario(numero/2);
+	}
 
-	//Muestro el resto de la division de numero dividido 2.
-	cout<<numero%2; //% obtiene el resto de una division
+	cout<<numero%2; 
 	return 0;
 }
 

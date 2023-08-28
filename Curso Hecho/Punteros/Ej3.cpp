@@ -9,7 +9,7 @@ using namespace std;
 
 int main(int argc,char*argv[]){
 
-    int numero[10],*ptr = numero;
+    int numero[10],*ptr{numero};
     srand(time(NULL));
 
     for(int i = 0; i < 10; i++){

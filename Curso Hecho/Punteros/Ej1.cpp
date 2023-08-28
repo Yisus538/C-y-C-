@@ -8,7 +8,8 @@ using namespace std;
 
 int main(int argc,char*argv[]){
 
-    int numero, *dir_numero = &numero;
+    int numero;
+    int *dir_numero{&numero};
 
     cout<<"Ingrese un numero: "<<endl;
     cin>>*dir_numero;

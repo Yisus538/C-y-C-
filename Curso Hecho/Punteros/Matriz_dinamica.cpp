@@ -6,8 +6,8 @@
 using namespace std;
 
 //¨Prototipo de Funcion.
-void Pedirdatos(int **,int,int);
-void Mostrar(int **,int,int);
+static void Pedirdatos(int **,int,int);
+static void Mostrar(int **,int,int);
 
 int main(int argc,char*argv[]){
 
@@ -24,7 +24,7 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0;
 }
-void Pedirdatos(int **puntero_matriz,int nFilas,int nColumnas){
+static void Pedirdatos(int **puntero_matriz,int nFilas,int nColumnas){
 
 
     cout<<"Ingrese numero de filas: "<<endl;
@@ -46,7 +46,7 @@ void Pedirdatos(int **puntero_matriz,int nFilas,int nColumnas){
     }
 
 }
-void Mostrar(int **puntero_matriz,int nFilas,int nColumnas){3
+static void Mostrar(int **puntero_matriz,int nFilas,int nColumnas){
 
 
     cout<<"\nImprimiendo Matriz"<<endl;

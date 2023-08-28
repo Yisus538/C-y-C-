@@ -12,9 +12,10 @@ struct Alumno{
     int edad;
     float promedio;
 }*puntero_usuario;
+int pos = 0;
 
-void Pedirdatos(Alumno *,int max);
-void Mostrar(Alumno *puntero_usuario,int max);
+static void Pedirdatos(Alumno *puntero_usuario,int max);
+static void Mostrar(Alumno *puntero_usuario,int max);
 
 int main(int argc,char*argv[]){
 
@@ -26,23 +27,22 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0;
 }
-void Pedirdatos(int max){
-
-    int pos;
+static void Pedirdatos(Alumno *puntero_usuario,int max){
 
     for(int i = 0; i < 3; i++){
-        cout<<"Ingrese su nombre: "<<endl; cin.getline(puntero_usuario+i->Nombre,30,'\n');
-        cout<<"Ingrese su edad: "<<endl; cin>>puntero_usuario+i->edad;
-        cout<<"Ingresa tu promedio: "<<endl; cin>>puntero_usuario+i->promedio;
+        std::cout<<"Ingrese su nombre: "<<std::endl; std::cin.getline((puntero_usuario+i)->Nombre,30,'\n');
+        std::cout<<"Ingrese su edad: "<<std::endl; std::cin>>(puntero_usuario+i)->edad;
+        std::cout<<"Ingresa tu promedio: "<<std::endl; std::cin>>(puntero_usuario+i)->promedio;
 
-        if((*(puntero_usuario+i)->promedio)>max){
+        if((puntero_usuario+i)->promedio>max){
             max =(puntero_usuario+i)->promedio;
             pos = i;
         }
     }
-        cout<<"\n\nDatos de Alumno"<<endl;
-        cout<<"Nombre: "<<*(puntero_usuario+pos)->Nombre<<endl;
-        cout<<"Edad: "<<*(puntero_usuario+pos)->edad<<endl;
-        cout<<"Promedio: "<<max<<endl;
-
+}
+static void Mostrar(Alumno *puntero_usuario,int max){
+    std::cout<<"\n\nDatos de Alumno"<<std::endl;
+    std::cout<<"Nombre: "<<(puntero_usuario+pos)->Nombre<<std::endl;
+    std::cout<<"Edad: "<<(puntero_usuario+pos)->edad<<std::endl;
+    std::cout<<"Promedio: "<<max<<std::endl;
 }

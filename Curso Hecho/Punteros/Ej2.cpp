@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc,char*argv[]){
 
-    int primo,*dir_primo = &primo,cont = 0;
+    int primo,*dir_primo{&primo},cont = 0;
 
     cout<<"Ingrese un numero: "<<endl;
     cin>>*dir_primo;

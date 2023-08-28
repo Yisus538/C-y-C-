@@ -6,7 +6,7 @@ Codigo	Precio Unitario	Cantidad	Subtotal
 1	4	2	8
 2	2	1	2
 3	1	3	4
-Una vez, cargado todos los arti­culos en la factura , el programa calculara
+Una vez, cargado todos los artiï¿½culos en la factura , el programa calculara
 cada uno de los subtotales y el total del monto a abonar por el cliente. Luego, 
 el sistema solicita que se ingrese la forma de pago (efectivo, debito o tarjeta). 
 Si es efectivo y este no es pago exacto, el programa debera calcular el vuelto, 
@@ -20,10 +20,10 @@ cual en este caso el arreglo sera del tipo float.
 #include <stdio.h>
 using namespace std;
 
-void calcularSubtotal(float [5][4]);
-float calcularTotal(float [5][4]);
-void mostrarFactura(float [5][4]);
-void formaPago(float);
+static void calcularSubtotal(float [5][4]);
+static float calcularTotal(float [5][4]);
+static void mostrarFactura(float [5][4]);
+static void formaPago(float);
 
 int main(int argc, char *argv[]) {
 	
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 	printf("FACTURACION\n");
 	for(int i=0; i<5;i++){
 		factura[5][0]=i+1;
-		printf("\nCód. %d\n", (i+1));
+		printf("\nCï¿½d. %d\n", (i+1));
 		printf("Precio Unitario: $");
 		scanf("%f",&factura[i][1]);
 		printf("Cantidad: ");
@@ -43,20 +43,20 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-void calcularSubtotal(float factura[5][4]){
+static void calcularSubtotal(float factura[5][4]){
 	for(int i=0; i<5;i++){
 		factura[i][3]=factura[i][1]*factura[i][2];
 	}
 	
 }
-float calcularTotal(float factura[5][4]){
+static float calcularTotal(float factura[5][4]){
 	float total=0;
 	for(int i=0; i<5;i++){
 		total=total+factura[i][3];
 	}
 	return total;
 }
-void mostrarFactura(float factura[5][4]){
+static void mostrarFactura(float factura[5][4]){
 	calcularSubtotal(factura);
 	printf("\n----------------------------------------------");
 	printf("\nCod.\tP.U.\tCant.\tSubtotal\n");
@@ -70,7 +70,7 @@ void mostrarFactura(float factura[5][4]){
 	printf("\n----------------------------------------------");
 }
 
-void formaPago(float total){
+static void formaPago(float total){
 	char op=' ';
 	float dinero=0, vuelto=0;
 	printf("\n\nIngrese la forma de pago: ");

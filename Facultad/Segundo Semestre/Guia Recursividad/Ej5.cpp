@@ -25,8 +25,9 @@ int main(int argc, char *argv[]) {
 }
 	
 int calcular_MCD(int n1, int n2){
-	if(n2==0) //caso base
+	if(n2==0) {
 		return n1;
-	else    //caso recursivo
+	}else{
 		return calcular_MCD(n2,n1%n2);
+	}
 }

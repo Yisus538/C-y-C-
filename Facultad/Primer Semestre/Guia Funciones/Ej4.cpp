@@ -8,13 +8,14 @@ funciones:
 #include <stdio.h>
 #include <math.h>
 #include <ctime>
+#include <stdlib.h>
 
 using namespace std;
 
-int sumar(int [10]);
-float promediar(int [10]);
-void transformarALetra(int [10]);
-void mostrar(int [10]);
+static int sumar(int [10]);
+static float promediar(int [10]);
+static void transformarALetra(int [10]);
+static void mostrar(int [10]);
 
 int main(int argc, char *argv[]) {
 	
@@ -57,26 +58,26 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-int sumar(int v[10]){
+static int sumar(int v[10]){
 	int suma=0;
 	for(int i=0; i<10; i++){
 		suma=suma+v[i];
 	}
 	return suma; 
 }
-float promediar(int v[10]){
+static float promediar(int v[10]){
 	float promedio=sumar(v)/10;
 	return promedio;
 	
 }
-void transformarALetra(int v[10]){
+static void transformarALetra(int v[10]){
 	printf("\nNumeros a Letras\n");
 	for(int i=0; i<10; i++){
 		printf(" %c\t", (char)v[i]);
 	}
 	printf("\n");
 }
-void mostrar(int v[10]){
+static void mostrar(int v[10]){
 	printf("Vector\n");
 	for(int i=0; i<10; i++){
 		printf("%d\t",v[i]);

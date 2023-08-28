@@ -13,11 +13,12 @@ int main(int argc, char *argv[]) {
 	cout<<"Ingrese la cantidad de numeros a sumar: ";
 	cin>>num;
 	
-	//muestro lo numeros a sumar
+	
 	for(int i=1;i<num+1;i++){
 		cout<<i;
-		if(i<num)
-			cout<<" + "; //lo muestra solo si hay otro numero para sumar
+		if(i<num){
+			cout<<" + ";
+		} 
 	}
 	
 	cout<<" = "<<sumar(num);
@@ -25,12 +26,12 @@ int main(int argc, char *argv[]) {
 }
 
 int sumar(int num){
-	//caso bases
-	if(num==0) 
+	
+	if(num==0) {
 		return 0;
-	if(num==1) 
+	}if(num==1) {
 		return 1;
-	else
-		//caso recursivo
+	}else{
 		return num+sumar(num-1);
+	}
 }

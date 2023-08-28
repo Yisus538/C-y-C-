@@ -5,7 +5,7 @@ cual determine si un número es o no par. (La funcion debe devolver el valor)*/
 
 using namespace std;
 
-bool esPar(int);
+static bool esPar(int);
 
 int main(int argc, char *argv[]) {
 	int numero=0;
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-bool esPar(int numero){
+static bool esPar(int numero){
 	if(numero%2==0)
 		return true;
 	else
