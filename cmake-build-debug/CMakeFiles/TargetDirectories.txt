@@ -1,3 +1,0 @@
-/home/yisus538/CLionProjects/C-y-C-/cmake-build-debug/CMakeFiles/C_y_C_.dir
-/home/yisus538/CLionProjects/C-y-C-/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/yisus538/CLionProjects/C-y-C-/cmake-build-debug/CMakeFiles/rebuild_cache.dir
