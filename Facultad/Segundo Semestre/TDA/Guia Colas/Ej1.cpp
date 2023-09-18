@@ -21,8 +21,8 @@ int add(struct node *);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = NULL;
-	struct node *back = NULL;
+	struct node *front {nullptr};
+	struct node *back {nullptr};
 	int value=0, op=0, i=0;
 	do{
 		op=menu();
@@ -66,13 +66,13 @@ int menu(void){
 void push(struct node **front, struct node **back, int d){
 	struct node *temp;
 	temp=(struct node *)malloc(sizeof(struct node));
-	if(temp==NULL){
+	if(temp==nullptr){
 		printf("No hay suficiente memoria");
 		exit(0);
 	}
 	temp->data=d;
-	temp->link=NULL;
-	if(*back==NULL){ //Insercion del primer nodo
+	temp->link=nullptr;
+	if(*back==nullptr){ //Insercion del primer nodo
 		*back=temp;
 		*front=*back;
 	}else{ //Insercion del resto de los nodos

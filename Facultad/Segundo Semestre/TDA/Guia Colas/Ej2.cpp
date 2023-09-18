@@ -22,8 +22,8 @@ void print_pair(struct node *);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = NULL;
-	struct node *back = NULL;
+	struct node *front = nullptr;
+	struct node *back = nullptr;
 	int value=0, op=0, i=0;
 	srand(time(NULL));
 	do{
@@ -68,13 +68,13 @@ int menu(void){
 void push(struct node **front, struct node **back, int d){
 	struct node *temp;
 	temp=(struct node *)malloc(sizeof(struct node));
-	if(temp==NULL){
+	if(temp==nullptr){
 		printf("No hay suficiente memoria");
 		exit(0);
 	}
 	temp->data=d;
-	temp->link=NULL;
-	if(*back==NULL){ //Insercion del primer nodo
+	temp->link=nullptr;
+	if(*back==nullptr){ //Insercion del primer nodo
 		*back=temp;
 		*front=*back;
 	}else{ //Insercion del resto de los nodos
@@ -85,7 +85,7 @@ void push(struct node **front, struct node **back, int d){
 		
 void pop(struct node **front, struct node **back){
 	struct node *temp;
-	if((*front==*back)&&(*back==NULL)){
+	if((*front==*back)&&(*back==nullptr)){
 		printf("Vacia\n");
 		exit(0);
 	}
@@ -99,20 +99,20 @@ void pop(struct node **front, struct node **back){
 }
 			
 void print(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp = nullptr;
 	temp=front;
 	printf("Impresion de la cola\n");
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		printf("%d\n", temp->data);
 		temp=temp->link;
 	}
 }
 	
 void print_pair(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp = nullptr;
 	temp=front;
 	printf("Impresion de la cola de pares\n");
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->data%2==0){
 			printf("%d\n", temp->data);
 		}

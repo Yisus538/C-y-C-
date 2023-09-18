@@ -20,8 +20,8 @@ int size(struct node *);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = NULL;
-	struct node *back = NULL;	
+	struct node *front = nullptr;
+	struct node *back = nullptr;	
 	int value=0, op=0, i=0;
 	srand(time(NULL));
 	
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 			print(front);
 			break;
 		case 4: 
-			printf("Tamaño de la cola: %d\n", size(front));
+			printf("Tamaï¿½o de la cola: %d\n", size(front));
 			break;
 		case 5: 
 			printf("Valor del frente de la cola: %d\n",front->data);
@@ -60,7 +60,7 @@ int menu(void){
 		printf("1.- Agregar un nodo\n");
 		printf("2.- Borrar un nodo\n");
 		printf("3.- Imprimir cola\n");
-		printf("4.- Tamaño de la cola\n");
+		printf("4.- Tamaï¿½o de la cola\n");
 		printf("5.- Valor del frente de la cola\n");
 		printf("6.- Salir\n");
 		scanf("%d", &op);
@@ -72,13 +72,13 @@ int menu(void){
 void push(struct node **front, struct node **back, int d){
 	struct node *temp;
 	temp=(struct node *)malloc(sizeof(struct node));
-	if(temp==NULL){
+	if(temp==nullptr){
 		printf("No hay suficiente memoria");
 		exit(0);
 	}
 	temp->data=d;
-	temp->link=NULL;
-	if(*back==NULL){ //Insercion del primer nodo
+	temp->link=nullptr;
+	if(*back==nullptr){ //Insercion del primer nodo
 		*back=temp;
 		*front=*back;
 	}else{ //Insercion del resto de los nodos
@@ -89,7 +89,7 @@ void push(struct node **front, struct node **back, int d){
 		
 void pop(struct node **front, struct node **back){
 	struct node *temp;
-	if((*front==*back)&&(*back==NULL)){
+	if((*front==*back)&&(*back==nullptr)){
 		printf("Vacia\n");
 		exit(0);
 	}
@@ -102,10 +102,10 @@ void pop(struct node **front, struct node **back){
 }
 			
 void print(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp = nullptr;
 	temp=front;
 	printf("Impresion de la cola\n");
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		printf("%d\n", temp->data);
 		temp=temp->link;
 	}
@@ -113,9 +113,9 @@ void print(struct node *front){
 	
 int size(struct node *front){
 	int size=0;
-	struct node *temp = NULL;
+	struct node *temp = nullptr;
 	temp=front;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		size++;
 		temp=temp->link;
 	}

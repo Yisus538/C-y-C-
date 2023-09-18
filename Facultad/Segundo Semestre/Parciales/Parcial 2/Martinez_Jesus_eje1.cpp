@@ -1,11 +1,11 @@
 /*LISTA
 
 Desarrolle un programa que cree una estructura llamada remito en la cual tiene 
-los siguientes atributos: número, apellido, cantidad de ladrillos, peso total 
+los siguientes atributos: nï¿½mero, apellido, cantidad de ladrillos, peso total 
 de la carga.  El peso de un ladrillo es de 0.350 kg.
 Luego crear una LISTA de remitos, y cargar los datos de cada remito. 
-El peso debe ser calculado por una función. Una vez cargado el TDA, mostrar 
-un menú de opciones con los siguientes datos:
+El peso debe ser calculado por una funciï¿½n. Una vez cargado el TDA, mostrar 
+un menï¿½ de opciones con los siguientes datos:
 
 1. Mostrar el listado de remitos.
 2. Mostrar el remito con mayor carga. 
@@ -19,12 +19,9 @@ Remito		Cantidad de Ladrillos	Peso total
 2			15	
 
 */
-
-
 #include <iostream>
 #include <ctime>
 #include <string.h>
-
 using namespace std;
 
 struct remito{
@@ -51,20 +48,20 @@ void check_null(FILE *fp);
 
 int main(int argc, char *argv[]) {
 	
-	struct node* head=NULL;
+	struct node* head=nullptr;
 	struct remito r;
-	FILE *fp=NULL;
+	FILE *fp=nullptr;
 	
 	int op=0;
-	cout<<"Ingreso de los datos:\n";
-	//ingreso de los datos de los equipos
+	std::cout<<"Ingreso de los datos:\n";
+	
 	for(int i=0; i<3; i++){
-		cout<<"Numero: "<<i+1<<"\n";
+		std::cout<<"Numero: "<<i+1<<"\n";
 		r.numero=i+1;
-		cout<<"Apellido: ";
-		cin>>r.apellido;
-		cout<<"Cantidad de ladrillos: ";
-		cin>>r.cant_ladrillo;
+		std::cout<<"Apellido: ";
+		std::cin>>r.apellido;
+		std::cout<<"Cantidad de ladrillos: ";
+		std::cin>>r.cant_ladrillo;
 		r.peso_total=calcular_peso_total(r.cant_ladrillo);
 		append(&head, r);
 	}
@@ -92,14 +89,14 @@ int main(int argc, char *argv[]) {
 int menu(void){
 	int op=0;
 	do{
-		cout<<"--------------------------------------------\n";
-		cout<<"1.- Mostrar lista de remitos\n";
-		cout<<"2.- Mostrar el remito con mayor carga\n";
-		cout<<"3.- Buscar un remito y mostrar sus datos\n";
-		cout<<"4.- Grabar en archivo\n";
-		cout<<"5.- Salir\n";
-		cin>>op;
-		cout<<"--------------------------------------------\n";
+		std::cout<<"--------------------------------------------\n";
+		std::cout<<"1.- Mostrar lista de remitos\n";
+		std::cout<<"2.- Mostrar el remito con mayor carga\n";
+		std::cout<<"3.- Buscar un remito y mostrar sus datos\n";
+		std::cout<<"4.- Grabar en archivo\n";
+		std::cout<<"5.- Salir\n";
+		std::cin>>op;
+		std::cout<<"--------------------------------------------\n";
 	}while((op<1)||(op>6));
 	return op;
 }
@@ -109,9 +106,9 @@ float calcular_peso_total(int cant_ladrillo){
 }
 	
 void push(struct node ** head, struct remito r){
-	struct node * new_node=NULL;
+	struct node * new_node=nullptr;
 	new_node = (struct node*)malloc(sizeof(struct node));
-	if(new_node==NULL){
+	if(new_node==nullptr){
 		printf("No hay memoria disponible");
 		exit(0);
 	}
@@ -121,52 +118,52 @@ void push(struct node ** head, struct remito r){
 }
 	
 void append(struct node **head, struct remito r){
-	struct node* new_node = NULL;
+	struct node* new_node = nullptr;
 	new_node = (struct node*)malloc(sizeof(struct node));
-	if(new_node==NULL){
+	if(new_node==nullptr){
 		printf("No hay memoria disponible");
 		exit(0);
 	}
 	struct node *temp=*head;
 	new_node->r=r;
-	new_node->next=NULL;
-	if(*head == NULL){
+	new_node->next=nullptr;
+	if(*head == nullptr){
 		*head=new_node;
 		return;
 	}
-	while(temp->next!=NULL){
+	while(temp->next!=nullptr){
 		temp=temp->next;
 	}
 	temp->next=new_node;
 }
 				
 void print_list(struct node *head){
-	struct node *temp=NULL;
+	struct node *temp=nullptr;
 	temp=head;
-	cout<<"LISTA DE REMITOS\n";
-	cout<<"N.R.\tApellido\tC.L.\tP.T.\n";
-	while(temp!=NULL){
-		cout<<temp->r.numero<<"\t"<<temp->r.apellido<<"\t\t"<<temp->r.cant_ladrillo<<"\t"<<temp->r.peso_total<<"\n";
+	std::cout<<"LISTA DE REMITOS\n";
+	std::cout<<"N.R.\tApellido\tC.L.\tP.T.\n";
+	while(temp!=nullptr){
+		std::cout<<temp->r.numero<<"\t"<<temp->r.apellido<<"\t\t"<<temp->r.cant_ladrillo<<"\t"<<temp->r.peso_total<<"\n";
 		temp=temp->next;
 	}
 }
 
 void mostrar_mayor_carga(struct node *head){
-	struct node *temp=NULL;
+	struct node *temp=nullptr;
 	temp=head;
 	float mayor=0;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(mayor<temp->r.peso_total){
 			mayor=temp->r.peso_total;
 		}
 		temp=temp->next;
 	}
 	temp=head;
-	cout<<"REMITO CON MAYOR CARGA\n";
-	cout<<"N.R.\tApellido\tC.L.\tP.T.\n";
-	while(temp!=NULL){
+	std::cout<<"REMITO CON MAYOR CARGA\n";
+	std::cout<<"N.R.\tApellido\tC.L.\tP.T.\n";
+	while(temp!=nullptr){
 		if(mayor==temp->r.peso_total){
-			cout<<temp->r.numero<<"\t"<<temp->r.apellido<<"\t\t"<<temp->r.cant_ladrillo<<"\t"<<temp->r.peso_total<<"\n";
+			std::cout<<temp->r.numero<<"\t"<<temp->r.apellido<<"\t\t"<<temp->r.cant_ladrillo<<"\t"<<temp->r.peso_total<<"\n";
 		}
 		temp=temp->next;
 	}
@@ -174,29 +171,29 @@ void mostrar_mayor_carga(struct node *head){
 	
 
 void buscar_remito(struct node *head){
-	struct node *temp = NULL;
+	struct node *temp = nullptr;
 	temp=head;
 	int numero=0;
 	bool bandera=false;
-	cout<<"BUSCADOR\n";
-	cout<<"Ingrese el numero ha buscar: ";
-	cin>>numero;
-	while(temp!=NULL){
+	std::cout<<"BUSCADOR\n";
+	std::cout<<"Ingrese el numero ha buscar: ";
+	std::cin>>numero;
+	while(temp!=nullptr){
 		if(temp->r.numero==numero){
-			cout<<"Apellido: "<<temp->r.apellido<<"\n";
-			cout<<"Cantidad de ladrillos: "<<temp->r.cant_ladrillo<<"\n";
-			cout<<"Peso total: "<<temp->r.peso_total<<"\n";
+			std::cout<<"Apellido: "<<temp->r.apellido<<"\n";
+			std::cout<<"Cantidad de ladrillos: "<<temp->r.cant_ladrillo<<"\n";
+			std::cout<<"Peso total: "<<temp->r.peso_total<<"\n";
 			bandera=true;
 		}
 		temp=temp->next;
 	}
 	if(bandera==false){
-		cout<<"No se ha encontrado el remito "<<numero<<".\n";
+		std::cout<<"No se ha encontrado el remito "<<numero<<".\n";
 	}
 }
 		
 void check_null(FILE *fp){
-	if(fp==NULL){
+	if(fp==nullptr){
 		printf("Imposible abrir el archivo");
 		exit(1);
 	}
@@ -206,15 +203,15 @@ void grabar_archivo(struct node *head, FILE *fp){
 	fp=fopen("./remito.txt", "w");
 	check_null(fp);
 	
-	struct node *temp = NULL;
+	struct node *temp = nullptr;
 	temp=head;
 	
 	fprintf(fp,"N.R.\tC.L.\tP.T.\n");
 	
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		fprintf(fp,"%d\t%d\t%0.2f\n", temp->r.numero, temp->r.cant_ladrillo, temp->r.peso_total);
 		temp=temp->next;
 	}
-	cout<<"ARCHIVO GRABADO\nNombre: remito.txt\n";
+	std::cout<<"ARCHIVO GRABADO\nNombre: remito.txt\n";
 	fclose(fp);
 }
