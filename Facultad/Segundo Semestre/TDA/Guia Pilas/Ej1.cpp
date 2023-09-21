@@ -17,7 +17,7 @@ struct node{
 	struct node *next;
 };
 
-/*Prototipado de funciones*/
+
 int menu(void);
 void push(struct node **, int);
 void pop(struct node **);
@@ -28,7 +28,7 @@ int count_nodes(struct node **);
 
 int main(int argc, char *argv[]) {
 	int op=0, value=0, i=0;
-	struct node *stack_p =NULL;
+	struct node *stack_p {nullptr};
 	do{
 		op=menu();
 		switch(op){
@@ -77,24 +77,24 @@ int menu(void){
 }
 	
 void push(struct node **sp, int value){
-	struct node *new_node = NULL;
+	struct node *new_node {nullptr};
 	/* Creacion de memoria*/
 	new_node = (struct node*)malloc(sizeof(struct node));
-	/*Verificacion de memoria disponible*/
+	
 	if(new_node==NULL){
 		printf("No hay memoria disponible");
 		exit(0);
 	}
-	/*Carga util*/
+	
 	new_node->data=value;
-	/*Asignamos el siguiente del nuevo nodo al stack pointer actual*/
+
 	new_node->next=*(sp);
-	/*Ahora el nuevo nodo es el stackptr*/
+
 	*(sp)=new_node;	
 }
 	
 bool isempty(struct node *sp){
-	if(sp==NULL)
+	if(sp==nullptr)
 		return(true);
 	else
 		return(false);
@@ -102,7 +102,7 @@ bool isempty(struct node *sp){
 
 void pop(struct node **sp){
 	if(isempty(*sp)==false){
-		struct node *temp=NULL;	
+		struct node *temp{nullptr};	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -120,7 +120,7 @@ void print(struct node **sp){
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
 		temp=*(sp);
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			printf("%d\n", temp->data);
 			temp=temp->next;
 			/*Recordar que el ultimo nodo de la stack, en siguiente apunta a NULL*/
@@ -136,7 +136,7 @@ int add(struct node **sp){
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
 		temp=*(sp);
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			suma+=temp->data;
 			temp=temp->next;
 			/*Recordar que el ultimo nodo de la stack, en siguiente apunta a NULL*/
@@ -146,13 +146,12 @@ int add(struct node **sp){
 	}
 	return suma;
 }
-
 int count_nodes(struct node **sp){
 	int acum=0;
 	if(isempty(*sp)==false){
 		struct node *temp;
 		temp=(*sp);
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			acum+=1;
 			temp=temp->next;
 		}

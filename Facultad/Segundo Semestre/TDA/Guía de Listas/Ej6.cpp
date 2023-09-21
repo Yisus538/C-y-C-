@@ -21,8 +21,8 @@ int main(int argc, char *argv[]) {
 	int dato=0, i=0;
 	do{
 		dato=rand()%10+1;
-		new_node = (struct node*)malloc(sizeof(struct node));
-		new_node = (struct node *) new_node;
+		new_node = new node();
+
 		if(new_node==nullptr){
 			printf("No hay memoria disponible");
 			exit(1);

@@ -24,11 +24,11 @@ bool check_repeated(struct node *, int);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = NULL;
-	struct node *back = NULL;
+	struct node *front = nullptr;
+	struct node *back = nullptr;
 	int value=0, op=0, i=0;
 	srand(time(NULL));
-	//carga 5 elementos en la cola de manera aleatoria
+	
 	for(i=0; i<5;i++){
 		value=rand()%10+1;
 		push(&front, &back, value);
@@ -75,17 +75,17 @@ int menu(void){
 	
 void push(struct node **front, struct node **back, int d){
 	struct node *temp;
-	temp=(struct node *)malloc(sizeof(struct node));
-	if(temp==NULL){
+	temp=new node();
+	if(temp==nullptr){
 		printf("No hay suficiente memoria");
 		exit(0);
 	}
 	temp->data=d;
-	temp->link=NULL;
-	if(*back==NULL){ //Insercion del primer nodo
+	temp->link=nullptr;
+	if(*back==nullptr){ 
 		*back=temp;
 		*front=*back;
-	}else{ //Insercion del resto de los nodos
+	}else{
 		(*back)->link =temp;
 		*back=temp;
 	}
@@ -93,7 +93,7 @@ void push(struct node **front, struct node **back, int d){
 		
 void pop(struct node **front, struct node **back){
 	struct node *temp;
-	if((*front==*back)&&(*back==NULL)){
+	if((*front==*back)&&(*back==nullptr)){
 		printf("Vacia\n");
 		exit(0);
 	}
@@ -107,10 +107,10 @@ void pop(struct node **front, struct node **back){
 }
 			
 void print(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
 	printf("Impresion de la cola\n");
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		printf("%d\n", temp->data);
 		temp=temp->link;
 	}
@@ -118,9 +118,9 @@ void print(struct node *front){
 
 bool check_repeated(struct node *front, int value){
 	bool repeated=false;
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->data==value){
 			repeated=true;
 		}

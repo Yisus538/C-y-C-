@@ -20,8 +20,8 @@ int size(struct node *);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = nullptr;
-	struct node *back = nullptr;	
+	struct node *front {nullptr};
+	struct node *back {nullptr};	
 	int value=0, op=0, i=0;
 	srand(time(NULL));
 	
@@ -71,17 +71,17 @@ int menu(void){
 	
 void push(struct node **front, struct node **back, int d){
 	struct node *temp;
-	temp=(struct node *)malloc(sizeof(struct node));
+	temp = new node();
 	if(temp==nullptr){
 		printf("No hay suficiente memoria");
 		exit(0);
 	}
 	temp->data=d;
 	temp->link=nullptr;
-	if(*back==nullptr){ //Insercion del primer nodo
+	if(*back==nullptr){ 
 		*back=temp;
 		*front=*back;
-	}else{ //Insercion del resto de los nodos
+	}else{ 
 		(*back)->link =temp;
 		*back=temp;
 	}
@@ -98,11 +98,11 @@ void pop(struct node **front, struct node **back){
 	if(*back==temp){
 		*back=(*back)->link;
 	}
-	free(temp);
+	delete temp;
 }
 			
 void print(struct node *front){
-	struct node *temp = nullptr;
+	struct node *temp {nullptr};
 	temp=front;
 	printf("Impresion de la cola\n");
 	while(temp!=nullptr){
@@ -113,7 +113,7 @@ void print(struct node *front){
 	
 int size(struct node *front){
 	int size=0;
-	struct node *temp = nullptr;
+	struct node *temp {nullptr};
 	temp=front;
 	while(temp!=nullptr){
 		size++;

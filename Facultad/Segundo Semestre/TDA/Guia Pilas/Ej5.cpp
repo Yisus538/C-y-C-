@@ -31,7 +31,7 @@ void print_pair(struct node **);
 
 int main(int argc, char *argv[]) {
 	int op=0, value=0, i=0;
-	struct node *stack_p =NULL;
+	struct node *stack_p {nullptr};
 	srand(time(NULL));
 	for(i=0; i<5;i++){
 		value=rand()%10+1;
@@ -85,11 +85,11 @@ int menu(void){
 	
 void push(struct node **sp, int value){
 
-	struct node *new_node = NULL;
+	struct node *new_node {nullptr};
 	/* Creacion de memoria*/
-	new_node = (struct node*)malloc(sizeof(struct node));
+	new_node = new node();
 	/*Verificacion de memoria disponible*/
-	if(new_node==NULL){
+	if(new_node==nullptr){
 		printf("No hay memoria disponible");
 		exit(0);
 	}
@@ -101,16 +101,11 @@ void push(struct node **sp, int value){
 	*(sp)=new_node;	
 }
 	
-bool isempty(struct node *sp){
-	if(sp==NULL)
-		return(true);
-	else
-		return(false);
-}
+bool isempty(struct node *sp){return (sp==NULL);}
 
 void pop(struct node **sp){
 	if(isempty(*sp)==false){
-		struct node *temp=NULL;	
+		struct node *temp{nullptr};	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -128,7 +123,7 @@ void print(struct node **sp){
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
 		temp=*(sp);
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			printf("%d\n", temp->data);
 			temp=temp->next;
 			/*Recordar que el ultimo nodo de la stack, en siguiente apunta a NULL*/
@@ -144,7 +139,7 @@ bool check_repeated(struct node **sp, int value){
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
 		temp=*(sp);
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			if(temp->data==value){
 				repeated=true;
 			}

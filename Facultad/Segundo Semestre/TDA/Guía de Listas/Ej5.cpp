@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
 		printf("Ingrese un dato:");
 		scanf(" %c", &dato);
 		
-		new_node = (struct node*)malloc(sizeof(struct node));
+		new_node =new node();
 		
 		if(new_node==nullptr){
 			printf("No hay memoria disponible");

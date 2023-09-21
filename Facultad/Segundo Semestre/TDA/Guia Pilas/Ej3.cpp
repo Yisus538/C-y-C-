@@ -2,7 +2,7 @@
 - Agregar un nodo a la pila. (se deben agregar 5 valores)
 - Borrar el ulltimo nodo de la pila.
 - Imprimir pila.
-- Tamaño de la pila
+- Tamaï¿½o de la pila
 - Mostrar el ultimo valor de la pila
 */
 
@@ -32,7 +32,7 @@ void print_pair(struct node **);
 
 int main(int argc, char *argv[]) {
 	int op=0, value=0, i=0;
-	struct node *stack_p =NULL;
+	struct node *stack_p {nullptr};
 	srand(time(NULL));
 	do{
 		op=menu();
@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
 			}
 			case 4:
 			{
-				printf("El tamaño de la pila: %d\n", size(&stack_p));
+				printf("El tamaï¿½o de la pila: %d\n", size(&stack_p));
 				break;
 			}
 			case 5:
@@ -78,7 +78,7 @@ int menu(void){
 		printf("1.- Agregar un nodo a la pila\n");
 		printf("2.- Borrar un nodo de la pila\n");
 		printf("3.- Imprimir pila\n");
-		printf("4.- Tamaño de la pila\n");
+		printf("4.- Tamaï¿½o de la pila\n");
 		printf("5.- Ultimo valor de la pila\n");
 		printf("6.- Salir\n");
 		scanf("%d", &op);
@@ -89,11 +89,11 @@ int menu(void){
 	
 void push(struct node **sp, int value){
 
-	struct node *new_node = NULL;
+	struct node *new_node = nullptr;
 	/* Creacion de memoria*/
 	new_node = (struct node*)malloc(sizeof(struct node));
 	/*Verificacion de memoria disponible*/
-	if(new_node==NULL){
+	if(new_node==nullptr){
 		printf("No hay memoria disponible");
 		exit(0);
 	}
@@ -106,7 +106,7 @@ void push(struct node **sp, int value){
 }
 	
 bool isempty(struct node *sp){
-	if(sp==NULL)
+	if(sp==nullptr)
 		return(true);
 	else
 		return(false);
@@ -114,7 +114,7 @@ bool isempty(struct node *sp){
 
 void pop(struct node **sp){
 	if(isempty(*sp)==false){
-		struct node *temp=NULL;	
+		struct node *temp=nullptr;	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -132,10 +132,10 @@ void print(struct node **sp){
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
 		temp=*(sp);
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			printf("%d\n", temp->data);
 			temp=temp->next;
-			/*Recordar que el ultimo nodo de la stack, en siguiente apunta a NULL*/
+			/*Recordar que el ultimo nodo de la stack, en siguiente apunta a nullptr*/
 		}
 	}else{
 		printf("Pila vacia\n");
@@ -148,10 +148,10 @@ int size(struct node **sp){
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
 		temp=*(sp);
-		while(temp!=NULL){
+		while(temp!=nullptr){
 			size++;
 			temp=temp->next;
-			/*Recordar que el ultimo nodo de la stack, en siguiente apunta a NULL*/
+			/*Recordar que el ultimo nodo de la stack, en siguiente apunta a nullptr*/
 		}
 	}else{
 		printf("Pila vacia\n");

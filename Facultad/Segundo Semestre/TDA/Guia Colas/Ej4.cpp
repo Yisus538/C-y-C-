@@ -5,7 +5,7 @@
 - Cantidad de nodos en la cola.
 - Cantidades de letras mayusculas y minusculas en la cola.
 
-El usuario cargará la cola con letras mayusculas o minusculas. 
+El usuario cargarï¿½ la cola con letras mayusculas o minusculas. 
 Nota: Las letras en ASCII mayusculas estan entre el 65 a 90 y las 
 minusculas entre  97 a 122 inclusive.*/
 
@@ -14,22 +14,22 @@ minusculas entre  97 a 122 inclusive.*/
 
 using namespace std;
 
-struct node{
+typedef struct node{
 	char data;
-	struct node *link;
-};
+	node *link;
+}node;
 
 int menu();
-void push(struct node **, struct node **, char);
-void pop(struct node **, struct node **);
-void print(struct node *);
-int size(struct node *);
-void counter(struct node *);
+void push(node **, node **, char);
+void pop(node **, node **);
+void print(node *);
+int size(node *);
+void counter(node *);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = NULL;
-	struct node *back = NULL;
+	node *front {nullptr};
+	node *back {nullptr};
 	int op=0;
 	char value=' ';
 	
@@ -83,27 +83,27 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node **front, struct node **back, char c){
-	struct node *temp;
-	temp=(struct node *)malloc(sizeof(struct node));
-	if(temp==NULL){
+void push(node **front, node **back, char c){
+	node *temp;
+	temp=new node();
+	if(temp==nullptr){
 		printf("No hay suficiente memoria");
 		exit(0);
 	}
 	temp->data=c;
-	temp->link=NULL;
-	if(*back==NULL){ //Insercion del primer nodo
+	temp->link=nullptr;
+	if(*back==nullptr){ 
 		*back=temp;
 		*front=*back;
-	}else{ //Insercion del resto de los nodos
+	}else{ 
 		(*back)->link =temp;
 		*back=temp;
 	}
 }
 		
-void pop(struct node **front, struct node **back){
-	struct node *temp;
-	if((*front==*back)&&(*back==NULL)){
+void pop(node **front, node **back){
+	node *temp;
+	if((*front==*back)&&(*back==nullptr)){
 		printf("Vacia\n");
 		exit(0);
 	}
@@ -113,35 +113,35 @@ void pop(struct node **front, struct node **back){
 		*back=(*back)->link;
 	}
 	printf("Primer nodo borrado de la cola\n");
-	free(temp);
+	delete temp;
 }
 			
-void print(struct node *front){
-	struct node *temp = NULL;
+void print(node *front){
+	node *temp {nullptr};
 	temp=front;
 	printf("Impresion de la cola\n");
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		printf("%c\n", temp->data);
 		temp=temp->link;
 	}
 }
 
-int size(struct node *front){
+int size(node *front){
 	int size=0;
-	struct node *temp = NULL;
+	node *temp {nullptr};
 	temp=front;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		size++;
 		temp=temp->link;
 	}
 	return size;
 }
 	
-void counter(struct node *front){
+void counter(node *front){
 	int cant_may=0, cant_min=0;
-	struct node *temp = NULL;
+	node *temp {nullptr};
 	temp=front;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->data>=65 && temp->data<=90){
 			cant_may++;
 		}else{

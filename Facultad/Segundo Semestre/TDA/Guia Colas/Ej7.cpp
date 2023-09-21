@@ -38,8 +38,8 @@ void print_axis(struct node *);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = NULL;
-	struct node *back = NULL;
+	struct node *front {nullptr};
+	struct node *back {nullptr};
 	struct vehicle v;
 	int op=0;
 	do{
@@ -102,25 +102,24 @@ int menu(void){
 	
 void push(struct node **front, struct node **back, struct vehicle v){
 	struct node *temp;
-	temp=(struct node *)malloc(sizeof(struct node));
-	if(temp==NULL){
+	temp=new node();
+	if(temp==nullptr){
 		cout<<"No hay suficiente memoria";
 		exit(0);
 	}
 	temp->v=v;
-	temp->link=NULL;
-	if(*back==NULL){ //Insercion del primer nodo
+	temp->link=nullptr;
+	if(*back==nullptr){ 
 		*back=temp;
 		*front=*back;
-	}else{ //Insercion del resto de los nodos
+	}else{ 
 		(*back)->link =temp;
 		*back=temp;
 	}
-}
-		
+}		
 void pop(struct node **front, struct node **back){
 	struct node *temp;
-	if((*front==*back)&&(*back==NULL)){
+	if((*front==*back)&&(*back==nullptr)){
 		cout<<"Vacia\n";
 		exit(0);
 	}
@@ -130,26 +129,26 @@ void pop(struct node **front, struct node **back){
 		*back=(*back)->link;
 	}
 	cout<<"Primer nodo borrado de la cola\n";
-	free(temp);
+	delete temp;
 }
 			
 void print(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
 	cout<<"Impresion de la cola\n";
 	cout<<"Pat.\tCant.\tPrec.\tDirec.\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		cout<<temp->v.patent<<"\t"<<temp->v.amount<<"\t"<<temp->v.price<<"\t"<<temp->v.direction<<"\n";
 		temp=temp->link;
 	}
 }
 
 void print_direction(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
 	cout<<"Impresion de la cola por direccion NS\n";
 	cout<<"Pat.\tCant.\tPrec.\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->v.direction.compare("NS")==0){
 			cout<<temp->v.patent<<"\t"<<temp->v.amount<<"\t"<<temp->v.price<<"\n";
 		}
@@ -158,7 +157,7 @@ void print_direction(struct node *front){
 	temp=front;
 	cout<<"\nImpresion de la cola por direccion SN\n";
 	cout<<"Pat.\tCant.\tPrec.\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->v.direction.compare("SN")==0){
 			cout<<temp->v.patent<<"\t"<<temp->v.amount<<"\t"<<temp->v.price<<"\n";
 		}
@@ -167,11 +166,11 @@ void print_direction(struct node *front){
 }
 
 void print_axis(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
 	cout<<"Impresion de la cola con 1 eje\n";
 	cout<<"Pat.\tPrec.\tDirec.\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->v.amount==1){
 			cout<<temp->v.patent<<"\t"<<temp->v.price<<"\t"<<temp->v.direction<<"\n";
 		}
@@ -180,7 +179,7 @@ void print_axis(struct node *front){
 	temp=front;
 	cout<<"\nImpresion de la cola con 2 eje\n";
 	cout<<"Pat.\tPrec.\tDirec.\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->v.amount==2){
 			cout<<temp->v.patent<<"\t"<<temp->v.price<<"\t"<<temp->v.direction<<"\n";
 		}
@@ -189,7 +188,7 @@ void print_axis(struct node *front){
 	temp=front;
 	cout<<"\nImpresion de la cola con 3 eje\n";
 	cout<<"Pat.\tPrec.\tDirec.\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->v.amount==3){
 			cout<<temp->v.patent<<"\t"<<temp->v.price<<"\t"<<temp->v.direction<<"\n";
 		}
@@ -198,7 +197,7 @@ void print_axis(struct node *front){
 	temp=front;
 	cout<<"\nImpresion de la cola con 4 eje o mas\n";
 	cout<<"Pat.\tCant.\tPrec.\tDirec.\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->v.amount>=4){
 			cout<<temp->v.patent<<"\t"<<temp->v.amount<<"\t"<<temp->v.price<<"\t"<<temp->v.direction<<"\n";
 		}

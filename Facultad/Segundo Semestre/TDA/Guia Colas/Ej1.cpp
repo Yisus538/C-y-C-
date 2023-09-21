@@ -70,12 +70,12 @@ void push(struct node **front, struct node **back, int d){
 		printf("No hay suficiente memoria");
 		exit(0);
 	}
-	temp->data=d;
-	temp->link=nullptr;
-	if(*back==nullptr){ //Insercion del primer nodo
+	temp->data = d;
+	temp->link = nullptr;
+	if(*back==nullptr){ 
 		*back=temp;
 		*front=*back;
-	}else{ //Insercion del resto de los nodos
+	}else{ 
 		(*back)->link =temp;
 		*back=temp;
 	}
@@ -83,7 +83,7 @@ void push(struct node **front, struct node **back, int d){
 		
 void pop(struct node **front, struct node **back){
 	struct node *temp;
-	if((*front==*back)&&(*back==NULL)){
+	if((*front==*back)&&(*back==nullptr)){
 		printf("Vacia\n");
 		exit(0);
 	}
@@ -96,19 +96,19 @@ void pop(struct node **front, struct node **back){
 	free(temp);
 }			
 void print(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
 	printf("Impresion de la cola\n");
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		printf("%d\n", temp->data);
 		temp=temp->link;
 	}
 }
 int add(struct node *front){
 	int addition=0;
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		addition+=temp->data;
 		temp=temp->link;
 	}

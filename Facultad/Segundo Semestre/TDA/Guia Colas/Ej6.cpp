@@ -34,8 +34,8 @@ void replace(struct node *, int, int);
 
 int main(int argc, char *argv[]) {
 	
-	struct node *front = NULL;
-	struct node *back = NULL;
+	struct node *front {nullptr};
+	struct node *back {nullptr};
 	struct product p;
 	int op=0, code=0, amount=0;
 	do{
@@ -92,13 +92,13 @@ int menu(void){
 void push(struct node **front, struct node **back, struct product p){
 	struct node *temp;
 	temp=(struct node *)malloc(sizeof(struct node));
-	if(temp==NULL){
+	if(temp==nullptr){
 		cout<<"No hay suficiente memoria";
 		exit(0);
 	}
 	temp->p=p;
-	temp->link=NULL;
-	if(*back==NULL){ //Insercion del primer nodo
+	temp->link=nullptr;
+	if(*back==nullptr){ //Insercion del primer nodo
 		*back=temp;
 		*front=*back;
 	}else{ //Insercion del resto de los nodos
@@ -109,7 +109,7 @@ void push(struct node **front, struct node **back, struct product p){
 		
 void pop(struct node **front, struct node **back){
 	struct node *temp;
-	if((*front==*back)&&(*back==NULL)){
+	if((*front==*back)&&(*back==nullptr)){
 		cout<<"Vacia\n";
 		exit(0);
 	}
@@ -123,20 +123,20 @@ void pop(struct node **front, struct node **back){
 }
 			
 void print(struct node *front){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
 	cout<<"Impresion de la cola\n";
 	cout<<"Cod.\tNombre\tCant.\tPrecio\n";
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		cout<<temp->p.code<<"\t"<<temp->p.name<<"\t"<<temp->p.amount<<"\t"<<temp->p.price<<"\n";
 		temp=temp->link;
 	}
 }
 
 void discount(struct node *front, int code, int amount){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->p.code==code){
 			temp->p.amount=temp->p.amount-amount;
 		}
@@ -145,9 +145,9 @@ void discount(struct node *front, int code, int amount){
 }
 
 void replace(struct node *front, int code, int amount){
-	struct node *temp = NULL;
+	struct node *temp {nullptr};
 	temp=front;
-	while(temp!=NULL){
+	while(temp!=nullptr){
 		if(temp->p.code==code){
 			temp->p.amount=temp->p.amount+amount;
 		}
