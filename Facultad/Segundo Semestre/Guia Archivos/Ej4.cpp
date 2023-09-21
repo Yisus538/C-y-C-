@@ -11,7 +11,7 @@ void CHECK_NULL(FILE *archivo);
 
 int main() {
 
-    FILE *archivo{fopen("el_quijote.txt", "r")}; 
+    FILE *archivo{fopen("el_quijote.txt","r")}; 
     
     CHECK_NULL(archivo);
 

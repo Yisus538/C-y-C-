@@ -3,8 +3,8 @@ siguientes datos (nombre del producto, marca, precio unitario, fecha de elaborac
 y lo guarde en un archivo con el nombre Datos_Producto_Estructura.txt*/
 
 
-#include <iostream> //libreria de entrada y salida por pantalla
-#include <fstream> //libreria para manejo de archivos
+#include <iostream> 
+#include <fstream>
 using namespace std;
 
 struct producto
@@ -28,31 +28,31 @@ int main(int argc, char *argv[]) {
 	cin>>p.preciou;
 	cout<<"Fecha: ";
 	cin>>p.fecha;
-	cout<<"Tamaño: ";
+	cout<<"Tamaï¿½o: ";
 	cin>>p.tam;
 	
 	
-	//Escribir un archivo con los datos
-	ofstream ofs; //creo un objeto de la libreria ofstream
-	ofs.open("Datos_Producto_Estructura.txt"); //Abro un archivo, sino existe se crea.
+	
+	ofstream ofs; 
+	ofs.open("Datos_Producto_Estructura.txt");
 	
 	ofs<<"Datos del producto: "<<endl;
 	ofs<<"Nombre: "<<p.nombre<<endl;
 	ofs<<"Marca: "<<p.marca<<endl;
 	ofs<<"Precio Unitario: "<<p.preciou<<endl;
 	ofs<<"Fecha: "<<p.fecha<<endl;
-	ofs<<"Tamaño: "<<p.tam<<endl;
+	ofs<<"Tamaï¿½o: "<<p.tam<<endl;
 	ofs.close(); 
 	
-	//Leer el archivo
+	
 	string lista=" ";
-	ifstream ifs; //creo un objeto de la libreria ifstream
-	ifs.open("Datos_Producto_Estructura.txt"); //abro el archivo
-	while(!ifs.eof()) { //recorre el archivo hasta que llega al fin de linea
+	ifstream ifs; 
+	ifs.open("Datos_Producto_Estructura.txt"); 
+	while(!ifs.eof()) { 
 		getline(ifs,lista); 
 		cout<<lista<<endl;
 	}
-	ifs.close(); //Cierro el archivo
+	ifs.close(); 
 	
 	return 0;
 }
