@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <list>
 
 using namespace std;
 
@@ -22,13 +23,18 @@ int menu(void);
 void push(struct node **, int);
 void pop(struct node **);
 void print(struct node **);
-bool isempty(struct node *);
+bool isEmpty(struct node *);
 int add(struct node **);
 int count_nodes(struct node **);
 
 int main(int argc, char *argv[]) {
 	int op=0, value=0, i=0;
 	struct node *stack_p {nullptr};
+
+	
+
+
+
 	do{
 		op=menu();
 		switch(op){
@@ -77,6 +83,7 @@ int menu(void){
 }
 	
 void push(struct node **sp, int value){
+	
 	struct node *new_node {nullptr};
 	/* Creacion de memoria*/
 	new_node = (struct node*)malloc(sizeof(struct node));
@@ -93,15 +100,12 @@ void push(struct node **sp, int value){
 	*(sp)=new_node;	
 }
 	
-bool isempty(struct node *sp){
-	if(sp==nullptr)
-		return(true);
-	else
-		return(false);
+bool isEmpty(struct node *sp){
+	return (sp==nullptr);
 }
 
 void pop(struct node **sp){
-	if(isempty(*sp)==false){
+	if(isEmpty(*sp)==false){
 		struct node *temp{nullptr};	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
@@ -115,7 +119,7 @@ void pop(struct node **sp){
 }
 
 void print(struct node **sp){
-	if(isempty(*sp)==false){
+	if(isEmpty(*sp)==false){
 		printf("Pila\n");
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
@@ -132,7 +136,7 @@ void print(struct node **sp){
 
 int add(struct node **sp){
 	int suma=0;
-	if(isempty(*sp)==false){
+	if(isEmpty(*sp)==false){
 		/*Comenzamos a recorrer desde el stack pointer*/
 		struct node *temp;
 		temp=*(sp);
@@ -148,7 +152,7 @@ int add(struct node **sp){
 }
 int count_nodes(struct node **sp){
 	int acum=0;
-	if(isempty(*sp)==false){
+	if(isEmpty(*sp)==false){
 		struct node *temp;
 		temp=(*sp);
 		while(temp!=nullptr){

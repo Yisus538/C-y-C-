@@ -40,7 +40,7 @@ private:
 	
 public://EN ESTE PUNTO, SE ENCUENTRAN TODOS LOS METODOS DE LA CLASE.**
 	libreria();
-	constexpr void setData(int i);
+	void setData(int i);
 	int Get_Total(int i);
 	bool Empty(city *);
 	void CHECK_NULL(FILE *);

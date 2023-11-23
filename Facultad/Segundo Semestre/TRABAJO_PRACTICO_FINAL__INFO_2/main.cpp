@@ -1,9 +1,8 @@
 #include <iostream>
-#include <stdlib.h>
 #include "libreria.h"
 using namespace std;
 
-int main(int argc, char *argv[]){
+int main(){
 	
 	libreria Provicias; //Declaracion de un objeto
 	float  prom_cba = 0, prom_men = 0,prom_sf = 0;
@@ -31,7 +30,8 @@ int main(int argc, char *argv[]){
 		printf("*9. Salir                                                                           *\n");
 		printf("*************************************************************************************\n");
 		printf("Opcion: \n"); scanf(" %d", &opc);
-		if(opc!=9){
+
+        if(opc!=9){
 			system("cls");
 		}
 		
@@ -109,7 +109,6 @@ int main(int argc, char *argv[]){
 			cout<<"\nSaliendo...\n"<<endl;
 			cout<<"----------------"<<endl;
 			exit(1);
-		break;
 		}
 	}
 	while(opc!=9);

@@ -14,26 +14,30 @@ int main(int argc, char *argv[]) {
 
 	struct node* head{nullptr};
 	struct node* temp{nullptr};
-	struct node *new_node{nullptr};
+	struct node* new_node{nullptr};
 
 	int dato=0, i=0;
 	do{
 		printf("Ingrese un dato\n");
 		scanf("%d", &dato);
+		
 
-		new_node = new node();
+		new_node = new node();//(struct node*)malloc(sizeof(struct node));
 
 		if(new_node==nullptr){
 			printf("No hay memoria disponible");
 			exit(1);
 		}
+		
 		new_node->data= {dato};
 		new_node->next = {nullptr};
+		
 		if(head==nullptr){
-			head=new_node;
-		}else{
+			head=new_node; //? primer nodo
+		}else{ //! guarden los otros nodos
 			temp=head;
-			while(temp->next!=nullptr){
+
+			while(temp->next!=nullptr){ 
 				temp=temp->next;
 			}
 			temp->next=new_node;

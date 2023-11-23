@@ -64,6 +64,7 @@ int menu(void){
 }
 	
 void push(struct node **front, struct node **back, int d){
+	
 	struct node *temp;
 	temp=(struct node *)malloc(sizeof(struct node));
 	if(temp==nullptr){
@@ -71,8 +72,8 @@ void push(struct node **front, struct node **back, int d){
 		exit(0);
 	}
 	temp->data = d;
-	temp->link = nullptr;
-	if(*back==nullptr){ 
+	temp->link = {nullptr};
+	if(*back==nullptr){ //Primer Nodo
 		*back=temp;
 		*front=*back;
 	}else{ 
