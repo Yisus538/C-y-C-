@@ -18,7 +18,7 @@ void Empty(Node **head,int &dato);
 
 int main(int argc,char**argv){
 
-    Node *head = NULL;
+    Node* head = NULL;
     int dato = 0;
     char rta = ' ';
 
