@@ -1,7 +1,7 @@
 //Metodo burbuja
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
@@ -18,14 +18,14 @@ int main(int argc,char*argv[]){
             }
         }
     }
-    cout<<"Orden Ascendente: "<<endl;
+    std::cout<<"Orden Ascendente: "<<std::endl;
 
     for(i=0; i<5; i++){
-        cout<<nummero[i]<<endl;
+        std::cout<<numero[i]<<std::endl;
     }
-    cout<<"Orden Descendente: "<<endl;
+    std::cout<<"Orden Descendente: "<<std::endl;
     for(i=4; i>=0; i--){
-        cout<<numero[i]<<endl;
+        std::cout<<numero[i]<<std::endl;
     }
 
     system("pause");

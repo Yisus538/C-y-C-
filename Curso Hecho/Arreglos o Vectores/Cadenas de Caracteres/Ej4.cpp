@@ -6,19 +6,19 @@
 #include <iostream>
 #include <cstdlib>
 #include <string.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
     char cad1[] = "Hola que tal ";
     char cad2[100] = "";
 
-    cout<<"Escriba su nombre: "<<endl;
-    cin.getline(cad2,100,'\n');
+    std::cout<<"Escriba su nombre: "<<std::endl;
+    std::cin.getline(cad2,100,'\n');
 
     strcat(cad1,cad2);
 
-    cout<<cad1<<endl;
+    std::cout<<cad1<<std::endl;
     
     system("pause");
     return 0;

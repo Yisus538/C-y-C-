@@ -4,7 +4,7 @@ del vector con sus indices asociados.
 */
 #include <stdio.h>
 #include <stdlib.h>
-using namespace std;5
+
 
 int main(int argc,char*argv[]){
 

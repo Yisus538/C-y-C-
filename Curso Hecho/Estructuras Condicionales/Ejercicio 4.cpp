@@ -1,16 +1,16 @@
 #include <iostream>
-using namespace std;
+
 
 int main(){
     int numero =0;
 
-    cout<<"Digite un numero: "; cin>>numero;
+    std::cout<<"Digite un numero: "; std::cin>>numero;
     if(numero == 0){
-      cout<<"El numero es cero."<<endl;
+      std::cout<<"El numero es cero."<<std::endl;
     }else if(numero > 0){
-       cout<<"El numero es positico.";
+       std::cout<<"El numero es positico.";
     }else{
-        cout<<"El numero es negativo";
+        std::cout<<"El numero es negativo";
     }
     return 0;
 }

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
@@ -10,7 +10,7 @@ int main(int argc,char*argv[]){
     char palabra2[]= "avion";
 
     if(strcmp(palabra1,palabra2) > 0){
-        cout<<palabra1<<" esta despues alfabeticamente. "<<endl;
+        std::cout<<palabra1<<" esta despues alfabeticamente. "<<std::endl;
     }
 
     system("pause");

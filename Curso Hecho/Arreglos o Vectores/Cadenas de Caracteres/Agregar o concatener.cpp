@@ -3,7 +3,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
 
 int main(int argc,char*argv[]){
 
@@ -15,7 +14,7 @@ int main(int argc,char*argv[]){
 
     strcat(cad3,cad2); //cadedena 3 = esto es una cadena de ejemplo.
 
-    cout<<cad3<<endl;
+    std::cout<<cad3<<std::endl;
 
 
     system("pause");

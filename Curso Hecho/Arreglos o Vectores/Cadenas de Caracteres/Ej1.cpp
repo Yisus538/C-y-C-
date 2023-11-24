@@ -5,15 +5,15 @@ y si esta supera a 10 caracteres mostrarla en pantalla, caso contrario no mostra
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
     char cadena[100] = "";
     //int longitud = 0;
 
-    cout<<"Escriba una cadena de texto: "<<endl; 
-    cin.getline(cadena,100,'\n');
+    std::cout<<"Escriba una cadena de texto: "<<std::endl;
+    std::cin.getline(cadena,100,'\n');
 
     /*
     longitud = strlen(cadena);
@@ -26,9 +26,9 @@ int main(int argc,char*argv[]){
     }
     */
    if(strlen(cadena)>10){
-     cout<<cadena<<endl;
+       std::cout<<cadena<<std::endl;
    }else{
-     cout<<"No supero las 10 para mostrarse en pantalla."<<endl;
+       std::cout<<"No supero las 10 para mostrarse en pantalla."<<std::endl;
    }
 
 

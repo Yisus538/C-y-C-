@@ -2,8 +2,7 @@
  4. Ewscribe un programa que defina un vector de numeros y muestre en la salida estandar el vector en orden inverso- del ultimo al primer elemento.
 */
 #include <stdio.h>
-#include <conio.h>
-using namespace std;
+#include <stdlib.h>
 
 int main(int argc,char*argv[]){
 
@@ -15,6 +14,6 @@ int main(int argc,char*argv[]){
       
     }
 
-    getch();
+    system("pause");
     return 0;
 }

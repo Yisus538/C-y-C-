@@ -1,7 +1,7 @@
 /**/
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 struct Nodo{
 
@@ -10,18 +10,18 @@ struct Nodo{
 
 };
 
-void Insertar_Cola(Nodo *&,Nodo *&,int);
-bool Cola_Vacia(Nodo *);
-void Suprimir_Nodo(Nodo *&,Nodo *&,int &);
+void Insertar_Cola(Nodo*&,Nodo*&,int);
+bool Cola_Vacia(Nodo*);
+void Suprimir_Nodo(Nodo*&,Nodo*&,int&);
 
 int main(int argc,char*argv[]){
 
-    Nodo *frente = NULL;
-    Nodo *fin = NULL;
+    Nodo* frente  {nullptr};
+    Nodo* fin {nullptr};
     int dato = 0,i = 0;
 
     do{
-        cout<<"Ingrese el dato: "<<endl; cin>>dato;
+        std::cout<<"Ingrese el dato: "<<std::endl; std::cin>>dato;
         Insertar_Cola(frente,fin,dato);
         i++;
     }while(i!=5);
@@ -30,20 +30,20 @@ int main(int argc,char*argv[]){
         Suprimir_Nodo(frente,fin,dato);
 
         if(frente != NULL){
-            cout<<dato<<" , ";
+            std::cout<<dato<<" , ";
         }else{
-            cout<<dato<<" . ";
+            std::cout<<dato<<" . ";
         }
     }
 
     system("pause");
     return 0;
 }
-void Insertar_Cola(Nodo *&frente,Nodo *&fin,int dato){
+void Insertar_Cola(Nodo*& frente,Nodo*& fin,int dato){
 
-    Nodo *nuevo_nodo = new Nodo();
+    Nodo* nuevo_nodo = new Nodo();
     nuevo_nodo->dato = dato;
-    nuevo_nodo->siguiente = NULL;
+    nuevo_nodo->siguiente = nullptr;
 
     if(Cola_Vacia(frente)){
         frente = nuevo_nodo;
@@ -53,17 +53,17 @@ void Insertar_Cola(Nodo *&frente,Nodo *&fin,int dato){
 
     fin = nuevo_nodo;
 }
-bool Cola_Vacia(Nodo *frente){
-    return (frente==NULL)? true : false;
+bool Cola_Vacia(Nodo* frente){
+    return (frente==nullptr);
 }
-void Suprimir_Nodo(Nodo *&frente,Nodo *&fin,int &dato){
+void Suprimir_Nodo(Nodo*& frente,Nodo*& fin,int& dato){
 
     dato = frente->dato;
     Nodo *aux = frente;
 
     if(frente==fin){
-        frente = NULL;
-        fin = NULL;
+        frente = nullptr;
+        fin = nullptr;
     }else{
         frente = frente->siguiente;
     }

@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 void intercambiar(int&,int&);
 
@@ -12,13 +12,13 @@ int main(int argc,char*argv[]){
     int num1=10, num2=15;
 
 
-    cout<<"El valor de num1 es: "<<num1<<endl;
-    cout<<"EL valor de num2 es: "<<num2<<endl;
+    std::cout<<"El valor de num1 es: "<<num1<<std::endl;
+    std::cout<<"EL valor de num2 es: "<<num2<<std::endl;
 
     intercambiar(num1,num2);
    
-    cout<<"El nuevo valor de num1 es: "<<num1<<endl;
-    cout<<"EL nuevo valor de num2 es: "<<num2<<endl;
+    std::cout<<"El nuevo valor de num1 es: "<<num1<<std::endl;
+    std::cout<<"EL nuevo valor de num2 es: "<<num2<<std::endl;
 
     system("pause");
     return 0;

@@ -8,7 +8,6 @@ ultimo mostrarle el numero de intentos que le llevo.*/
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-using namespace std;
 
 int main(int argc, char*argv[]){
    
@@ -19,19 +18,19 @@ int main(int argc, char*argv[]){
 
      do{
 
-        cout<<"Digite un numero: "; cin>>numero;
+        std::cout<<"Digite un numero: "; std::cin>>numero;
  
         if(numero>dato){  
-            cout<<"Digite un numero menor\n";
+            std::cout<<"Digite un numero menor\n";
         }
         if(numero<dato){
-            cout<<"Digite un numero mayor\n";
+            std::cout<<"Digite un numero mayor\n";
         }
         contador++;
      }while(numero != dato);
 
-     cout<<"FELICIDADES ADIVINASTE EL NUMERO"<<endl;
-     cout<<"Numero de intentos: "<<contador;
+     std::cout<<"FELICIDADES ADIVINASTE EL NUMERO"<<std::endl;
+     std::cout<<"Numero de intentos: "<<contador;
     system("pause");
     return 0;
 }

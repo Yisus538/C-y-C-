@@ -4,10 +4,10 @@ con los elementos impares del vector recibido.
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 void pedirDatos();
-void arrays(int vec[],int tam);
+void arrays(int[],int);
 
 
 int vec[100],tam=0;
@@ -22,13 +22,13 @@ int main(int argc,char*argv[]){
 }
 void pedirDatos(){
 
-    cout<<"Ingrese el tamaño del vector: "<<endl;
-    cin>>tam;
+    std::cout<<"Ingrese el tamaño del vector: "<<std::endl;
+    std::cin>>tam;
 
     for(int i=0; i<tam; i++){
 
-        cout<<i+1<<". Digite el numero: "<<endl;
-        cin>>vec[i];
+        std::cout<<i+1<<". Digite el numero: "<<std::endl;
+        std::cin>>vec[i];
 
     }
 
@@ -45,9 +45,9 @@ void arrays(int vec[],int tam){
 
     }
 
-    cout<<"Imprimiendo los elementos impares del vector: "<<endl;
+    std::cout<<"Imprimiendo los elementos impares del vector: "<<std::endl;
     for(int i=0; i<j; i++){
-        cout<<impar[i]<<" "<<endl;
+        std::cout<<impar[i]<<" "<<std::endl;
     }
 
 }

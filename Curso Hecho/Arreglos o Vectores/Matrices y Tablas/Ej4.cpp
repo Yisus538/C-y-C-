@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
@@ -12,8 +12,8 @@ int main(int argc,char*argv[]){
     int vector1[100][100]={0},vector2[100][100]={0},dato=0,filas=0,columnas=0;
     srand (time(NULL));
 
-    cout<<"Escriba el numero de filas: "<<endl; cin>>filas;
-    cout<<"Escriba el numero de columnas: "<<endl; cin>>columnas;
+    std::cout<<"Escriba el numero de filas: "<<std::endl; std::cin>>filas;
+    std::cout<<"Escriba el numero de columnas: "<<std::endl; std::cin>>columnas;
 
     for(int i=0; i<filas; i++){
         for(int j=0; i<columnas; j++){
@@ -35,10 +35,10 @@ int main(int argc,char*argv[]){
     for(int i=0; i<filas; i++){
         for(int j=0; i<columnas; j++){
 
-           cout<<vector2[i][j]<<" ";
+            std::cout<<vector2[i][j]<<" ";
            
         }
-       cout<<"\n";
+        std::cout<<"\n";
     }
 
 

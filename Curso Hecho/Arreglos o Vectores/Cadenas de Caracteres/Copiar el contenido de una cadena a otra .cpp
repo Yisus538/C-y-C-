@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
@@ -13,7 +13,7 @@ int main(int argc,char*argv[]){
 
    strcpy(nombre2,nombre);
 
-   cout<<"Tu nombre es: "<<nombre2<<endl;
+    std::cout<<"Tu nombre es: "<<nombre2<<std::endl;
 
     system("pause");
     return 0;

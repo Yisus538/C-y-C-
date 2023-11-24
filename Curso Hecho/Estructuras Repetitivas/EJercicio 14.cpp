@@ -7,7 +7,7 @@ Realice un programa que permita la lectura de los datos y el calculo de las esta
 
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc, char*argv[]){
 
@@ -16,10 +16,10 @@ int main(int argc, char*argv[]){
     
     for(int i=1;i<=5;i++){
       
-      cout<<i<< "Digite el resultado del primer examen: "<<endl; cin>>examen1;
-      cout<<i<< "Digite el resultado del segundo examen: "<<endl; cin>>examen2;
-      cout<<i<< "Digite el resultado del tercer examen: "<<endl; cin>>examen3;
-      cout<<"\n";
+      std::cout<<i<< "Digite el resultado del primer examen: "<<std::endl; std::cin>>examen1;
+      std::cout<<i<< "Digite el resultado del segundo examen: "<<std::endl; std::cin>>examen2;
+      std::cout<<i<< "Digite el resultado del tercer examen: "<<std::endl; std::cin>>examen3;
+      std::cout<<"\n";
 
       if((examen1>=6)&&(examen2>=6)&&(examen3>=6)){
         aprobados++;
@@ -31,9 +31,9 @@ int main(int argc, char*argv[]){
         ultimo++;
       }
     }
-    cout<<"Los alumnos que aprobaron todos los examenes: "<<aprobados<<endl;
-    cout<<"Los alumnos que aprobaron un examenen: "<<aprobado<<endl;
-    cout<<"Los alumnos que aprobaron el ultimo examen: "<<ultimo<<endl;
+    std::cout<<"Los alumnos que aprobaron todos los examenes: "<<aprobados<<std::endl;
+    std::cout<<"Los alumnos que aprobaron un examenen: "<<aprobado<<std::endl;
+    std::cout<<"Los alumnos que aprobaron el ultimo examen: "<<ultimo<<std::endl;
 
     system("pause");
     return 0;

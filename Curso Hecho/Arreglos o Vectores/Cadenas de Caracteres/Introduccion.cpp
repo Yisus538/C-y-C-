@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string.h>
 #include <cstdlib>
-using namespace std;
 
 int main(int argc,char*argv[]){
     /*
@@ -14,10 +13,10 @@ int main(int argc,char*argv[]){
     */
     char nombre[20]={" "};
 
-    cout<<"Escriba su nombre: "<<endl;
-    cin.getline(nombre,20,'\n');
+    std::cout<<"Escriba su nombre: "<<std::endl;
+    std::cin.getline(nombre,20,'\n');
 
-    cout<<nombre<<endl;
+    std::cout<<nombre<<std::endl;
 
     system("pause");
     return 0;

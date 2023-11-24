@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int arg,char*argv[]){
 
@@ -13,19 +13,19 @@ int main(int arg,char*argv[]){
 
        for(int j=0; j<3; j++){
 
-         cout<<numero[i][j];
+           std::cout<<numero[i][j];
 
        }
-      cout<<"\n";
+        std::cout<<"\n";
     }
-    cout<<"\nMostrando Diagonal Principal"<<endl;
+    std::cout<<"\nMostrando Diagonal Principal"<<std::endl;
     for(int i=0; i<3; i++){
 
        for(int j=0; j<3; j++){
 
          if(i==j){
 
-            cout<<numero[i][j]<<endl;
+             std::cout<<numero[i][j]<<std::endl;
 
          }
 

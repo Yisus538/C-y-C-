@@ -4,22 +4,22 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
     int numero;
-    int *dir_numero{&numero};
+    int* dir_numero{&numero};
 
-    cout<<"Ingrese un numero: "<<endl;
-    cin>>*dir_numero;
+    std::cout<<"Ingrese un numero: "<<std::endl;
+    std::cin>>*dir_numero;
 
     if(*dir_numero%2==0){
-        cout<<"El numero es: "<<*dir_numero<<endl;
-        cout<<"Su direccion de memoria es: "<<dir_numero<<endl;
+        std::cout<<"El numero es: "<<*dir_numero<<std::endl;
+        std::cout<<"Su direccion de memoria es: "<<dir_numero<<std::endl;
     }else{
-        cout<<"El numero no es par: "<<*dir_numero<<endl;
-        cout<<"Su direccion de memoria es: "<<dir_numero<<endl;
+        std::cout<<"El numero no es par: "<<*dir_numero<<std::endl;
+        std::cout<<"Su direccion de memoria es: "<<dir_numero<<std::endl;
     }
 
 

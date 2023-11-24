@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-using namespace std;
 
 int main(int argc,char*argv[]){
 
@@ -12,7 +11,7 @@ int main(int argc,char*argv[]){
        
        multi *= vector[i];
     }
-    cout<<"El resultado de la multiplicacion es de: "<<multi<<endl;
+    std::cout<<"El resultado de la multiplicacion es de: "<<multi<<std::endl;
 
 
     system("pause");

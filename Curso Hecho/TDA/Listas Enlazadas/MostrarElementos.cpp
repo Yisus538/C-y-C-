@@ -1,25 +1,24 @@
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
 struct Nodo{
 
     int dato;
-    struct Nodo *siguiente;
+    struct Nodo* siguiente;
 
 };
 
-void Insertar_Elemento(struct Nodo *&lista,int dato);
-void Mostrar_Elemento(struct Nodo *lista);
+void Insertar_Elemento(struct Nodo*&,int);
+void Mostrar_Elemento(struct Nodo*);
 
 int main(int argc,char*argv[]){
 
-    Nodo *lista = NULL;
+    Nodo* lista = nullptr;
     int dato = 0,i = 0;
 
     do{
 
-        cout<<"Ingrese un dato: "<<endl; cin>>dato;
+        std::cout<<"Ingrese un dato: "<<std::endl; std::cin>>dato;
         Insertar_Elemento(lista,dato);
         i++;
     }while(i!=5);
@@ -29,7 +28,7 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0;
 }
-void Insertar_Elemento(struct Nodo *&lista,int dato){
+void Insertar_Elemento(struct Nodo*& lista,int dato){
 
     Nodo *nuevo_nodo = new Nodo();
     nuevo_nodo->dato = dato;
@@ -37,7 +36,7 @@ void Insertar_Elemento(struct Nodo *&lista,int dato){
     Nodo *aux1 = lista;
     Nodo *aux2;
 
-    while((aux1 != NULL) && (aux1->dato < dato)){
+    while((aux1 != nullptr) && (aux1->dato < dato)){
         aux2 = aux1;
         aux1 = aux1->siguiente;
     }
@@ -50,20 +49,20 @@ void Insertar_Elemento(struct Nodo *&lista,int dato){
 
     nuevo_nodo->siguiente = aux1;
 
-    cout<<"EL elemento "<<dato<<" insertado a lista correctamente."<<endl;
+    std::cout<<"EL elemento "<<dato<<" insertado a lista correctamente."<<std::endl;
 
 }
-void Mostrar_Elemento(struct Nodo *lista){
+void Mostrar_Elemento(struct Nodo* lista){
 
-    Nodo *actual = new Nodo();
+    Nodo* actual = new Nodo();
     actual = lista;
 
-    cout<<"\n\nLos datos de la lista son: "<<endl;
-    while(actual != NULL){
+    std::cout<<"\n\nLos datos de la lista son: "<<std::endl;
+    while(actual != nullptr){
 
-        cout<<actual->dato<<" ";
+        std::cout<<actual->dato<<" ";
         actual = actual->siguiente;
 
     }
-    cout<<"\n";
+    std::cout<<"\n";
 }

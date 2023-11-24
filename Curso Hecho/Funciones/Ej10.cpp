@@ -7,7 +7,7 @@ los argumentos respectivosen la funcion que llama. Para este problema supong que
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 //Prototipo de funcion
 void calc_anos(int,int&,int&,int&);
@@ -16,12 +16,12 @@ int main(int argc,char*argv[]){
   
     int totaldias=0, ano=0, mes=0,dia=0;
 
-    cout<<"Digite el numero total de dias: "<<endl;
-    cin>>totaldias;
+    std::cout<<"Digite el numero total de dias: "<<std::endl;
+    std::cin>>totaldias;
 
     calc_anos(totaldias,ano,mes,dia);
 
-    cout<<"La fecha actual: "<<dia+1<<"/"<<mes+1<<"/"<<ano+2000<<endl;
+    std::cout<<"La fecha actual: "<<dia+1<<"/"<<mes+1<<"/"<<ano+2000<<std::endl;
 
     system("pause");
     return 0;

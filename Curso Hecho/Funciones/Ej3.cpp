@@ -4,7 +4,6 @@ valor transmitido a la funcion
  */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
 //FUNCIONES
 
@@ -24,10 +23,10 @@ int main(int argc,char*argv[]){
 
 void datos(){
 
-    cout<<"Digite un numero: "<<endl;
-    cin>>num1;
-    cout<<"Digite el exponente: "<<endl;
-    cin>>exponente;
+    std::cout<<"Digite un numero: "<<std::endl;
+    std::cin>>num1;
+    std::cout<<"Digite el exponente: "<<std::endl;
+    std::cin>>exponente;
 
 }
 void funpot(int x, int y){
@@ -39,6 +38,6 @@ void funpot(int x, int y){
        resultado *= x;
 
     }
-    cout<<"EL resultado es: "<<resultado<<endl;
+    std::cout<<"EL resultado es: "<<resultado<<std::endl;
 
 }

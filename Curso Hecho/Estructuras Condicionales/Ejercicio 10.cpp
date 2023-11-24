@@ -1,24 +1,23 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
 
 int main(int argc, char *argv[]){
     int mes=0;
 
-    cout<<"Ingrese el numero de mes: \n"; cin>>mes;
+    std::cout<<"Ingrese el numero de mes: \n"; std::cin>>mes;
     switch (mes) {
-    case 1: cout<<"Enero"<<endl; break;
-    case 2: cout<<"Febrero"<<endl; break;
-    case 3: cout<<"Marzo"<<endl; break;
-    case 4: cout<<"Abril"<<endl; break;
-    case 5: cout<<"Mayo"<<endl; break;
-    case 6: cout<<"Junio"<<endl; break;
-    case 7: cout<<"Julio"<<endl; break;
-    case 8: cout<<"Agosto"<<endl; break;
-    case 9: cout<<"Septiembre"<<endl; break;
-    case 10: cout<<"Octubre"<<endl; break;
-    case 11: cout<<"Noviembre"<<endl; break;
-    case 12: cout<<"Diciembre"<<endl; break;  
+    case 1: std::cout<<"Enero"<<std::endl; break;
+    case 2: std::cout<<"Febrero"<<std::endl; break;
+    case 3: std::cout<<"Marzo"<<std::endl; break;
+    case 4: std::cout<<"Abril"<<std::endl; break;
+    case 5: std::cout<<"Mayo"<<std::endl; break;
+    case 6: std::cout<<"Junio"<<std::endl; break;
+    case 7: std::cout<<"Julio"<<std::endl; break;
+    case 8: std::cout<<"Agosto"<<std::endl; break;
+    case 9: std::cout<<"Septiembre"<<std::endl; break;
+    case 10: std::cout<<"Octubre"<<std::endl; break;
+    case 11: std::cout<<"Noviembre"<<std::endl; break;
+    case 12: std::cout<<"Diciembre"<<std::endl; break;
     default:
        printf("El numero ingresado no coincide con ningun mes."); break;
     }

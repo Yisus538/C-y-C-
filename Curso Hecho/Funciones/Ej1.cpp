@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 
 //Prototipo de Funcion
@@ -25,14 +25,14 @@ int main(int argc,char*argv[]){
 }
 void pedirDatos(){
 
-   cout<<"Ingrese dos numeros: "<<endl;
-   cin>>num1>>num2;
+   std::cout<<"Ingrese dos numeros: "<<std::endl;
+   std::cin>>num1>>num2;
 
     
 }
 void mult(float x, float y){
 
-    cout<<"La multiplicacione es: "<<num1*num2<<endl;
+    std::cout<<"La multiplicacione es: "<<num1*num2<<std::endl;
 }
 
 

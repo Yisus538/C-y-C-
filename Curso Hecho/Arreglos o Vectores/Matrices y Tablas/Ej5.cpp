@@ -4,7 +4,7 @@ traspuesta es aquella en la que la columna i era la fila i de la matriz original
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
@@ -14,32 +14,32 @@ int main(int argc,char*argv[]){
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
 
-            cout<<"Escriba el elemento del Vector["<<i<<"]["<<j<<"]: "<<endl;
-            cin>>matriz[i][j];
+            std::cout<<"Escriba el elemento del Vector["<<i<<"]["<<j<<"]: "<<endl;
+            std::cin>>matriz[i][j];
      
         }
     }
 
-    cout<<"\tMatriz Original\n";
+    std::cout<<"\tMatriz Original\n";
 
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
 
-            cout<<matriz[i][j];
+            std::cout<<matriz[i][j];
 
         }
-        cout<<"\n";
+        std::cout<<"\n";
     }
 
-    cout<<"\tTranspuesta\n";
+    std::cout<<"\tTranspuesta\n";
 
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
 
-            cout<<matriz[j][i];
+            std::cout<<matriz[j][i];
      
         }
-        cout<<"\n";
+        std::cout<<"\n";
     }
 
 

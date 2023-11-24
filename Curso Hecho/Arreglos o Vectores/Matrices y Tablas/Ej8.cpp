@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
@@ -18,9 +18,9 @@ int main(int argc,char*argv[]){
      }
      for(int i=0; i<3; i++){
          for(int j=0; j<3; j++){
-             cout<<C[i][j]<<" ";
+             std::cout<<C[i][j]<<" ";
          }
-         cout<<"\n";
+         std::cout<<"\n";
      }
 
     system("pause");

@@ -1,10 +1,10 @@
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 //Prototipo
 template <class TIPOD>
-void mostrarAbs(TIPOD numero);
+void mostrarAbs(TIPOD);
 
 
 int main(int argc,char*argv[]){
@@ -29,6 +29,6 @@ void mostrarAbs(TIPOD numero){
        numero *= -1;
 
     }
-    cout<<"El valor absoluto del numero es: "<<numero<<endl;
+    std::cout<<"El valor absoluto del numero es: "<<numero<<std::endl;
 
 }

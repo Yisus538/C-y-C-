@@ -5,7 +5,7 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 //Prototipo de Funcion
 void tiempo(int,int&,int&,int&);
@@ -15,15 +15,15 @@ int main(int argc,char*argv[]){
     
     int totalseg=0, hora,min,seg;
 
-    cout<<"Digite el numero total de segundos: "<<endl;
-    cin>>totalseg;       
+    std::cout<<"Digite el numero total de segundos: "<<std::endl;
+    min>>totalseg;
     
     tiempo(totalseg,hora,min,seg);
 
-    cout<<"\nTiempo equivalente a la cantidad de segundos: "<<endl;
-    cout<<"Horas: "<<hora<<endl;
-    cout<<"Minutos: "<<min<<endl;
-    cout<<"Segundos: "<<seg<<endl;
+    std::cout<<"\nTiempo equivalente a la cantidad de segundos: "<<std::endl;
+    std::cout<<"Horas: "<<hora<<std::endl;
+    std::cout<<"Minutos: "<<min<<std::endl;
+    std::cout<<"Segundos: "<<seg<<std::endl;
 
 
     system("pause");

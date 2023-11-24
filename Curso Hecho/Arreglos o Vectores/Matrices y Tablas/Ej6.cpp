@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 
@@ -13,10 +13,10 @@ int main(int argc,char*argv[]){
        for(int j=0; j<3; j++){
 
          /*suma[i][j] = mcuadrada1[i][j] + mcuadrada2[i][j]*/
-         cout<<mcuadrada1[i][j] + mcuadrada2[i][j]<<" ";
+           std::cout<<mcuadrada1[i][j] + mcuadrada2[i][j]<<" ";
 
        }
-       cout<<"\n";
+        std::cout<<"\n";
     }
     /* for(int i=0; i<3; i++){
        for(int j=0; j<3; j++){

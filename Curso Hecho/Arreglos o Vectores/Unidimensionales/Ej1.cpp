@@ -1,7 +1,7 @@
 /*Escriba un porograma que defina un vector de numeros y calcule la suma de sus elementos*/
 #include <stdio.h>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc,char*argv[]){
 

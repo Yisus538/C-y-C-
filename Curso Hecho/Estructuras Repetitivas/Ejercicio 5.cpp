@@ -3,21 +3,21 @@
 introducidos*/
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 int main(int argc, char*argv[]){
 
     int numero=0,suma=0;
       
     do{
-     cout<<"Digite un numero: "; cin>>numero;
+     std::cout<<"Digite un numero: "; std::cin>>numero;
      if(numero>0){
        suma += numero;
      }
 
     }while((numero !=0) && (numero<20) || (numero>30));
 
-    cout<<"La suma de los valores mayores a cero es: "<<suma;
+    std::cout<<"La suma de los valores mayores a cero es: "<<suma;
     
     system("pause");
     return 0;

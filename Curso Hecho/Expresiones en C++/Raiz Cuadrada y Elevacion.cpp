@@ -1,15 +1,14 @@
 #include <iostream>
 #include <math.h>
-using namespace std;
 
 int main(){
     
     float x= 0, y=0, resultado=0;
 
-    cout<<"Ingrese x: "; cin>>x;
-    cout<<"Ingrese y"; cin>>y;
+    std::cout<<"Ingrese x: "; std::cin>>x;
+    std::cout<<"Ingrese y"; std::cin>>y;
 
     resultado = (sqrt(x))/ (pow(y,2) -1);
-    cout<<"El resultado es: "<<resultado<<endl;
+    std::cout<<"El resultado es: "<<resultado<<std::endl;
     return 0;
 }

@@ -2,8 +2,6 @@
 3/ Hacer una matriz de tipo entera de 2x2, llenarla de numeros y luego copiar todo su contenido hacia otra matriz.
 */
 #include <iostream>
-#include <conio.h>
-using namespace std;
 
 int main(int argc,char*argv[]){
 
@@ -22,12 +20,12 @@ int main(int argc,char*argv[]){
 
         for(int j=0; j<2; j++){
 
-           cout<<vector2[i][j];
+            std::cout<<vector2[i][j];
            
         }
-        cout<<"\n";
+        std::cout<<"\n";
     }
 
-    getch();
+    system("pause");
     return 0;
 }
