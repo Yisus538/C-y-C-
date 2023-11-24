@@ -5,10 +5,10 @@ del vector es mayor o igual que el elemento que le precede en el vector.
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 void pedirdato();
-void orden(int vec[],int tam);
+void orden(int[],int);
 
 int vec[100],tam=0;
 
@@ -23,12 +23,12 @@ int main(int argc,char*argv[]){
 }
 void pedirdato(){
 
-    cout<<"Digite el numero de elementos del vector: "<<endl;
-    cin>>tam;
+    std::cout<<"Digite el numero de elementos del vector: "<<std::endl;
+    std::cin>>tam;
 
     for(int i=0; i<tam; i++){
-        cout<<i+1<<". Digite un numero: "<<end;
-        cin>>vec[i];
+        std::cout<<i+1<<". Digite un numero: "<<std::endl;
+        std::cin>>vec[i];
     }
 
 }
@@ -46,9 +46,9 @@ void orden(int vec[], int tam){
     }
 
     if(band == 'F'){
-        cout<<"El array esta ordenado Crecientemente. "<<endl;
+        std::cout<<"El array esta ordenado Crecientemente. "<<std::endl;
     }else{
-        cout<<"EL arreglo NO esta ordenado. "<<endl;
+        std::cout<<"EL arreglo NO esta ordenado. "<<std::endl;
     }
 
 }

@@ -1,13 +1,14 @@
 #include <iostream>
-
+#include <conio.h>
+using namespace std;
 
 int main(){  
     int i =0;
 
     for(i=1; i<=10; i++){
-        std::cout<<i<<std::endl;
+        cout<<i<<endl;
     }
     
-    system("pause");
+    getch();
     return 0;
 }

@@ -4,6 +4,13 @@
 
 #include <iostream>
 #include <stdlib.h>
+<<<<<<< HEAD:Curso Hecho/Funciones/Ejercicio 6.cpp
+=======
+
+
+
+//Prototipo de Funcion
+>>>>>>> origin/main:Curso Hecho/Funciones/Ej1.cpp
 
 void pedirDatos();
 void mult(float, float);

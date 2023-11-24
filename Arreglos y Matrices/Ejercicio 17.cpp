@@ -4,8 +4,9 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+using namespace std;
 
-int main(){
+int main(int argc,char*argv[]){
 
     int vector[100][100]={0},filas=0,columnas=0;
 

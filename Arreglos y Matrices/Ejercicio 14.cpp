@@ -5,8 +5,9 @@ del vector.
 */
 #include <stdio.h>
 #include <stdlib.h>
+using namespace std;
 
-int main(){
+int main(int argc,char*argv[]){
 
 
     int vector[5]= {1,4,3,1,2},suma=0,mayor=0;

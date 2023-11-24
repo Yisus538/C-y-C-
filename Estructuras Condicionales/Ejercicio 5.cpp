@@ -1,9 +1,10 @@
 #include <iostream>
+using namespace std;
 
 int main(){
 	char letra;
 	
-	std::cout<<"Escribi un caracter: "; std::cin>>letra;
+	cout<<"Escribi un caracter: "; cin>>letra;
 	
 	switch (letra){
 	case 'a':  
@@ -11,16 +12,16 @@ int main(){
 	case 'i': 
 	case 'o': 
 	case 'u': 
-		std::cout<<"la vocal es minuscula"; break;
+		cout<<"la vocal es minuscula"; break;
 		
 	case 'A':  
 	case 'E': 
 	case 'I': 
 	case 'O': 
 	case 'U': 
-		std::cout<<"la vocal es mayuscula"; break;
+		cout<<"la vocal es mayuscula"; break;
 	default: 
-    std::cout<<"Error no ingresaste una vocal valida."; break;
+    cout<<"Error no ingresaste una vocal valida."; break;
 	}
 	return 0;
 }

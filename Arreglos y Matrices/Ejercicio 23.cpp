@@ -4,20 +4,21 @@
 */
 #include <iostream>
 #include <stdlib.h>
+using namespace std;
 
-int main(){
+int main(int argc,char*argv[]){
 
     int matriz[100][100]={0},filas=0,columnas=0;
     char bandera= 'F';
 
-    std::cout<<"Digite el numero de filas: "<<std::endl; std::cin>>filas;
-    std::cout<<"Digite el numero de columanas: "<<std::endl; std::cin>>columnas;
+    cout<<"Digite el numero de filas: "<<endl; cin>>filas;
+    cout<<"Digite el numero de columanas: "<<endl; cin>>columnas;
 
     for(int i=0; i<filas; i++){
         for(int j=0; j<columnas; j++){
 
-            std::cout<<"Digite un numero["<<i<<"]["<<j<<"]: "<<std::endl;
-            std::cin>>matriz[i][j];
+            cout<<"Digite un numero["<<i<<"]["<<j<<"]: "<<endl;
+            cin>>matriz[i][j];
 
         }
     }
@@ -34,11 +35,11 @@ int main(){
     }
     if(bandera == 'V'){
 
-      std::cout<<"La matriz es simetrica."<<std::endl;
+      cout<<"La matriz es simetrica."<<endl;
 
     }else{
 
-        std::cout<<"La matriz no es simetrica."<<std::endl;
+        cout<<"La matriz no es simetrica."<<endl;
         
     }
 

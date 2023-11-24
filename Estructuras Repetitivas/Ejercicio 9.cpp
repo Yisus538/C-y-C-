@@ -1,16 +1,18 @@
 //9. Escriba un programa que calcule el valor de: 1*2*3*...*n(factorial)
 #include <iostream>
+#include <conio.h>
+using namespace std;
 
-int main(){
+int main(int argc, char*argv[]){
 
     int numero=0, factorial =1;
 
-    std::cout<<"Digite un numero: "; std::cin>>numero;
+    cout<<"Digite un numero: "; cin>>numero;
     for(int i=1;i<=numero;i++){
        factorial *=i;
     }
-    std::cout<<"La multiplicacion es: "<<factorial;
+    cout<<"La multiplicacion es: "<<factorial;
 
-    system("pause");
+    getch();
     return 0;
 }

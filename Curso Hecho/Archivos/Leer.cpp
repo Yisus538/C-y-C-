@@ -2,27 +2,26 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-using namespace std;
 
 void Escribir();
 
 int main(int argc,char**argv){
 
-    ifstream file;
-    string text;
+    std::ifstream file;
+    std::string text;
 
     Escribir();
 
-    file.open("Jesus.txt",ios::in);
+    file.open("Jesus.txt",std::ios::in);
 
     if(file.fail()){
-        cout<<"El archivo no se a podido leer."<<endl;
+        std::cout<<"El archivo no se a podido leer."<<std::endl;
         exit(EXIT_FAILURE);
     }
 
     while(!file.eof()){
         getline(file,text);
-        cout<<text<<endl;
+        std::cout<<text<<std::endl;
     }
 
     file.close();
@@ -31,19 +30,19 @@ int main(int argc,char**argv){
 }
 void Escribir(){
 
-    ofstream file;
-    string Nombre_archivo;
+    std::ofstream file;
+    std::string Nombre_archivo;
 
-    cout<<"Ingrese el nombre del archivo: "<<endl; getline(cin,Nombre_archivo);
+    std::cout<<"Ingrese el nombre del archivo: "<<std::endl; getline(std::cin,Nombre_archivo);
 
-    file.open(Nombre_archivo.c_str(),ios::out);
+    file.open(Nombre_archivo.c_str(),std::ios::out);
 
     if(file.fail()){
-        cout<<"El archivo no se a podido abrir."<<endl;
+        std::cout<<"El archivo no se a podido abrir."<<std::endl;
         exit(EXIT_SUCCESS);
     }
 
-    file<<"Creando archivo de texto."<<endl;
+    file<<"Creando archivo de texto."<<std::endl;
 
 
     file.close();

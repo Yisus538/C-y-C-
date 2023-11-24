@@ -1,7 +1,7 @@
 //Intercambia los valores con puntero.
 #include <stdio.h>
 #include <stdlib.h>
-using namespace std;
+
 
 void Intercambio(float *,float *);
 
@@ -17,7 +17,7 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0; 
 }
-void Intercambio(float *dir_num1,float *dir_num2){
+void Intercambio(float* dir_num1,float* dir_num2){
 
     float aux;
 

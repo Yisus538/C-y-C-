@@ -4,11 +4,11 @@ vector.
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 void pedirDatos();
-void arrays(int vec[],int tam);
-void mostrar(int vec[],int tam);
+void arrays(int[],int);
+void mostrar(int[],int);
 
 
 int vec[100],tam=0;
@@ -26,13 +26,13 @@ int main(int argc,char*argv[]){
 void pedirDatos(){
 
 
-    cout<<"Ingrese el tamaño del vector: "<<endl;
-    cin>>tam;
+    std::cout<<"Ingrese el tamaño del vector: "<<std::endl;
+    std::cin>>tam;
 
     for(int i=0; i<tam; i++){
 
-        cout<<i+1<<". Digite un numero: "<<endl;
-        cin>>vec[i];
+        std::cout<<i+1<<". Digite un numero: "<<std::endl;
+        std::cin>>vec[i];
 
     }
 
@@ -49,7 +49,7 @@ void mostrar(int vec[],int tam){
 
     for(int i=0; i<tam; i++){
 
-        cout<<vec[i]<<" "<<endl;
+        std::cout<<vec[i]<<" "<<std::endl;
 
     }
 }

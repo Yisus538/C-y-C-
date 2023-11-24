@@ -1,12 +1,11 @@
 #include <iostream>
 #include <stdio.h>
-
+using namespace std;
 
 int main(){
     int edad =0;
 
-    printf("Cual es tu edad?: ");
-    scanf(" %d", &edad);
+    cout<<"Cual es tu edad?: "; cin>>edad;
 
    if(edad>= 18 && edad <= 25){
       printf("La edad esta en el rango solicitado.");

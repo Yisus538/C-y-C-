@@ -5,15 +5,15 @@
 #include <stdio.h>
 #include <ctime>
 #include <stdlib.h>
-using namespace std;
 
-void aleatorios(int **,int,int);
-void suma(int **,int**,int,int);
-void Mostrar_Matriz(int **,int,int);
+
+void aleatorios(int**,int,int);
+void suma(int**,int**,int,int);
+void Mostrar_Matriz(int**,int,int);
 
 int main(int argc,char*argv[]){
 
-    int **numero_matrices,**numero_matrices2,nFilas,nColumnas;
+    int** numero_matrices,**numero_matrices2,nFilas,nColumnas;
 
     aleatorios(numero_matrices,nFilas,nColumnas);
     aleatorios(numero_matrices2,nFilas,nColumnas);
@@ -25,11 +25,11 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0;
 }
-void aleatorios(int **numero_matrices,int nFilas,int nColumnas){
+void aleatorios(int** numero_matrices,int nFilas,int nColumnas){
 
     
-    cout<<"Ingrese la cantidad de filas: "<<endl; cin>>nFilas;
-    cout<<"Ingrese la cantidad de columnas: "<<endl; cin>>nColumnas;
+    std::cout<<"Ingrese la cantidad de filas: "<<std::endl; std::cin>>nFilas;
+    std::cout<<"Ingrese la cantidad de columnas: "<<std::endl; std::cin>>nColumnas;
 
     numero_matrices = new int*[nFilas];
     for(int i = 0; i <nFilas; i++){
@@ -41,7 +41,7 @@ void aleatorios(int **numero_matrices,int nFilas,int nColumnas){
         }
     }
 }
-void suma(int **numero_matrices,int **numero_matrices2,int nFilas,int nColumnas){
+void suma(int** numero_matrices,int** numero_matrices2,int nFilas,int nColumnas){
 
     for(int i = 0; i < nFilas; i++){
         for(int j = 0; j < nColumnas; j++){
@@ -49,7 +49,7 @@ void suma(int **numero_matrices,int **numero_matrices2,int nFilas,int nColumnas)
         }
     }
 }
-void Mostrar_Matriz(int **numero_matrices,int nFilas,int nColumnas){
+void Mostrar_Matriz(int** numero_matrices,int nFilas,int nColumnas){
 
     for(int i = 0; i < nFilas; i++){
         for(int j = 0; j < nColumnas; j++){

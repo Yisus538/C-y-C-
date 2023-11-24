@@ -1,7 +1,7 @@
 //Punteros a Estructuras
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 struct Persona{
     char nombre[30];
@@ -21,12 +21,12 @@ int main(int argc,char*argv[]){
 }
 void Pedirdatos(){
 
-    cout<<"Digite su nombre: "<<endl; cin.getline(puntero_persona->nombre,30,'\n');
-    cout<<"Digite la edad: "<<endl; cin>>puntero_persona->edad;
+    std::cout<<"Digite su nombre: "<<std::endl; std::cin.getline(puntero_persona->nombre,30,'\n');
+    std::cout<<"Digite la edad: "<<std::endl; std::cin>>puntero_persona->edad;
 
 }
-void Mostrar(Persona *puntero_persona){
+void Mostrar(Persona* puntero_persona){
 
-    cout<<puntero_persona->nombre<<endl;
-    cout<<puntero_persona->edad<<endl;
+    std::cout<<puntero_persona->nombre<<std::endl;
+    std::cout<<puntero_persona->edad<<std::endl;
 }

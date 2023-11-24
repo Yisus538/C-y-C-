@@ -12,10 +12,10 @@ Parametros de la funcion:
 
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
-void cuadrado(int vec[],int);
-void mostrar(int vec[],int);
+
+void cuadrado(int[],int);
+void mostrar(int[],int);
 
 int main(int argc,char*argv[]){
 
@@ -38,7 +38,7 @@ void cuadrado(int vec[],int tam){
 void mostrar(int vec[],int tam){
 
     for(int i=0; i<tam; i++){
-        cout<<vec[i]<<" "<<endl;
+        std::cout<<vec[i]<<" "<<std::endl;
     }
 
 }

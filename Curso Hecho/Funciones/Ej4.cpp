@@ -3,7 +3,6 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
 //Prototipos de Funciones
 
@@ -17,7 +16,7 @@ int main(int argc,char*argv[]){
     pedirdatos();
   
 
-    cout<<"El resultado es: "<<partefra(numero)<<endl;
+    std::cout<<"El resultado es: "<<partefra(numero)<<std::endl;
 
 
     system("pause");
@@ -26,8 +25,8 @@ int main(int argc,char*argv[]){
 
 void pedirdatos(){
 
-    cout<<"Digite su numero: "<<endl;
-    cin>>numero;
+    std::cout<<"Digite su numero: "<<std::endl;
+    std::cin>>numero;
 
 }
 float partefra(float n){

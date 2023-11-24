@@ -4,7 +4,7 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 template <class TIPOD>
 void despliegue(TIPOD dato);
@@ -28,6 +28,6 @@ int main(int argc,char*argv[]){
 template <class TIPOD>
 void despliegue(TIPOD dato){
 
-    cout<<"EL dato es: "<<dato<<endl;
+    std::cout<<"EL dato es: "<<dato<<std::endl;
 
 }

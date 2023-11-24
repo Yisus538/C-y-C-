@@ -1,8 +1,9 @@
 //Metodo burbuja
 #include <iostream>
 #include <stdlib.h>
+using namespace std;
 
-int main(){
+int main(int argc,char*argv[]){
 
     int numero[] = {4,1,2,3,5};
     int i,j,aux;
@@ -17,14 +18,14 @@ int main(){
             }
         }
     }
-    std::cout<<"Orden Ascendente: "<<std::endl;
+    cout<<"Orden Ascendente: "<<endl;
 
     for(i=0; i<5; i++){
-        std::cout<<numero[i]<<std::endl;
+        cout<<nummero[i]<<endl;
     }
-    std::cout<<"Orden Descendente: "<<std::endl;
+    cout<<"Orden Descendente: "<<endl;
     for(i=4; i>=0; i--){
-        std::cout<<numero[i]<<std::endl;
+        cout<<numero[i]<<endl;
     }
 
     system("pause");

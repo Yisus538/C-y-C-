@@ -1,7 +1,6 @@
 /**/
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
 struct Nodo{
 
@@ -16,24 +15,28 @@ void Eliminar_Nodo(Nodo*&,int);
 
 int main(int argc,char*argv[]){
 
+<<<<<<< HEAD
     Nodo*lista = nullptr;
+=======
+    Nodo* lista = nullptr;
+>>>>>>> origin/main
     Nodo* aux = nullptr;
     Nodo* nuevo_nodo = nullptr;
     int dato,opc;
  
     do{
-        cout<<"\tMENU"<<endl;
-        cout<<"1. Insertar elementos en la lista.\n2. Mostrar Elementos de la lista\n3. Eliminar Nodo\n4. Salir\nOPCION: "<<endl;
-        cin>>opc;
+        std::cout<<"\tMENU"<<std::endl;
+        std::cout<<"1. Insertar elementos en la lista.\n2. Mostrar Elementos de la lista\n3. Eliminar Nodo\n4. Salir\nOPCION: "<<std::endl;
+        std::cin>>opc;
         system("cls");
 
         switch(opc){
             case 1: Insertar_Elemento(lista,aux,nuevo_nodo,dato); break;
             case 2: Mostrar_Elementos(lista,aux); break;
             case 3: 
-                cout<<"Ingrese elemento a eliminar: "<<endl; cin>>dato;
+                std::cout<<"Ingrese elemento a eliminar: "<<std::endl; std::cin>>dato;
                 Eliminar_Nodo(lista,dato);
-                cout<<"\n";
+                std::cout<<"\n";
             break;
         }
     }while(opc != 4);
@@ -46,7 +49,7 @@ void Insertar_Elemento(Nodo*& lista,Nodo* aux,Nodo* nuevo_nodo,int dato){
     int i = 0;
 
     do{
-        cout<<"Ingrese un dato: "<<endl; cin>>dato;
+        std::cout<<"Ingrese un dato: "<<std::endl; std::cin>>dato;
         nuevo_nodo = new Nodo();
         nuevo_nodo->dato = dato;
         nuevo_nodo->siguiente = nullptr;
@@ -66,24 +69,39 @@ void Insertar_Elemento(Nodo*& lista,Nodo* aux,Nodo* nuevo_nodo,int dato){
 void Mostrar_Elementos(Nodo* lista,Nodo* aux){
 
     if(lista==nullptr){
+<<<<<<< HEAD
         cout<<"La lista se encuentra vacia."<<endl;
     }else{
         Nodo* aux = lista;
 
         while(aux!=nullptr){
             cout<<aux->dato<<" ";
+=======
+        std::cout<<"La lista se encuentra vacia."<<std::endl;
+    }else{
+        aux = lista;
+
+        while(aux!=nullptr){
+            std::cout<<aux->dato<<" ";
+>>>>>>> origin/main
             aux = aux->siguiente;
         }  
-        cout<<"\n";
+        std::cout<<"\n";
     }
 
 
 }
 void Eliminar_Nodo(Nodo*& lista,int dato){
 
+<<<<<<< HEAD
     if(lista!=nullptr){//Esta lista esta vacia?
         Nodo* aux_borrar = nullptr;
         Nodo* anterior = nullptr;
+=======
+    if(lista!=NULL){//Esta lista esta vacia?
+        Nodo *aux_borrar = nullptr;
+        Nodo *anterior = nullptr;
+>>>>>>> origin/main
 
         aux_borrar = lista;
 
@@ -94,7 +112,11 @@ void Eliminar_Nodo(Nodo*& lista,int dato){
         }
 
         if(aux_borrar==nullptr){//Elemento no encontrado.
+<<<<<<< HEAD
             cout<<"El elemento no fue encontrado."<<endl;
+=======
+            std::cout<<"El elemento no fue encontrado."<<std::endl;
+>>>>>>> origin/main
         }else if(anterior == nullptr){//Primer elemento es el que se va eliminar
             lista = lista->siguiente;
             delete aux_borrar;

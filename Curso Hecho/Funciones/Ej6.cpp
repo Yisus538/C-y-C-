@@ -5,7 +5,7 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 //Prototipo de Funcion
 void pediDato();
@@ -18,7 +18,7 @@ int dato1= 0, dato2= 0, dato3= 0;
 int main(int argc,char*argv[]){
     
     pediDato();
-    cout<<"EL maximo valor es: "<<maximo(dato1,dato2,dato3)<<endl;
+    std::cout<<"EL maximo valor es: "<<maximo(dato1,dato2,dato3)<<std::endl;
 
 
     system("pause");
@@ -26,8 +26,8 @@ int main(int argc,char*argv[]){
 }
 void pediDato(){
 
-    cout<<"Ingrese 3 datos: "<<endl;
-    cin>>dato1>>dato2>>dato3;
+    std::cout<<"Ingrese 3 datos: "<<std::endl;
+    std::cin>>dato1>>dato2>>dato3;
 
 }
 template <class TD>

@@ -5,10 +5,10 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+
 
 void pedirdatos();
-void simetria(int m[][100],int,int);
+void simetria(int[][100],int,int);
 
 int m[100][100],nfilas,ncolumnas;
 
@@ -24,16 +24,16 @@ int main(int argc,char*argv[]){
 
 void pedirdatos(){
 
-    cout<<"Digite el numero de filas: "<<endl;
-    cin>>nfilas;
+    std::cout<<"Digite el numero de filas: "<<std::endl;
+    std::cin;  std::cin>>nfilas;
 
-    cout<<"Digite el numero de columnas: "<<endl;
-    cin>>ncolumnas;
+    std::cout<<"Digite el numero de columnas: "<<std::endl;
+    std::cin>>ncolumnas;
 
     for(int i=0; i<nfilas; i++){
         for(int j=0; j<ncolumnas; j++){
-            cout<<"Digite un numero ["<<i<<"]["<<j<<"]: "<<endl;
-            cin>>m[i][j];
+            std::cout<<"Digite un numero ["<<i<<"]["<<j<<"]: "<<std::endl;
+            std::cin>>m[i][j];
         }
     }
 }
@@ -54,9 +54,9 @@ void simetria(int m[][100],int nfilas,int ncolumnas){
  }
 
  if(contador == nfilas*ncolumnas){
-     cout<<"La matriz es simetrica.\n"<<endl;
+     std::cout<<"La matriz es simetrica.\n"<<std::endl;
  }else{
-     cout<<"La matriz no es simetrica. \n"<<endl;
+     std::cout<<"La matriz no es simetrica. \n"<<std::endl;
  }
 
 }

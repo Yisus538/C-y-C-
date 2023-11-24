@@ -5,7 +5,6 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
 struct Alumno{
     char Nombre[30];
@@ -14,8 +13,8 @@ struct Alumno{
 }*puntero_usuario;
 int pos = 0;
 
-static void Pedirdatos(Alumno *puntero_usuario,int max);
-static void Mostrar(Alumno *puntero_usuario,int max);
+static void Pedirdatos(Alumno*,int);
+static void Mostrar(Alumno*,int);
 
 int main(int argc,char*argv[]){
 
@@ -27,7 +26,7 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0;
 }
-static void Pedirdatos(Alumno *puntero_usuario,int max){
+static void Pedirdatos(Alumno* puntero_usuario,int max){
 
     for(int i = 0; i < 3; i++){
         std::cout<<"Ingrese su nombre: "<<std::endl; std::cin.getline((puntero_usuario+i)->Nombre,30,'\n');
@@ -40,7 +39,7 @@ static void Pedirdatos(Alumno *puntero_usuario,int max){
         }
     }
 }
-static void Mostrar(Alumno *puntero_usuario,int max){
+static void Mostrar(Alumno* puntero_usuario,int max){
     std::cout<<"\n\nDatos de Alumno"<<std::endl;
     std::cout<<"Nombre: "<<(puntero_usuario+pos)->Nombre<<std::endl;
     std::cout<<"Edad: "<<(puntero_usuario+pos)->edad<<std::endl;

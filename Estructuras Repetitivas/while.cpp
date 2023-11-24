@@ -1,14 +1,15 @@
 //piensa y despues actua. 
 #include <iostream>
-
+#include <conio.h>
+using namespace std;
 
 int main(){
     int i=1;
 
     while(i<=10){
-      std::cout<<i<<std::endl;
+      cout<<i<<endl;
       i++;
     }
-    system("pause");
+    getch();
     return 0;
 }

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <math.h>
 #include <stdlib.h>
-using namespace std;
+
 
 //Funciones
 void datos();
@@ -26,14 +26,13 @@ int main(int argc,char*argv[]){
 
 void datos(){
 
-   cout<<"Ingrese un numero: "<<endl;
-   cin>>num1;
+   std::cout<<"Ingrese un numero: "<<std::endl; std::cin>>num1;
 
 
 }
 void al_cuadrado(float x){
 
-    cout<<"El resultado es: "<<pow(x,2)<<endl;
+    std::cout<<"El resultado es: "<<pow(x,2)<<std::endl;
 
 
 

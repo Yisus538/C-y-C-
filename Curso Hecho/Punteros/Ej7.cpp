@@ -2,31 +2,30 @@
 7. Contar vocales de un nombre con punteros.
 */
 #include <iostream>
-#include <stdlib.h>
-#include <cstring>
-using namespace std;
+#include <string>
 
-void PedirDatos(char);
-int Vocales(char *);
+
+void PedirDatos(char*);
+int Vocales(char*);
 
 int main(int argc,char*argv[]){
 
     char usuario[30];
     
     PedirDatos(usuario);
-    cout<<"La cantidad de vocales que hay son: "<<Vocales(usuario)<<endl;
+    std::cout<<"La cantidad de vocales que hay son: "<<Vocales(usuario)<<std::endl;
 
     system("pause");
     return 0;
 }
-void PedirDatos(char usuario){
+void PedirDatos(char* usuario){
 
-    cout<<"Ingrese su nombre: "<<endl;
-    cin.getline(usuario,30,'\n');
+    std::cout<<"Ingrese su nombre: "<<std::endl;
+    std::cin.getline(usuario,30,'\n');
 
     strupr(usuario);
 }
-int Vocales(char *nombre){
+int Vocales(char* nombre){
 
     int contador = 0; 
 

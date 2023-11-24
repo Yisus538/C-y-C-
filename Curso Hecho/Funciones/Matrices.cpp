@@ -3,11 +3,10 @@
 //Elevar al cuadrado todos los elementos de una matriz
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
-void mostrarMatriz(int m[][3],int,int);
-void cuadrado(int m[][3],int,int);
-void mostraelevada(int m[][3],int,int);
+void mostrarMatriz(int[][3],int,int);
+void cuadrado(int[][3],int,int);
+void mostraelevada(int[][3],int,int);
 
 int main(int argc,char*argv[]){
 
@@ -24,13 +23,13 @@ int main(int argc,char*argv[]){
 }
 void mostrarMatriz(int m[][3],int nfilas,int ncolumnas){
 
-    cout<<"\tMostrando Matriz Original. "<<endl;
+    std::cout<<"\tMostrando Matriz Original. "<<std::endl;
 
     for(int i=0; i<nfilas; i++){
         for(int j=0; j<ncolumnas; j++){
-            cout<<m[i][j]<<" ";
+            std::cout<<m[i][j]<<" ";
         }
-        cout<<"\n";
+        std::cout<<"\n";
     }
 }
 void cuadrado(int m[][3],int nfilas,int ncolumnas){
@@ -43,12 +42,12 @@ void cuadrado(int m[][3],int nfilas,int ncolumnas){
 }
 void mostraelevada(int m[][3],int nfilas,int ncolumnas){
 
-    cout<<"\tMostrando Matriz Elevada al Cuadrado. "<<endl;
+    std::cout<<"\tMostrando Matriz Elevada al Cuadrado. "<<std::endl;
 
     for(int i=0; i<nfilas; i++){
         for(int j=0; j<ncolumnas; j++){
-            cout<<m[i][j]<<" ";
+            std::cout<<m[i][j]<<" ";
         }
-        cout<<"\n";
+        std::cout<<"\n";
     }
 }

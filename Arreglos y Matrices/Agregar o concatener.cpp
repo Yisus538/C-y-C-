@@ -3,8 +3,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
+using namespace std;
 
-int main(){
+int main(int argc,char*argv[]){
 
     char cad1[] = "Esto es una cadena";
     char cad2[] = " de ejemplo.";
@@ -14,7 +15,7 @@ int main(){
 
     strcat(cad3,cad2); //cadedena 3 = esto es una cadena de ejemplo.
 
-   std:: cout<<cad3<<std::endl;
+    cout<<cad3<<endl;
 
 
     system("pause");

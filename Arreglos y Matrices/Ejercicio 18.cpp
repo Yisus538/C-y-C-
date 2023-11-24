@@ -3,9 +3,9 @@
 */
 #include <iostream>
 #include <stdlib.h>
+using namespace std;
 
-
-int main(){
+int main(int arg,char*argv[]){
 
     int numero[3][3]={{1,2,3},{4,5,6},{7,8,9}};
 
@@ -13,19 +13,19 @@ int main(){
 
        for(int j=0; j<3; j++){
 
-         std::cout<<numero[i][j];
+         cout<<numero[i][j];
 
        }
-      std::cout<<"\n";
+      cout<<"\n";
     }
-    std::cout<<"\nMostrando Diagonal Principal"<<std::endl;
+    cout<<"\nMostrando Diagonal Principal"<<endl;
     for(int i=0; i<3; i++){
 
        for(int j=0; j<3; j++){
 
          if(i==j){
 
-            std::cout<<numero[i][j]<<std::endl;
+            cout<<numero[i][j]<<endl;
 
          }
 

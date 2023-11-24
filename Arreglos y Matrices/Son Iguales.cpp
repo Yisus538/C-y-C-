@@ -5,24 +5,25 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
+using namespace std;
 
-int main(){
+int main(int argc,char*argv[]){
 
     char palabra1[100]= "",palabra2[100]="";
 
-    std::cout<<"Digite una cadena de texto: "<<std::endl; 
-    std::cin.getline(palabra1,100,'\n');
-    std::cout<<"Digite otra cadena de texto: "<<std::endl;
-    std::cin.getline(palabra2,100,'\n');
+    cout<<"Digite una cadena de texto: "<<endl; 
+    cin.getline(palabra1,100,'\n');
+    cout<<"Digite otra cadena de texto: "<<endl;
+    cin.getline(palabra2,100,'\n');
 
     if((strcmp(palabra1,palabra2)==0)){
-      std::cout<<"Ambas son iguales "<<std::endl;
+      cout<<"Ambas son iguales "<<endl;
       
     }else if(strcmp(palabra1,palabra2) > 0){
-      std::cout<<palabra1<<" es mayor alfabeticamente. "<<std::endl;
+      cout<<palabra1<<" es mayor alfabeticamente. "<<endl;
 
     }else{
-        std::cout<<palabra2<<" es mayor alfabeticamente. "<<std::endl;
+        cout<<palabra2<<" es mayor alfabeticamente. "<<endl;
     }
 
     system("pause");

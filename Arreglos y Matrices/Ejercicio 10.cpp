@@ -1,7 +1,8 @@
 /*Escriba un porograma que defina un vector de numeros y calcule la multiplicacion de sus elementos*/
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <iostream>
+using namespace std;
 
 int main(int argc,char*argv[]){
 
@@ -11,7 +12,7 @@ int main(int argc,char*argv[]){
        
        multi *= vector[i];
     }
-    printf("El resultado de la multiplicacion es de: %d\n",multi);
+    cout<<"El resultado de la multiplicacion es de: "<<multi<<endl;
 
 
     system("pause");
