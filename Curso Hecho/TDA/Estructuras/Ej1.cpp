@@ -12,7 +12,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
-using namespace std;
+
 
 struct corredor{
 
@@ -27,14 +27,14 @@ int main(int argc,char*argv[]){
 
     char categoria[20];
 
-    cout<<"Ingrese el nombre: "<<endl;
-    cin.getline(corredor1.Nombre,20,'\n');
-    cout<<"Ingresa el sexo: "<<endl;
-    cin.getline(corredor1.sexo,20,'\n');
-    cout<<"Ingrese el nombre de su club: "<<endl;
-    cin.getline(corredor1.Club,30,'\n');
-    cout<<"Ingrese la edad: "<<endl;
-    cin>>corredor1.edad;
+    std::cout<<"Ingrese el nombre: "<<std::endl;
+    std::cin.getline(corredor1.Nombre,20,'\n');
+    std::cout<<"Ingresa el sexo: "<<std::endl;
+    std::cin.getline(corredor1.sexo,20,'\n');
+    std::cout<<"Ingrese el nombre de su club: "<<std::endl;
+    std::cin.getline(corredor1.Club,30,'\n');
+    std::cout<<"Ingrese la edad: "<<std::endl;
+    std::cin>>corredor1.edad;
 
     if(corredor1.edad <= 18){
         strcpy(categoria,"Juvenil");
@@ -44,12 +44,12 @@ int main(int argc,char*argv[]){
         strcpy(categoria,"Veterano");
     }
 
-    cout<<"\n\nDatos del Corredor\n";
-    cout<<"Nombre: "<<corredor1.Nombre<<endl;
-    cout<<"Edad: "<<corredor1.edad<<endl;
-    cout<<"Sexo: "<<corredor1.sexo<<endl;
-    cout<<"Club: "<<corredor1.Club<<endl;
-    cout<<"Categoria: "<<categoria<<endl;
+    std::cout<<"\n\nDatos del Corredor\n";
+    std::cout<<"Nombre: "<<corredor1.Nombre<<std::endl;
+    std::cout<<"Edad: "<<corredor1.edad<<std::endl;
+    std::cout<<"Sexo: "<<corredor1.sexo<<std::endl;
+    std::cout<<"Club: "<<corredor1.Club<<std::endl;
+    std::cout<<"Categoria: "<<categoria<<std::endl;
 
 
 

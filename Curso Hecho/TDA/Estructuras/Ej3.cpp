@@ -4,8 +4,6 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
-
 
 struct Empleados{
 
@@ -18,16 +16,16 @@ int main(int argc,char*argv[]){
 
     int tam,max,min,PMayor,PMenor = 999999;
 
-    cout<<"Ingrese la cantidad de empleados: "<<endl;
-    cin>>tam;
+    std::cout<<"Ingrese la cantidad de empleados: "<<std::endl;
+    std::cin>>tam;
 
     for(int i = 0; i < tam; i++){
 
         fflush(stdin);
-        cout<<"Nombre: "<<endl;
-        cin.getline(Empleados[i].Nombre,20,'\n');
-        cout<<"Salario: "<<endl;
-        cin>>Empleados[i].salario;
+        std::cout<<"Nombre: "<<std::endl;
+        std::cin.getline(Empleados[i].Nombre,20,'\n');
+        std::cout<<"Salario: "<<std::endl;
+        std::cin>>Empleados[i].salario;
 
         if(Empleados[i].salario>max){
             max = Empleados[i].salario;
@@ -36,16 +34,16 @@ int main(int argc,char*argv[]){
             min = Empleados[i].salario;
             PMenor = i;
         }
-        cout<<"\n";
+        std::cout<<"\n";
 
     }
-    cout<<"\n\nDATOS DEL EMPLEADO MAYOR"<<endl;
-    cout<<"Nombre: "<<Empleados[PMayor].Nombre<<endl;
-    cout<<"Salario: "<<Empleados[PMayor].salario<<endl;
+    std::cout<<"\n\nDATOS DEL EMPLEADO MAYOR"<<std::endl;
+    std::cout<<"Nombre: "<<Empleados[PMayor].Nombre<<std::endl;
+    std::cout<<"Salario: "<<Empleados[PMayor].salario<<std::endl;
 
-    cout<<"\n\nDATOS DEL EMPLEADO MENOR"<<endl;
-    cout<<"Nombre: "<<Empleados[PMenor].Nombre<<endl;
-    cout<<"Salario: "<<Empleados[PMenor].salario<<endl;
+    std::cout<<"\n\nDATOS DEL EMPLEADO MENOR"<<std::endl;
+    std::cout<<"Nombre: "<<Empleados[PMenor].Nombre<<std::endl;
+    std::cout<<"Salario: "<<Empleados[PMenor].salario<<std::endl;
 
     system("pause");
     return 0;

@@ -5,7 +5,6 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
-using namespace std;
 
 //Estructuras
 struct Promedio{
@@ -26,26 +25,26 @@ int main(int argc,char*argv[]){
 
     int nAlumnos,max,Pmax;
 
-    cout<<"Ingrese el numero de alumnos: "<<endl;    
-    cin>>nAlumnos;
+    std::cout<<"Ingrese el numero de alumnos: "<<std::endl;    
+    std::cin>>nAlumnos;
 
     for(int i = 0; i < nAlumnos; i++){
 
         fflush(stdin);
 
-        cout<<i+1<<" Ingrese el nombre: "<<endl;
-        cin.getline(alumnos[i].Nombre,20,'\n');
-        cout<<i+1<<" Ingrese el sexo del alumno: "<<endl;
-        cin>>alumnos[i].edad;
-        cout<<i+1<<" Ingrese la edad: "<<endl;
-        cin>>alumnos[i].edad;
+        std::cout<<i+1<<" Ingrese el nombre: "<<std::endl;
+        std::cin.getline(alumnos[i].Nombre,20,'\n');
+        std::cout<<i+1<<" Ingrese el sexo del alumno: "<<std::endl;
+        std::cin>>alumnos[i].edad;
+        std::cout<<i+1<<" Ingrese la edad: "<<std::endl;
+        std::cin>>alumnos[i].edad;
 
-        cout<<"\n\nIngrese la primera nota: "<<endl;
-        cin>>alumnos[i].notas[i].nota1;
-        cout<<"Ingrese la segunda nota: "<<endl;
-        cin>>alumnos[i].notas[i].nota2;
-        cout<<"Ingrese la tercera nota: "<<endl;
-        cin>>alumnos[i].notas[i].nota3;
+        std::cout<<"\n\nIngrese la primera nota: "<<std::endl;
+        std::cin>>alumnos[i].notas[i].nota1;
+        std::cout<<"Ingrese la segunda nota: "<<std::endl;
+        std::cin>>alumnos[i].notas[i].nota2;
+        std::cout<<"Ingrese la tercera nota: "<<std::endl;
+        std::cin>>alumnos[i].notas[i].nota3;
 
         alumnos[i].notas[i].promedio =((alumnos[i].notas[i].nota1+alumnos[i].notas[i].nota2+alumnos[i].notas[i].nota3)/3);
     
@@ -56,11 +55,11 @@ int main(int argc,char*argv[]){
            
     }
 
-    cout<<"\n\nDatos y Mejor promedio de Alumno: "<<endl;
-    cout<<"Nombre: "<<alumnos[Pmax].Nombre<<endl;
-    cout<<"Edad: "<<alumnos[Pmax].edad<<endl;
-    cout<<"Sexo: "<<alumnos[Pmax].Sexo<<endl;
-    cout<<"Promedio: "<<alumnos[Pmax].notas[Pmax].promedio<<endl;
+    std::cout<<"\n\nDatos y Mejor promedio de Alumno: "<<std::endl;
+    std::cout<<"Nombre: "<<alumnos[Pmax].Nombre<<std::endl;
+    std::cout<<"Edad: "<<alumnos[Pmax].edad<<std::endl;
+    std::cout<<"Sexo: "<<alumnos[Pmax].Sexo<<std::endl;
+    std::cout<<"Promedio: "<<alumnos[Pmax].notas[Pmax].promedio<<std::endl;
 
     system("pause");
     return 0;

@@ -3,8 +3,6 @@
    nombre,pais,numero_medallas. y devuelva los datos(Nombre,pais) del atleta que ha ganado el mayor numero de medallas.
 */ 
 #include <iostream>
-#include <conio.h>
-using namespace std;
 
 struct atleta{
 
@@ -18,19 +16,19 @@ int main(int argc,char*argv[]){
 
     int tam,max,min,Pmax,Pmin;
 
-    cout<<"Cuantos atletas van a ser?: "<<endl;
-    cin>>tam;
+    std::cout<<"Cuantos atletas van a ser?: "<<std::endl;
+    std::cin>>tam;
 
     for(int i = 0; i < tam; i++){
 
         fflush(stdin);
-        cout<<i+1<<" Nombre: "<<endl;
-        cin.getline(Atletas[i].Nombre,20,'\n');
-        cout<<i+1<<" Pais: "<<endl;
-        cin.getline(Atletas[i].Pais,30,'\n');
-        cout<<"Numero de medallas: "<<endl;
-        cin>>Atletas[i].numero_medallas;
-        cout<<"\n";
+        std::cout<<i+1<<" Nombre: "<<std::endl;
+        std::cin.getline(Atletas[i].Nombre,20,'\n');
+        std::cout<<i+1<<" Pais: "<<std::endl;
+        std::cin.getline(Atletas[i].Pais,30,'\n');
+        std::cout<<"Numero de medallas: "<<std::endl;
+        std::cin>>Atletas[i].numero_medallas;
+        std::cout<<"\n";
 
         if(Atletas[i].numero_medallas>max){
             max = Atletas[i].numero_medallas;
@@ -43,14 +41,13 @@ int main(int argc,char*argv[]){
 
     }
 
-    cout<<"\n\nDATOS DEL ATLETA CON MAYOR MEDALLAS"<<endl;
-    cout<<"Nombre: "<<Atletas[Pmax].Nombre<<endl;
-    cout<<"Pais: "<<Atletas[Pmax].Pais<<endl;
+    std::cout<<"\n\nDATOS DEL ATLETA CON MAYOR MEDALLAS"<<std::endl;
+    std::cout<<"Nombre: "<<Atletas[Pmax].Nombre<<std::endl;
+    std::cout<<"Pais: "<<Atletas[Pmax].Pais<<std::endl;
 
-    cout<<"\n\nDATOS DEL ATLETA CON MENOR MEDALLAS"<<endl;
-    cout<<"Nombre: "<<Atletas[Pmin].Nombre<<endl;
-    cout<<"Pais: "<<Atletas[Pmin].Pais<<endl;
+    std::cout<<"\n\nDATOS DEL ATLETA CON MENOR MEDALLAS"<<std::endl;
+    std::cout<<"Nombre: "<<Atletas[Pmin].Nombre<<std::endl;
+    std::cout<<"Pais: "<<Atletas[Pmin].Pais<<std::endl;
 
-    getch();
     return 0;
 }

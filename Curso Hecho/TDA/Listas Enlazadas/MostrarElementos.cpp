@@ -9,8 +9,8 @@ struct Nodo{
 
 };
 
-void Insertar_Elemento(struct Nodo *&lista,int dato);
-void Mostrar_Elemento(struct Nodo *lista);
+void Insertar_Elemento(struct Nodo*&,int);
+void Mostrar_Elemento(struct Nodo*);
 
 int main(int argc,char*argv[]){
 

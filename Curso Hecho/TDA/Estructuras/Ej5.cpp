@@ -5,7 +5,6 @@
 */
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
 //Estructuras
 struct Promedio{
@@ -25,26 +24,26 @@ int main(int argc,char*argv[]){
 
 
     fflush(stdin);
-    cout<<"Ingrese el nombre: "<<endl;
-    cin.getline(alumnos.Nombre,20,'\n');
-    cout<<"Ingrese el sexo de la persona: "<<endl;
-    cin.getline(alumnos.Sexo,20,'\n');
-    cout<<"Ingrese la edad: "<<endl;
-    cin>>alumnos.edad;
+    std::cout<<"Ingrese el nombre: "<<std::endl;
+    std::cin.getline(alumnos.Nombre,20,'\n');
+    std::cout<<"Ingrese el sexo de la persona: "<<std::endl;
+    std::cin.getline(alumnos.Sexo,20,'\n');
+    std::cout<<"Ingrese la edad: "<<std::endl;
+    std::cin>>alumnos.edad;
 
 
-    cout<<"\n\nIngrese nota 1: "<<endl;
-    cin>>promedio.nota1;
-    cout<<"Ingrese nota 2: "<<endl;
-    cin>>promedio.nota2;
-    cout<<"Ingrese nota 3: "<<endl;
-    cin>>promedio.nota3;
+    std::cout<<"\n\nIngrese nota 1: "<<std::endl;
+    std::cin>>promedio.nota1;
+    std::cout<<"Ingrese nota 2: "<<std::endl;
+    std::cin>>promedio.nota2;
+    std::cout<<"Ingrese nota 3: "<<std::endl;
+    std::cin>>promedio.nota3;
     
-    cout<<"\n\nDatos y Promedio de Alumno: "<<endl;
-    cout<<"Nombre: "<<alumnos.Nombre<<endl;
-    cout<<"Edad: "<<alumnos.edad<<endl;
-    cout<<"Sexo: "<<alumnos.Sexo<<endl;
-    cout<<"Promedio: "<<((promedio.nota1+promedio.nota2+promedio.nota3)/3)<<endl;
+    std::cout<<"\n\nDatos y Promedio de Alumno: "<<std::endl;
+    std::cout<<"Nombre: "<<alumnos.Nombre<<std::endl;
+    std::cout<<"Edad: "<<alumnos.edad<<std::endl;
+    std::cout<<"Sexo: "<<alumnos.Sexo<<std::endl;
+    std::cout<<"Promedio: "<<((promedio.nota1+promedio.nota2+promedio.nota3)/3)<<std::endl;
 
 
     system("pause");

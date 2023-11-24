@@ -5,8 +5,7 @@
 */
 #include <iostream>
 #include <string.h>
-#include <conio.h>
-using namespace std;
+
 
 struct alumnos{
 
@@ -23,12 +22,12 @@ int main(int argc,char*argv[]){
 
     for(int i = 0; i < 3; i++){
 
-        cout<<i+1<<" Nombre: "<<endl;
-        cin.getline(Alumnos[i].Nombre,20,'\n');
-        cout<<i+1<<" Edad: "<<endl;
-        cin>>Alumnos[i].edad;
-        cout<<i+1<<" Promedio: "<<endl;
-        cin>>Alumnos[i].promedio;
+        std::cout<<i+1<<" Nombre: "<<std::endl;
+        std::cin.getline(Alumnos[i].Nombre,20,'\n');
+        std::cout<<i+1<<" Edad: "<<std::endl;
+        std::cin>>Alumnos[i].edad;
+        std::cout<<i+1<<" Promedio: "<<std::endl;
+        std::cin>>Alumnos[i].promedio;
 
         if(Alumnos[i].promedio>max){
             max = Alumnos[i].promedio;
@@ -36,12 +35,10 @@ int main(int argc,char*argv[]){
         }
     }
 
-    cout<<"\n\nDatos de la Persona: "<<endl;
-    cout<<"Nombre: "<<Alumnos[posicion].Nombre<<endl;
-    cout<<"Edad: "<<Alumnos[posicion].edad<<endl;
-    cout<<"Promedio: "<<Alumnos[posicion].promedio<<endl;
+    std::cout<<"\n\nDatos de la Persona: "<<std::endl;
+    std::cout<<"Nombre: "<<Alumnos[posicion].Nombre<<std::endl;
+    std::cout<<"Edad: "<<Alumnos[posicion].edad<<std::endl;
+    std::cout<<"Promedio: "<<Alumnos[posicion].promedio<<std::endl;
 
-
-    getch();
     return 0;
 }
