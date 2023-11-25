@@ -5,12 +5,12 @@ template <class T>
 class Materia{
 
     private: 
-        string nombreMateria = " ";
+        std::string nombreMateria = " ";
         int clave = 0;
         T calificacion;
 
     public:
-        Materia(string nombreMateria,int clave,T calificacion){
+        Materia(std::string nombreMateria,int clave,T calificacion){
             this->nombreMateria = nombreMateria;
             this->clave = clave;
             this->calificacion = calificacion;

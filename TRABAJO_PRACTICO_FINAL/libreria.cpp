@@ -2,22 +2,21 @@
 #include <string.h>
 #include <stdlib.h>
 #include "libreria.h"
-using namespace std;
 
 libreria::libreria(){ //CONSTRUCTOR POR DEFECTO...
 }
 void libreria::setData(int i){//CARGA DE LOS DATOS...
 	
-	city *General{nullptr};
-	city *Cordoba{nullptr};//Lista Cordoba
-	city *Mendoza{nullptr};//Lista Mendoza
-	city *Santa_fe{nullptr};//Lista Santa Fe
+	city* General{nullptr};
+	city* Cordoba{nullptr};//Lista Cordoba
+	city* Mendoza{nullptr};//Lista Mendoza
+	city* Santa_fe{nullptr};//Lista Santa Fe
 	int codP=0,codC=0;//codigo provincia y codigo ciudad
 	int  hh = 0, mm = 0, month = 0, day = 0;//hora , minutos, mes, dia , variables de la estructura measurement
 	float hum = 0, temp = 0;//humedad , temperatura variables de la estructura timestamp
 	char name[50] = {' '};//nombre de ciudad ,variable estructura city
 	
-	FILE *fp{fopen("data_set.txt","r")};
+	FILE* fp{fopen("data_set.txt","r")};
 	
 	CHECK_NULL(fp);
 	
@@ -40,7 +39,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 			if(Empty(General)){
 				General = filtro;
 			}else{
-				city *aux {General};
+				city* aux {General};
 				
 				while (aux->next!= nullptr){
 					aux = aux->next;
@@ -67,7 +66,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 			if(Empty(Cordoba)){
 				Cordoba = filtro;
 			}else{
-				city *aux{Cordoba};
+				city* aux{Cordoba};
 				
 				while (aux->next!= nullptr){
 					aux = aux->next;
@@ -95,7 +94,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 			if(Empty(Mendoza)){
 				Mendoza =filtro;
 			}else{
-				city *aux{Mendoza};
+				city* aux{Mendoza};
 			
 			
 				while (aux->next!= nullptr){
@@ -125,7 +124,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 			if(Empty(Santa_fe)){
 				Santa_fe = filtro;
 			}else{
-				city *aux {Santa_fe};
+				city* aux {Santa_fe};
 				
 				while (aux->next!= nullptr){
 					aux = aux->next;
@@ -156,13 +155,13 @@ int libreria::Get_Total(int i){//CANTIDAD DE MUESTRAS DE CADA PROVINCIA...
 	char name[50] = {" "};
 	int cont_Cordoba=0,cont_Santa_fe = 0,cont_Mendoza = 0;
 	
-	FILE *fp{fopen("data_set.txt","r")};
+	FILE* fp{fopen("data_set.txt","r")};
 	CHECK_NULL(fp);
 	
 	
 	while (!feof(fp)){
 		
-		fscanf(fp,"%d%d%s%f%f%d%d%d%d",&codC,&codP,&name[50],&temp,&hum,&hh,&mm,&day,&month);
+		fscanf(fp,"%d%d%s%f%f%d%d%d%d",&codC,&codP,name,&temp,&hum,&hh,&mm,&day,&month);
 		
 		if(codP==i+1 && codP == 1){
 			cont_Cordoba++;
@@ -191,9 +190,9 @@ float libreria::prom_temp_provincia(int i,float medir){
 		
 	if(i==1){
 		if(Empty(this->Cordoba)){
-			cout<<"La lista esta vacia."<<endl;
+			std::cout<<"La lista esta vacia."<<std::endl;
 		}else{		
-			city *aux = this->Cordoba;
+			city* aux = this->Cordoba;
 			
 			while(aux!=nullptr){
 				cont++;
@@ -206,9 +205,9 @@ float libreria::prom_temp_provincia(int i,float medir){
 		
 	}else if(i==2){
 		if(Empty(this->Mendoza)){
-			cout<<"La lista esta vacia."<<endl;
+			std::cout<<"La lista esta vacia."<<std::endl;
 		}else{		
-			city *aux {this->Mendoza};
+			city* aux {this->Mendoza};
 			
 			while(aux!=nullptr){
 				cont++;
@@ -221,9 +220,9 @@ float libreria::prom_temp_provincia(int i,float medir){
 		
 	}else if(i==3){
 		if(Empty(this->Santa_fe)){
-			cout<<"La lista esta vacia."<<endl;
+			std::cout<<"La lista esta vacia."<<std::endl;
 		}else{		
-			city *aux = this->Santa_fe;
+			city* aux = this->Santa_fe;
 			
 			while(aux!=nullptr){
 				cont++;
@@ -235,8 +234,8 @@ float libreria::prom_temp_provincia(int i,float medir){
 		return prom_sf;
 	}
 }
-bool libreria::Empty(city *head){		//ESTA BANDERA ES USADA PARA CONPROBAR SI LAS LISTAS NO ESTAN VACIAS...
-	return (head==nullptr)? true : false;
+bool libreria::Empty(city* head){		//ESTA BANDERA ES USADA PARA CONPROBAR SI LAS LISTAS NO ESTAN VACIAS...
+	return (head==nullptr);
 }
 void libreria::prom_temp_ciudad(){//PROMEDIO DE LAS CIUDADES...
 	
@@ -247,11 +246,11 @@ void libreria::prom_temp_ciudad(){//PROMEDIO DE LAS CIUDADES...
 	
 	
 	if(Empty(this->General)){
-		cout<<"La lista Cordoba esta vacia."<<endl;
+		std::cout<<"La lista Cordoba esta vacia."<<std::endl;
 	}
 	else{		
 		
-		city *aux {this->General};
+		city* aux {this->General};
 		auxid=aux->cityId;//IGUALAMOS EL AUXILIAR AL PRIMER ID...
 		
 		while(aux!=NULL){
@@ -277,9 +276,9 @@ void libreria::dia_frio_prov(){//CALCULO DEL DIA MAS FRIO...
 	float menor=0;
 	int dia=0,mes=0,temp=0;
 	if(Empty(this->Cordoba)){
-		cout<<"La lista esta vacia."<<endl;
+		std::cout<<"La lista esta vacia."<<std::endl;
 		}else{		
-			city *aux {this->Cordoba};
+			city* aux {this->Cordoba};
 			while(aux!=nullptr){//RECORRE LA LISTA DE CORDOBA...
 				if(aux->m.temp<menor){//VERIFICA QUE TEMPERATURA ES MENOR... 
 					dia=aux->m.time.day;
@@ -289,12 +288,12 @@ void libreria::dia_frio_prov(){//CALCULO DEL DIA MAS FRIO...
 				
 				aux=aux->next;
 			}
-			cout<<"El dia mas frio de Cordoba es el "<<dia<<" del "<<mes<<" con "<<temp<<endl;//cambiar printeo de numero a nombre del mes
+			std::cout<<"El dia mas frio de Cordoba es el "<<dia<<" del "<<mes<<" con "<<temp<<std::endl;//cambiar printeo de numero a nombre del mes
 		}
 		if(Empty(this->Santa_fe)){
-		cout<<"La lista esta vacia."<<endl;
+		std::cout<<"La lista esta vacia."<<std::endl;
 		}else{		
-			city *aux {this->Santa_fe};
+			city* aux {this->Santa_fe};
 			while(aux!=nullptr){//RECORRE LA LISTA DE SANTA FE...
 				
 				if(aux->m.temp<menor){//VERIFICA QUE TEMPERATURA ES MENOR...
@@ -305,13 +304,13 @@ void libreria::dia_frio_prov(){//CALCULO DEL DIA MAS FRIO...
 				
 				aux=aux->next;
 			}
-			cout<<"El dia mas frio de Santa_fe es el "<<dia<<" del "<<mes<<" con "<<temp<<endl;//cambiar printeo de numero a nombre del mes
+			std::cout<<"El dia mas frio de Santa_fe es el "<<dia<<" del "<<mes<<" con "<<temp<<std::endl;//cambiar printeo de numero a nombre del mes
 		}
 		if(Empty(this->Mendoza)){
-		cout<<"La lista esta vacia."<<endl;
+		std::cout<<"La lista esta vacia."<<std::endl;
 		}else{		
 			
-			city *aux = this->Mendoza;
+			city* aux = this->Mendoza;
 			
 			while(aux!=nullptr){   //RECORRE LA LISTA DE MENDOZA...
 				
@@ -324,7 +323,7 @@ void libreria::dia_frio_prov(){//CALCULO DEL DIA MAS FRIO...
 				aux=aux->next;
 			}
 
-			cout<<"El dia mas frio de Mendoza es el "<<dia<<" del "<<mes<<" con "<<temp<<endl;//cambiar printeo de numero a nombre del mes
+			std::cout<<"El dia mas frio de Mendoza es el "<<dia<<" del "<<mes<<" con "<<temp<<std::endl;//cambiar printeo de numero a nombre del mes
 		}
 	}
 void libreria::dia_calido_prov(){//DIA MAS CALIDO DE CADA CIUDAD...
@@ -334,9 +333,9 @@ void libreria::dia_calido_prov(){//DIA MAS CALIDO DE CADA CIUDAD...
 	int mes=0 , dia=0;
 	
 	if(Empty(this->General)){
-		cout<<"La lista Cordoba esta vacia."<<endl;
+		std::cout<<"La lista Cordoba esta vacia."<<std::endl;
 	}else{		
-		city *aux {this->General};
+		city* aux {this->General};
 		
 		auxid=aux->cityId;
 		while(aux!=nullptr){//RECORRE LA LISTA GENERAL...
@@ -376,13 +375,13 @@ void libreria::pimientos(){//MEJOR PROVINCIA PARA EL CULTIVO DE PIMIENTOS...
 	diferencia3 = 23 - (float)prom_Men;
 
 	if(diferencia1<diferencia2 && diferencia1<diferencia3){
-		cout<<"Cordoba es la mejor provincia para cultivar pimientos"<<endl;
+		std::cout<<"Cordoba es la mejor provincia para cultivar pimientos"<<std::endl;
 	}
 	else if(diferencia2<diferencia3){
-		cout<<"SantaFe es la mejor provincia para cultivar pimientos y solo para eso sirve"<<endl;
+		std::cout<<"SantaFe es la mejor provincia para cultivar pimientos y solo para eso sirve"<<std::endl;
 	}
 	else{
-		cout<<"Mendoza es la mejor provincia para cultivar pimientos"<<endl;
+		std::cout<<"Mendoza es la mejor provincia para cultivar pimientos"<<std::endl;
 	}
 
 
@@ -396,9 +395,9 @@ void libreria::ciud_frio(){//CALCULO DE LA CIUDAD MAS FRIA...
 	int auxid=0;
 	
 	if(Empty(this->Cordoba)){
-		cout<<"La lista Cordoba esta vacia."<<endl;
+		std::cout<<"La lista Cordoba esta vacia."<<std::endl;
 	}else{		
-		city *aux{this->Cordoba};
+		city* aux{this->Cordoba};
 		
 		auxid=aux->cityId;
 		
@@ -430,9 +429,9 @@ void libreria::ciud_frio(){//CALCULO DE LA CIUDAD MAS FRIA...
 	printf("La ciudad mas fria de cordoba es %s con un promedio de: %.2f �\n",text,menor_promedio);//PRINTEO DE LA CIUDAD CON EL MENOR PROMEDIO...
 	
 	if(Empty(this->Santa_fe)){
-		cout<<"La lista Santa Fe esta vacia."<<endl;
+		std::cout<<"La lista Santa Fe esta vacia."<<std::endl;
 	}else{		
-		city *aux {this->Santa_fe};
+		city* aux {this->Santa_fe};
 		
 		auxid=aux->cityId;
 		
@@ -464,9 +463,9 @@ void libreria::ciud_frio(){//CALCULO DE LA CIUDAD MAS FRIA...
 	printf("La ciudad mas fria de Santa Fe es %s con un promedio de: %.2f �\n",text,menor_promedio);//PRINTEO DE LA CIUDAD CON EL MENOR PROMEDIO...
 	
 	if(Empty(this->Cordoba)){
-		cout<<"La lista Mendoza esta vacia."<<endl;
+		std::cout<<"La lista Mendoza esta vacia."<<std::endl;
 	}else{		
-		city *aux {this->Mendoza};
+		city* aux {this->Mendoza};
 		
 		auxid=aux->cityId;
 		
@@ -504,9 +503,9 @@ void libreria::ciud_calido(){//CALCULO DE LA CIUDAD MAS CALIDA...
 	
 	
 	if(Empty(this->Cordoba)){
-		cout<<"La lista Cordoba esta vacia."<<endl;
+		std::cout<<"La lista Cordoba esta vacia."<<std::endl;
 	}else{		
-		city *aux {this->Cordoba};
+		city* aux {this->Cordoba};
 		
 		auxid=aux->cityId;
 		while(aux!=nullptr){//CALCULA LOS PROMEDIOS DE LAS CIUDADES COMO EN EL INCISO N�3...
@@ -534,9 +533,9 @@ void libreria::ciud_calido(){//CALCULO DE LA CIUDAD MAS CALIDA...
 	printf("La ciudad mas calida de Cordoba es %s con un promedio de: %.2f �\n",text,mayor_promedio);//PRINTEO DE LA CIUDAD CON EL MAYOR PROMEDIO...
 	
 	if(Empty(this->Santa_fe)){
-		cout<<"La lista Santa fe esta vacia."<<endl;
+		std::cout<<"La lista Santa fe esta vacia."<<std::endl;
 	}else{		
-		city *aux {this->Santa_fe};
+		city* aux {this->Santa_fe};
 		
 		auxid=aux->cityId;
 		while(aux!=nullptr){//CALCULA LOS PROMEDIOS DE LAS CIUDADES COMO EN EL INCISO N�3...
@@ -564,7 +563,7 @@ void libreria::ciud_calido(){//CALCULO DE LA CIUDAD MAS CALIDA...
 	printf("La ciudad mas calida de Santa Fe es %s con un promedio de: %.2f �\n",text,mayor_promedio);//PRINTEO DE LA CIUDAD CON EL MAYOR PROMEDIO...
 	
 	if(Empty(this->Mendoza)){
-		cout<<"La lista Mendoza esta vacia."<<endl;
+		std::cout<<"La lista Mendoza esta vacia."<<std::endl;
 	}else{		
 		city *aux{this->Mendoza};
 		

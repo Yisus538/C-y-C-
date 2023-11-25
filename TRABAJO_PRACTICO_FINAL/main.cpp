@@ -1,19 +1,18 @@
 #include <iostream>
 #include "libreria.h"
-using namespace std;
 
 int main(){
 	
 	libreria Provicias; //Declaracion de un objeto
 	float  prom_cba = 0, prom_men = 0,prom_sf = 0;
-	string nombres[3]={"Cordoba ","Mendoza ","SanteFe "};	
+	std::string nombres[3]={"Cordoba ","Mendoza ","SanteFe "};	
 	int opc;
 	
-	cout<<"Iniciando escaneo"<<endl;
+	std::cout<<"Iniciando escaneo"<<std::endl;
 	for(int i = 0 ; i < 3; i++){
 		Provicias.setData(i);
 	}
-	cout<<"Escaneo Finalizado"<<endl;
+	std::cout<<"Escaneo Finalizado"<<std::endl;
 	printf("Se a escaneado correctamente el archivo.\n");
 	system("pause");
 	system("cls");
@@ -38,76 +37,76 @@ int main(){
 		switch (opc)
 		{
 		case 1:
-				cout<<"----------------------------CANTIDAD DE MEDICIONES---------------------------"<<endl;
+				std::cout<<"----------------------------CANTIDAD DE MEDICIONES---------------------------"<<std::endl;
 			for(int i = 0 ; i < 3; i++){
-				cout<<"-\tLa cantidad de mediciones de "<<nombres[i]<<" es de: "<<Provicias.Get_Total(i)<<"                    -"<<endl;
+				std::cout<<"-\tLa cantidad de mediciones de "<<nombres[i]<<" es de: "<<Provicias.Get_Total(i)<<"                    -"<<std::endl;
 			}
-				cout<<"-----------------------------------------------------------------------------"<<endl;
+				std::cout<<"-----------------------------------------------------------------------------"<<std::endl;
 			system("pause");
 			system("cls");
 			break;
 		case 2:
-			cout<<"\n----------------------------TEMPERATURA PROMEDIO POR PROVINCIA---------------------------"<<endl;
+			std::cout<<"\n----------------------------TEMPERATURA PROMEDIO POR PROVINCIA---------------------------"<<std::endl;
 			
-			cout<<"-\t"<<nombres[0]<<Provicias.prom_temp_provincia(1,prom_cba)<<"\t                                                        -"<<endl;
-			cout<<"-\t"<<nombres[1]<<Provicias.prom_temp_provincia(2,prom_men)<<"\t                                                        -"<<endl;
-			cout<<"-\t"<<nombres[2]<<Provicias.prom_temp_provincia(3,prom_sf)<<"\t                                                        -"<<endl;
-			cout<<"-----------------------------------------------------------------------------------------"<<endl;
+			std::cout<<"-\t"<<nombres[0]<<Provicias.prom_temp_provincia(1,prom_cba)<<"\t                                                        -"<<std::endl;
+			std::cout<<"-\t"<<nombres[1]<<Provicias.prom_temp_provincia(2,prom_men)<<"\t                                                        -"<<std::endl;
+			std::cout<<"-\t"<<nombres[2]<<Provicias.prom_temp_provincia(3,prom_sf)<<"\t                                                        -"<<std::endl;
+			std::cout<<"-----------------------------------------------------------------------------------------"<<std::endl;
 			
 			system("pause");
 			system("cls");
 			break;
 		case 3:
-			cout<<"\n----------------------------TEMPERATURA PROMEDIO POR CIUDAD---------------------------"<<endl;
+			std::cout<<"\n----------------------------TEMPERATURA PROMEDIO POR CIUDAD---------------------------"<<std::endl;
 				Provicias.prom_temp_ciudad();
-			cout<<"-----------------------------------------------------------------------------------------"<<endl;
+			std::cout<<"-----------------------------------------------------------------------------------------"<<std::endl;
 
 			system("pause");
 			system("cls");
 			break;
 		case 4:
-			cout<<"\n----------------------------CIUDAD MAS CALIDA SEGUN EL PROMEDIO--------------------------"<<endl;
+			std::cout<<"\n----------------------------CIUDAD MAS CALIDA SEGUN EL PROMEDIO--------------------------"<<std::endl;
 			Provicias.ciud_calido();
-			cout<<"-----------------------------------------------------------------------------------------"<<endl;
+			std::cout<<"-----------------------------------------------------------------------------------------"<<std::endl;
 			system("pause");
 			system("cls");
 			break;
 		case 5:
-			cout<<"\n----------------------------CIUDAD MAS FRIA SEGUN EL PROMEDIO----------------------------"<<endl;
+			std::cout<<"\n----------------------------CIUDAD MAS FRIA SEGUN EL PROMEDIO----------------------------"<<std::endl;
 			Provicias.ciud_frio();
-			cout<<"-----------------------------------------------------------------------------------------"<<endl;
+			std::cout<<"-----------------------------------------------------------------------------------------"<<std::endl;
 			system("pause");
 			system("cls");
 		break;
 		case 6:
-			cout<<"\n----------------------------DIA MAS FRIO DE PROVINCIAS---------------------------"<<endl;
+			std::cout<<"\n----------------------------DIA MAS FRIO DE PROVINCIAS---------------------------"<<std::endl;
 			Provicias.dia_frio_prov();
-			cout<<"-----------------------------------------------------------------------------------------"<<endl;
+			std::cout<<"-----------------------------------------------------------------------------------------"<<std::endl;
 			system("pause");
 			system("cls");
 		break;
 		case 7:
-			cout<<"\n----------------------------DIA MAS CALIDO DE CADA CIUDAD---------------------------"<<endl;
+			std::cout<<"\n----------------------------DIA MAS CALIDO DE CADA CIUDAD---------------------------"<<std::endl;
 			Provicias.dia_calido_prov();
-			cout<<"-----------------------------------------------------------------------------------------"<<endl;
+			std::cout<<"-----------------------------------------------------------------------------------------"<<std::endl;
 
 			system("pause");
 			system("cls");
 		break;
 		case 8:
-		cout<<"\n----------------------------MEJOR PROVINCIA PARA CULTIVAR PIMIENTOS---------------------------"<<endl;
-			cout<<"\n";
+		std::cout<<"\n----------------------------MEJOR PROVINCIA PARA CULTIVAR PIMIENTOS---------------------------"<<std::endl;
+			std::cout<<"\n";
 			Provicias.pimientos();
-			cout<<"\n";
-			cout<<"-----------------------------------------------------------------------------------------"<<endl;	
+			std::cout<<"\n";
+			std::cout<<"-----------------------------------------------------------------------------------------"<<std::endl;	
 
 			system("pause");
 			system("cls");
 		break;
 		case 9:
-			cout<<"----------------"<<endl;
-			cout<<"\nSaliendo...\n"<<endl;
-			cout<<"----------------"<<endl;
+			std::cout<<"----------------"<<std::endl;
+			std::cout<<"\nSaliendo...\n"<<std::endl;
+			std::cout<<"----------------"<<std::endl;
 			exit(1);
 		}
 	}

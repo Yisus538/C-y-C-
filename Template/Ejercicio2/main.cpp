@@ -3,21 +3,12 @@
 
 
 const int TAM = 5;
-template <typename T> void pedirdatos(T *array){
-    for(int i = 0; i < TAM; i++){
-        std::cout<<"Digite un elemento["<<i<<"]: "<<std::endl;
-        std::cin>>array[i];
-    }
-}
-template <typename T> void mostrarArreglo(T *array){
-    for(int i = 0; i < TAM; i++){
-        std::cout<<"Elemento ["<<i<<"]: "<<array[i]<<std::endl;
-    }
-} 
+template <typename T> void pedirdatos(T*);
+template <typename T> void mostrarArreglo(T*);
 
 int main(){
 
-    int *ptr{new int[TAM]};
+    int* ptr{new int[TAM]};
     pedirdatos(ptr);
 
     
@@ -30,3 +21,14 @@ int main(){
     delete[] ptr;
     return 0;
 }
+template <typename T> void pedirdatos(T* array){
+    for(int i = 0; i < TAM; i++){
+        std::cout<<"Digite un elemento["<<i<<"]: "<<std::endl;
+        std::cin>>array[i];
+    }
+}
+template <typename T> void mostrarArreglo(T* array){
+    for(int i = 0; i < TAM; i++){
+        std::cout<<"Elemento ["<<i<<"]: "<<array[i]<<std::endl;
+    }
+} 

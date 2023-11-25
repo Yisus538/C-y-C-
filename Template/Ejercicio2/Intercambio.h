@@ -1,8 +1,7 @@
 #include<iostream>
 
-template <typename T>
-void intercambiar(T &dato1,T &dato2){
- 
+template <typename T>void intercambiar(T &dato1,T &dato2){
+
     T aux;
 
     aux = dato1;

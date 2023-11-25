@@ -1,7 +1,6 @@
 #include <iostream>
 
-template <typename T>
-T mayor(T dato1,T dato2){return dato1>=dato2? dato1:dato2;}
+template <typename T>T mayor(T dato1,T dato2){return dato1>=dato2? dato1:dato2;}
 
 int main(){   
 

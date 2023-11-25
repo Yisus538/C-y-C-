@@ -3,14 +3,7 @@
 #include <stdlib.h>
 
 
-void opciones(){
-    std::cout<<"\tMenu:"<<std::endl;
-    std::cout<<"1. Agregar elemento."<<std::endl;
-    std::cout<<"2. Comprobar espacio de arreglo"<<std::endl;
-    std::cout<<"3. Ver arreglo"<<std::endl;
-    std::cout<<"4. Vaciar arreglo"<<std::endl;
-    std::cout<<"5. Salir\nOPCION: "<<std::endl;
-}
+void opciones();
 
 int main(){
     
@@ -56,8 +49,14 @@ int main(){
         std::cout<<std::endl;
     }while(opcion!=5); 
     
-    
-    
-    
     return 0;
+}
+
+void opciones(){
+    std::cout<<"\tMenu:"<<std::endl;
+    std::cout<<"1. Agregar elemento."<<std::endl;
+    std::cout<<"2. Comprobar espacio de arreglo"<<std::endl;
+    std::cout<<"3. Ver arreglo"<<std::endl;
+    std::cout<<"4. Vaciar arreglo"<<std::endl;
+    std::cout<<"5. Salir\nOPCION: "<<std::endl;
 }
