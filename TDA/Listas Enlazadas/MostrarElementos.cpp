@@ -11,7 +11,7 @@ struct Nodo{
 void Insertar_Elemento(struct Nodo*&,int);
 void Mostrar_Elemento(struct Nodo*);
 
-int main(int argc,char*argv[]){
+int main(){
 
     Nodo* lista = nullptr;
     int dato = 0,i = 0;
@@ -28,7 +28,7 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0;
 }
-void Insertar_Elemento(struct Nodo*& lista,int dato){
+void Insertar_Elemento(Nodo*& lista,int dato){
 
     Nodo *nuevo_nodo = new Nodo();
     nuevo_nodo->dato = dato;
@@ -52,7 +52,7 @@ void Insertar_Elemento(struct Nodo*& lista,int dato){
     std::cout<<"EL elemento "<<dato<<" insertado a lista correctamente."<<std::endl;
 
 }
-void Mostrar_Elemento(struct Nodo* lista){
+void Mostrar_Elemento(Nodo* lista){
 
     Nodo* actual = new Nodo();
     actual = lista;

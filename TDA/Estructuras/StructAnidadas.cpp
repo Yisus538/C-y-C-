@@ -19,7 +19,7 @@ struct empleado{
 }empleado[2];
 
 
-int main(int argc,char*argv[]){
+int main(){
 
     //Tomar Datos
     for(int i = 0; i < 2; i++){

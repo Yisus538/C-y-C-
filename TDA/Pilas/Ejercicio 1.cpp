@@ -1,3 +1,7 @@
+/*
+Ejercicio 1: hacer un programa para ingresar numeros enteros a una pila hasta que el usuario lo decida,
+             despues mostrar los elementos y eliminarlos.
+*/
 #include <iostream>
 #include <stdlib.h>
 
@@ -8,19 +12,20 @@ struct Node{
 
 };
 
-void push(Node**,int dato);
-void Empty(Node**,int &dato);
+void push(Node**,int );
+void Empty(Node**,int&);
 
 int main(){
 
     Node* sp = NULL;
-    int dato = 0, i = 0;
+    int dato = 0;
+    char rta = ' ';
 
     do{
         std::cout<<"Ingrese un dato: "<<std::endl; std::cin>>dato;
         push(&sp,dato);
-        i++;
-    }while(i!=5);
+        std::cout<<"Desea agregar otro elemento? (s/n): "<<std::endl; std::cin>>rta;
+    }while(rta == 'S' || rta == 's');
 
     while(sp != NULL){
         Empty(&sp,dato);
@@ -42,14 +47,9 @@ void push(Node** sp,int dato){
     new_node->next  = *(sp);
     *(sp) = new_node;
 
-    std::cout<<"El elemento "<<dato<<" a sido ingresado correctamente."<<std::endl;
-
-    system("pause");
-    system("cls");
-
 
 }
-void Empty(Node** sp,int& dato){
+void Empty(Node** sp,int &dato){
 
     Node* aux = *(sp);
     dato = aux->data;

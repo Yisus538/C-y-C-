@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
 
 struct Node{
 
@@ -10,28 +9,28 @@ struct Node{
 };
 
 
-void push(Node **head,int dato);
+void push(Node**,int);
 
-int main(int argc,char**argv){
+int main(){
 
-    Node *head = NULL;
+    Node* sp = NULL;
     int dato = 0;
 
 
-    cout<<"Ingrese un dato: "<<endl; cin>>dato;
-    push(&head,dato);
+    std::cout<<"Ingrese un dato: "<<std::endl; std::cin>>dato;
+    push(&sp,dato);
 
     system("pause");
     return 0;
 }
-void push(Node **head,int dato){
+void push(Node **sp,int dato){
 
     Node *new_node = new Node();
     new_node->data = dato;
-    new_node->next  = *(head);
-    *(head) = new_node;
+    new_node->next  = *(sp);
+    *(sp) = new_node;
 
-    cout<<"El elemento "<<dato<<" a sido ingresado correctamente."<<endl;
+    std::cout<<"El elemento "<<dato<<" a sido ingresado correctamente."<<std::endl;
 
     system("pause");
     system("cls");

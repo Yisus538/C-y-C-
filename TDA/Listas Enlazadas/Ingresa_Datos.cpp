@@ -5,27 +5,16 @@
 typedef struct Nodo{
 
     int dato;
-<<<<<<< HEAD
     Nodo* siguiente;
-=======
-    struct Nodo* siguiente;
->>>>>>> origin/main
 
 }Nodo;
 
-<<<<<<< HEAD
+
 void Insertar_Elemento(Nodo*&,int);
 
 int main(int argc,char*argv[]){
 
-    Nodo *lista = nullptr;
-=======
-void Insertar_Elemento(struct Nodo*&,int);
-
-int main(int argc,char*argv[]){
-
     Nodo* lista = nullptr;
->>>>>>> origin/main
     int dato = 0,i = 0;
 
     do{
@@ -38,17 +27,14 @@ int main(int argc,char*argv[]){
     system("pause");
     return 0;
 }
-<<<<<<< HEAD
-void Insertar_Elemento(Nodo*& lista,int dato){
-=======
-void Insertar_Elemento(struct Nodo*& lista,int dato){
->>>>>>> origin/main
 
-    Nodo *nuevo_nodo = new Nodo();
+void Insertar_Elemento(Nodo*& lista,int dato){
+
+    Nodo* nuevo_nodo = new Nodo();
     nuevo_nodo->dato = dato;
 
-    Nodo *aux1 = lista;
-    Nodo *aux2;
+    Nodo* aux1 = lista;
+    Nodo* aux2;
 
     while((aux1 != nullptr) && (aux1->dato < dato)){
         aux2 = aux1;

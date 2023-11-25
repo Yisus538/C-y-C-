@@ -10,7 +10,7 @@ struct Persona{
 
 }persona1 = {"Yisus",19},persona2 = {"Manu",17};
 
-int main(int argc,char*argv[]){
+int main(){
     
     std::cout<<"Nombre1: "<<persona1.nombre<<std::endl;
     std::cout<<"Edad: "<<persona1.edad<<std::endl;

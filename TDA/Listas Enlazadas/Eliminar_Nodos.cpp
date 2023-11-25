@@ -13,13 +13,10 @@ void Insertar_Elemento(Nodo*&,Nodo*,Nodo*,int);
 void Mostrar_Elementos(Nodo*,Nodo*);
 void Eliminar_Nodo(Nodo*&,int);
 
-int main(int argc,char*argv[]){
+int main(){
 
-<<<<<<< HEAD
-    Nodo*lista = nullptr;
-=======
+
     Nodo* lista = nullptr;
->>>>>>> origin/main
     Nodo* aux = nullptr;
     Nodo* nuevo_nodo = nullptr;
     int dato,opc;
@@ -69,21 +66,12 @@ void Insertar_Elemento(Nodo*& lista,Nodo* aux,Nodo* nuevo_nodo,int dato){
 void Mostrar_Elementos(Nodo* lista,Nodo* aux){
 
     if(lista==nullptr){
-<<<<<<< HEAD
-        cout<<"La lista se encuentra vacia."<<endl;
-    }else{
-        Nodo* aux = lista;
-
-        while(aux!=nullptr){
-            cout<<aux->dato<<" ";
-=======
         std::cout<<"La lista se encuentra vacia."<<std::endl;
     }else{
         aux = lista;
 
         while(aux!=nullptr){
             std::cout<<aux->dato<<" ";
->>>>>>> origin/main
             aux = aux->siguiente;
         }  
         std::cout<<"\n";
@@ -93,30 +81,18 @@ void Mostrar_Elementos(Nodo* lista,Nodo* aux){
 }
 void Eliminar_Nodo(Nodo*& lista,int dato){
 
-<<<<<<< HEAD
     if(lista!=nullptr){//Esta lista esta vacia?
         Nodo* aux_borrar = nullptr;
         Nodo* anterior = nullptr;
-=======
-    if(lista!=NULL){//Esta lista esta vacia?
-        Nodo *aux_borrar = nullptr;
-        Nodo *anterior = nullptr;
->>>>>>> origin/main
 
         aux_borrar = lista;
-
         //Recorrer la lista
         while((aux_borrar != nullptr) && (aux_borrar->dato != dato)){
             anterior = aux_borrar;
             aux_borrar = aux_borrar->siguiente;
         }
-
         if(aux_borrar==nullptr){//Elemento no encontrado.
-<<<<<<< HEAD
-            cout<<"El elemento no fue encontrado."<<endl;
-=======
             std::cout<<"El elemento no fue encontrado."<<std::endl;
->>>>>>> origin/main
         }else if(anterior == nullptr){//Primer elemento es el que se va eliminar
             lista = lista->siguiente;
             delete aux_borrar;

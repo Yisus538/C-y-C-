@@ -12,7 +12,7 @@ struct Nodo{
 void Insertar_Cola(Nodo*&,Nodo*&,int);
 bool cola_vacia(Nodo*);
 
-int main(int argc,char*argv[]){
+int main(){
 
     struct Nodo* frente = nullptr;
     struct Nodo* fin = nullptr;
