@@ -5,7 +5,7 @@
 
 void Escribir();
 
-int main(int argc,char**argv){
+int main(){
 
     std::ifstream file;
     std::string text;

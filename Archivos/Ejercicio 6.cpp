@@ -5,30 +5,29 @@ Datos_Producto.txt*/
 #include <iostream>
 #include <fstream> 
 
-using namespace std;
 
-int main(int argc, char *argv[]) {
-	string lista="";
+int main() {
+	std::string lista="";
 	
-	ofstream ofs; //creo la libreria ofstream
+	std::ofstream ofs; //creo la libreria ofstream
 	ofs.open("Datos_Producto.txt"); //Abro un archivo, sino existe se crea.
 	//Ingreso por teclado
-	cout<<"nombre del producto/ marca/ precio unitario($)/ fecha de elaboración(00-00-00)/ tamaño(cm): [fin = '.']"<<endl;   
-	getline(cin, lista, '.');
+	std::cout<<"nombre del producto/ marca/ precio unitario($)/ fecha de elaboración(00-00-00)/ tamaño(cm): [fin = '.']"<<std::endl;   
+	getline(std::cin, lista, '.');
 	
 	//Escribir el archivo con el mensaje
-	ofs <<"Mensaje: "<<endl; 
-	ofs<<lista<<endl;
+	ofs <<"Mensaje: "<<std::endl; 
+	ofs<<lista<<std::endl;
 	ofs.close();  //Cierra
 	
 	//Leer 
 	lista=" ";
-	ifstream ifs; //objeto libreria ifstream
+	std::ifstream ifs; //objeto libreria ifstream
 	ifs.open("Datos_Producto.txt"); //abrir
-	cout << "\nContenido del Archivo"<<endl;
+	std::cout << "\nContenido del Archivo"<<std::endl;
 	while(!ifs.eof()) { //recorre el bucle
 		getline(ifs,lista); //saca el mensaje
-		cout<<lista<<endl; //lo muestra en pantalla
+		std::cout<<lista<<std::endl; //lo muestra en pantalla
 	}
 	ifs.close(); //Cierra
 	return 0;

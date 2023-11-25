@@ -5,9 +5,9 @@ Recuerden descargar el archivo en el mismo lugar donde corren el programa.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
 
-void CHECK_NULL(FILE *archivo);
+
+void CHECK_NULL(FILE *);
 
 int main() {
 

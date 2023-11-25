@@ -7,9 +7,9 @@ c) leer un archivo.
 #include <stdio.h>
 #include <stdlib.h>
 
-void check_null(FILE *fp);
+void check_null(FILE*);
 
-int main(int argc, char *argv[]) {
+int main() {
 	FILE *fp=NULL;
 	char opcion=' ', rta=' ';
 	char cadena[1000];

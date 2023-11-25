@@ -11,9 +11,6 @@ El archivo se llamara Listado_Producto.txt.*/
 #include <fstream>
 #include "Producto.h"
 
-using namespace std;
-
-
 void mostrarListado(Producto[3]);
 void escribir_Archivo(Producto [3]);
 void actualizar_Archivo(Producto [3]);

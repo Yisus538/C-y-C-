@@ -9,7 +9,7 @@ Ejercicio 1: Realiza un programa que pida el nombre o ubicacion de un archivo y 
 void Escribir();
 void Leer();
 
-int main(int argc,char**argv){
+int main(){
 
     std::ifstream file;
     std::string text;

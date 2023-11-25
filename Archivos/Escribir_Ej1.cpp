@@ -7,7 +7,7 @@ Ejercicio 1: Realice un programa que pida el nombre de un archivo de texto y a c
 #include <stdlib.h>
 
 
-int main(int argc,char** argv){
+int main(){
 
     std::ofstream file;
     std::string Nombre_archivo,frase;

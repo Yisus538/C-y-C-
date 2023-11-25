@@ -5,9 +5,9 @@ contenga los valores pares del 1 al 100. Luego abrir el archivo y mostrarlo.
 #include <stdio.h>
 #include <stdlib.h>
 
-void check_null(FILE *fp);
+void check_null(FILE*);
 
-int main(int argc, char *argv[]) {
+int main() {
 	
 	FILE *fp=NULL;
 	int i=0, j=0, pares[50]={0};

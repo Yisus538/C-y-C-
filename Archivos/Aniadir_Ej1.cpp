@@ -6,7 +6,7 @@ Ejercicio 3: Realiza un programa que pida el nombre o ubicacion del archivo de t
 #include <fstream>
 #include <stdlib.h>
 
-int main(int argc,char** argv){
+int main(){
 
     std::ofstream file;
     std::string Nombre_archivo,frase;

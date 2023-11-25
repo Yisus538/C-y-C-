@@ -6,9 +6,9 @@ mostrarlo.*/
 #include <stdio.h>
 #include <stdlib.h>
 
-void check_null(FILE *fp);
+void check_null(FILE*);
 
-int main(int argc, char *argv[]) {
+int main() {
 	
 	FILE *fp=NULL;
 	

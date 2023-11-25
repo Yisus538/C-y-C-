@@ -11,9 +11,9 @@ struct Producto{
 	float precio_unitario;
 };
 
-void check_null(FILE *fp);
+void check_null(FILE*);
 
-int main(int argc, char *argv[]) {
+int main() {
 	FILE *fp = fopen("Datos_Producto.txt", "w");
 	check_null(fp);
 	struct Producto p;
