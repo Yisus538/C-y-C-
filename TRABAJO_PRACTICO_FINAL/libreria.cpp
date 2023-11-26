@@ -7,10 +7,10 @@ libreria::libreria(){ //CONSTRUCTOR POR DEFECTO...
 }
 void libreria::setData(int i){//CARGA DE LOS DATOS...
 	
-	city* General{nullptr};
-	city* Cordoba{nullptr};//Lista Cordoba
-	city* Mendoza{nullptr};//Lista Mendoza
-	city* Santa_fe{nullptr};//Lista Santa Fe
+	city* General {nullptr};
+	city* Cordoba {nullptr};//Lista Cordoba
+	city* Mendoza {nullptr};//Lista Mendoza
+	city* Santa_fe {nullptr};//Lista Santa Fe
 	int codP=0,codC=0;//codigo provincia y codigo ciudad
 	int  hh = 0, mm = 0, month = 0, day = 0;//hora , minutos, mes, dia , variables de la estructura measurement
 	float hum = 0, temp = 0;//humedad , temperatura variables de la estructura timestamp
@@ -92,7 +92,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 			this->filtro->next= nullptr;
 			
 			if(Empty(Mendoza)){
-				Mendoza =filtro;
+				Mendoza = filtro;
 			}else{
 				city* aux{Mendoza};
 			
@@ -138,7 +138,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 	delete fp;
 	free (filtro);
 }
-void libreria::CHECK_NULL(FILE *fp){
+void libreria::CHECK_NULL(FILE* fp){
 	
 	if(fp==nullptr){
 		perror("Error no se a podido leer el archivo.\n");
