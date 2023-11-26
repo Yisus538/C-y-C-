@@ -31,11 +31,11 @@ class libreria{
 private:
 	
 	
-	city* filtro = nullptr; //New Node	
-	city* General = nullptr;//Lista General
-	city* Cordoba = nullptr;//Lista Cba
-	city* Mendoza = nullptr;//Lista Mendoza
-	city* Santa_fe = nullptr;//Lista Santa Fe
+	city* filtro {nullptr}; //New Node	
+	city* General {nullptr};//Lista General
+	city* Cordoba {nullptr};//Lista Cba
+	city* Mendoza {nullptr};//Lista Mendoza
+	city* Santa_fe {nullptr};//Lista Santa Fe
 	
 	
 public://EN ESTE PUNTO, SE ENCUENTRAN TODOS LOS METODOS DE LA CLASE.**

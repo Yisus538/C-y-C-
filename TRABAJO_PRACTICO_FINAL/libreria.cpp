@@ -13,7 +13,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 	city* Santa_fe {nullptr};//Lista Santa Fe
 	int codP=0,codC=0;//codigo provincia y codigo ciudad
 	int  hh = 0, mm = 0, month = 0, day = 0;//hora , minutos, mes, dia , variables de la estructura measurement
-	float hum = 0, temp = 0;//humedad , temperatura variables de la estructura timestamp
+	float hum = 0.0, temp = 0.0;//humedad , temperatura variables de la estructura timestamp
 	char name[50] = {' '};//nombre de ciudad ,variable estructura city
 	
 	FILE* fp{fopen("data_set.txt","r")};
@@ -24,7 +24,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 	//Escaneo y Guardado de Datos
 	while(!feof(fp)){
 		fscanf(fp,"%d%d%s%f%f%d%d%d%d",&codC,&codP,name,&temp,&hum,&hh,&mm,&day,&month);
-			filtro = (struct city *)malloc(sizeof(struct city));
+			filtro = (city*)malloc(sizeof(city));
 			
 			this->filtro->cityId= codC;
 			strcpy(this->filtro->city_name, name);
@@ -50,7 +50,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 
 		if(codP==1){
 			
-			filtro = (struct city *)malloc(sizeof(struct city));
+			filtro = (city*)malloc(sizeof(city));
 
 			
 			this->filtro->cityId= codC;
@@ -79,7 +79,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 		}else if(codP==3){
 			
 			
-			filtro = (struct city *)malloc(sizeof(struct city));
+			filtro = (city*)malloc(sizeof(city));
 
 			this->filtro->cityId= codC;
 			strcpy(this->filtro->city_name, name);
@@ -108,7 +108,7 @@ void libreria::setData(int i){//CARGA DE LOS DATOS...
 		}else if(codP==2){
 			
 			
-			filtro = (struct city *)malloc(sizeof(struct city));
+			filtro = (city*)malloc(sizeof(city));
 
 			
 			this->filtro->cityId= codC;
@@ -253,17 +253,14 @@ void libreria::prom_temp_ciudad(){//PROMEDIO DE LAS CIUDADES...
 		city* aux {this->General};
 		auxid=aux->cityId;//IGUALAMOS EL AUXILIAR AL PRIMER ID...
 		
-		while(aux!=NULL){
+		while(aux!=nullptr){
 			if(aux->cityId==auxid){//COMPRUEBA SI LOS ID COINCIDEN...
 				cont++;//CONTADOR...
 				suma+=aux->m.temp;//SUMADOR DE LAS TEMPERATURAS...
-				for(int i=0;i<50;i++)
-				{
-					text[i]=aux->city_name[i];
-				}
+				strncpy(text,aux->city_name,50);
 			}else{
-				prom=suma/(float)cont; 
-				printf("El nombre de la ciudad es %s y su temperatura promedio es de: %.2f  \n",text,prom);//CALCULO Y PRINTEO DE LOS PROMEDIOS...
+				prom = suma/static_cast<float>(cont); //CALCULO Y PRINTEO DE LOS PROMEDIOS...
+				printf("El nombre de la ciudad es %s y su temperatura promedio es de: %.2f  \n",text,prom);
 				cont=0; 
 				prom=0, suma=0;
 				auxid=aux->cityId;//PASA A CONTENER EL ID DE LA SIGUIENTE CIUDAD...
@@ -341,11 +338,7 @@ void libreria::dia_calido_prov(){//DIA MAS CALIDO DE CADA CIUDAD...
 		while(aux!=nullptr){//RECORRE LA LISTA GENERAL...
 			
 			if(aux->cityId==auxid){
-				for(int i=0;i<50;i++)
-				{
-					text[i]=aux->city_name[i];
-					
-				}
+				strncpy(text,aux->city_name,50);
 				if(aux->m.temp>mayor_temperatura)//BUSCA EL DIA QUE SE HAYA REGISTRADO LA MAYOR TEMPERATURA...
 				{
 					mes=aux->m.time.month;
@@ -370,9 +363,9 @@ void libreria::pimientos(){//MEJOR PROVINCIA PARA EL CULTIVO DE PIMIENTOS...
 	abs((int)prom_Men);
 	abs((int)prom_Stafe);
 
-	diferencia1 = 23 - (float)prom_Cba;
-	diferencia2 = 23 - (float)prom_Stafe; //CALCULA QUE TEMPERATURA ES MAS SIMILAR A LOS 25�...
-	diferencia3 = 23 - (float)prom_Men;
+	diferencia1 = 23 - static_cast<float>(prom_Cba);
+	diferencia2 = 23 - static_cast<float>(prom_Stafe);//CALCULA QUE TEMPERATURA ES MAS SIMILAR A LOS 25�...
+	diferencia3 = 23 - static_cast<float>(prom_Men);
 
 	if(diferencia1<diferencia2 && diferencia1<diferencia3){
 		std::cout<<"Cordoba es la mejor provincia para cultivar pimientos"<<std::endl;
@@ -406,10 +399,7 @@ void libreria::ciud_frio(){//CALCULO DE LA CIUDAD MAS FRIA...
 			if(aux->cityId==auxid){
 				cont++;
 				suma+=aux->m.temp;
-				for(int i=0;i<50;i++)
-				{
-					text[i]=aux->city_name[i];
-				}
+				strncpy(text,aux->city_name,50);
 			}else{
 				prom=suma/(float)cont;
 				
@@ -513,10 +503,7 @@ void libreria::ciud_calido(){//CALCULO DE LA CIUDAD MAS CALIDA...
 			if(aux->cityId==auxid){
 				cont++;
 				suma+=aux->m.temp;
-				for(int i=0;i<50;i++)
-				{
-					text[i]=aux->city_name[i];
-				}
+				strncpy(text,aux->city_name,50);
 			}else{
 				prom=suma/(float)cont;
 				if(prom>mayor_promedio)//GUARDA EN mayorid y mayor_promedio LOS DATOS DE LA CIUDAD...

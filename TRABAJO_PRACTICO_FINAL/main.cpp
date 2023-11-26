@@ -1,5 +1,5 @@
 #include <iostream>
-#include "libreria.h"
+#include "libreria.cpp"
 
 int main(){
 	
