@@ -50,8 +50,7 @@ public://EN ESTE PUNTO, SE ENCUENTRAN TODOS LOS METODOS DE LA CLASE.**
 	void dia_calido_prov();
 	void pimientos();
 	void ciud_frio();
-	void ciud_calido();
-	
+	void ciud_calido();	
 };
 
 #endif
