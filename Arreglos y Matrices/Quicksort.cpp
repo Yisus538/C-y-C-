@@ -5,12 +5,12 @@ int particionar(int[],int,int);
 void quickSort(int[],int,int);
 void imprimirArreglo(int[],int);
 
-int main() {
+int main(){
 
     int arreglo[] = {12, 4, 5, 6, 7, 3, 1, 15};
     int tamano = sizeof(arreglo) / sizeof(arreglo[0]);
 
-    std::cout << "Arreglo original: ";
+    std::cout << "Arreglo: ";
     imprimirArreglo(arreglo, tamano);
 
     quickSort(arreglo, 0, tamano - 1);
@@ -20,13 +20,14 @@ int main() {
 
     return 0;
 }
-void imprimirArreglo(int arreglo[], int tamano) {
+void imprimirArreglo(int arreglo[],int tamano) {
     for (int i = 0; i < tamano; i++) {
         std::cout << arreglo[i] << " ";
     }
     std::cout << std::endl;
 }
-void quickSort(int arreglo[], int inicio, int fin) {
+void quickSort(int arreglo[],int inicio,int fin) {
+
     if (inicio < fin) {
         int indicePivote = particionar(arreglo, inicio, fin);
 
@@ -34,7 +35,8 @@ void quickSort(int arreglo[], int inicio, int fin) {
         quickSort(arreglo, indicePivote + 1, fin);
     }
 }
-int particionar(int arreglo[], int inicio, int fin){
+int particionar(int arreglo[],int inicio,int fin){
+
     int pivote = arreglo[fin];
     int i = inicio - 1;
 
