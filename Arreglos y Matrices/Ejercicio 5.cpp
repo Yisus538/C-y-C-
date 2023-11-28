@@ -8,9 +8,6 @@ d. Cantidad de saldos mayores al promedio.
 e. Calcular cuanto fue lo recaudado en el mes.
 */
 #include <stdio.h>
-#include <ctime>
-#include<stdlib.h>
-
 
 int main() {
 	int i=0, cant=0, cant_menores=0, cant_mayores=0;
@@ -26,7 +23,7 @@ int main() {
 	}
 			
 	cant=i-1;
-	prom=sum/(float)cant;
+	prom= sum / static_cast<float>(cant);
 	
 	do{
 		printf("\nMenu\na. Cant. Saldos\nb. Prom. Saldos\nc. Cant. Saldos Menores al Prom.\nd. Cant. Saldos Mayores al Prom.\ne. Recaudacion Mensual\n");
@@ -59,7 +56,7 @@ int main() {
 			break;
 		}
 	
-		printf("\n¿Desea volver al menu (S/N)? ");
+		printf("\nï¿½Desea volver al menu (S/N)? ");
 		scanf(" %c",&op);
 		
 	}while(op=='s' || op=='S');  

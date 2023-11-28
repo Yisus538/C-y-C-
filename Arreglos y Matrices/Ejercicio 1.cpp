@@ -9,18 +9,17 @@ impares.
 
 int main() {
 
-	int i=0, v[5]={0}; // se igualan todas las posiciones a 0
+	int v[5]={0}; // se igualan todas las posiciones a 0
 	srand(time(NULL));
 	printf("Lista de valores\n\n");
-	for(i=0;i<5;i++){
+	for(int i=0;i<5;i++){
 		v[i]=rand()%99;
 		printf("v[%d]=%d\n", i, v[i]);
 	}
 	//Mostrar
 	printf("\n\nValores en posiciones impares\n\n");
-	for(i=0;i<5;i++){
-		if(i%2!=0)
-			printf("v[%d]=%d\n", i, v[i]);
+	for(int i=0;i<5;i++){
+		if(i%2!=0)printf("v[%d]=%d\n", i, v[i]);
 	}
 	
 	return 0;

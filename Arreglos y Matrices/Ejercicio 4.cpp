@@ -7,16 +7,16 @@ Luego mostrar los valores pares.*/
 
 int main() {
 	
-	int i=0, v[10]={0};
+	int v[10]={0};
 	srand(time(NULL));
 	printf("Valores\n");
-	for(i=0;i<10;i++){
+	for(int i=0;i<10;i++){
 		v[i]= rand() % 100 + 1;
 		printf("%d-",v[i]);
 	}
 	
 	printf("\n\nValores pares \n");
-	for(i=0;i<10;i++){
+	for(int i=0;i<10;i++){
 		if(v[i]%2==0)
 			printf("%d-",v[i]);
 		
