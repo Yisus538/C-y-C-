@@ -1,7 +1,7 @@
-/*Dibuje e Implemente la clase remito con sus atributos (número, apellido, 
-cantidad de ladrillos, peso total de la carga) y métodos (setter y getter 
-para cada uno de sus atributos, toString, y cálculo del peso total). 
-Luego cree una función main donde se instancie 2 veces la clase, una con 
+/*Dibuje e Implemente la clase remito con sus atributos (nï¿½mero, apellido, 
+cantidad de ladrillos, peso total de la carga) y mï¿½todos (setter y getter 
+para cada uno de sus atributos, toString, y cï¿½lculo del peso total). 
+Luego cree una funciï¿½n main donde se instancie 2 veces la clase, una con 
 el constructor por defecto y otra con un constructor con datos. 
 
 ---------------------------------------------
@@ -72,5 +72,5 @@ int main(){
 }
 	
 float calcular_peso_total(int cant_ladrillo){
-	return 0.350*cant_ladrillo;
+	return static_cast<float>(0.350 * cant_ladrillo);
 }

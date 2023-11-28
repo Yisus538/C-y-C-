@@ -1,13 +1,13 @@
-/*Diseñar y codificar un programa que permita el ingreso de las toneladas de 
-trigo que se muelen en un mes durante un trimestre.  Luego crear un menú de 
+/*Diseï¿½ar y codificar un programa que permita el ingreso de las toneladas de 
+trigo que se muelen en un mes durante un trimestre.  Luego crear un menï¿½ de 
 opciones que  muestre los siguientes datos:
 
 a. Total de toneladas de trigo molidos en un trimestre. 
 b. Monto recaudado en un trimestre, siendo que un kilo cuesta $50. 
 (1 tonelada = 1000 kg)
-c. El número de mes que se molió más y cuántas toneladas se molieron.
-d. El número de mes que se molió menor y cuántas toneladas se molieron.
-e. Mostrar si la empresa cumplió con la meta de producir mas de 30000 paquetes 
+c. El nï¿½mero de mes que se moliï¿½ mï¿½s y cuï¿½ntas toneladas se molieron.
+d. El nï¿½mero de mes que se moliï¿½ menor y cuï¿½ntas toneladas se molieron.
+e. Mostrar si la empresa cumpliï¿½ con la meta de producir mas de 30000 paquetes 
 de harina en un trimestre. Considerar que un paquete de harina es de 1 kg.
 
 */
@@ -19,7 +19,8 @@ int main(int argc, char *argv[]) {
 	int tonelada=0, i=0, opcion=0, total=0, monto=0, 
 		mayor=0, menor=0, dia_mayor=0, dia_menor=0;
 	char rta=' ';
-	printf("\nIngrese las toneladas por mes del trimestre:\n");
+
+    printf("\nIngrese las toneladas por mes del trimestre:\n");
 	for(i=0; i<3;i++){
 		printf("Mes %d: ", i+1);
 		scanf("%d", &tonelada);
