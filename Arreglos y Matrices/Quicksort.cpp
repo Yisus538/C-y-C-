@@ -1,51 +1,51 @@
-
 #include <iostream>
 
-// Función para intercambiar dos elementos en un array
 void intercambiar(int&,int&);
-int particion(int[],int,int);
-void quicksort(int[],int,int);
+int particionar(int[],int,int);
+void quickSort(int[],int,int);
+void imprimirArreglo(int[],int);
 
 int main() {
 
-    int arr[] = {12, 7, 3, 1, 5, 9};
+    int arreglo[] = {12, 4, 5, 6, 7, 3, 1, 15};
+    int tamano = sizeof(arreglo) / sizeof(arreglo[0]);
 
-    int n = sizeof(arr) / sizeof(arr[0]);
+    std::cout << "Arreglo original: ";
+    imprimirArreglo(arreglo, tamano);
 
-    std::cout << "Arreglo: ";
-    for (int i = 0; i < n; i++) {
-        std::cout << arr[i] << " ";
-    }
+    quickSort(arreglo, 0, tamano - 1);
 
-    quicksort(arr, 0, n - 1);
-
-    std::cout << "\nArreglo ordenado: ";
-    for (int i = 0; i < n; i++) {
-        std::cout << arr[i] << " ";
-    }
+    std::cout << "Arreglo ordenado: ";
+    imprimirArreglo(arreglo, tamano);
 
     return 0;
 }
-void quicksort(int arr[], int bajo, int alto) {
-    if (bajo < alto) {
-        int indicePivote = particion(arr, bajo, alto);
+void imprimirArreglo(int arreglo[], int tamano) {
+    for (int i = 0; i < tamano; i++) {
+        std::cout << arreglo[i] << " ";
+    }
+    std::cout << std::endl;
+}
+void quickSort(int arreglo[], int inicio, int fin) {
+    if (inicio < fin) {
+        int indicePivote = particionar(arreglo, inicio, fin);
 
-        quicksort(arr, bajo, indicePivote - 1);
-        quicksort(arr, indicePivote + 1, alto);
+        quickSort(arreglo, inicio, indicePivote - 1);
+        quickSort(arreglo, indicePivote + 1, fin);
     }
 }
-int particion(int arr[], int bajo, int alto) {
+int particionar(int arreglo[], int inicio, int fin){
+    int pivote = arreglo[fin];
+    int i = inicio - 1;
 
-    int pivote = arr[alto];
-    int i = bajo - 1;
-
-    for (int j = bajo; j < alto; j++) {
-        if (arr[j] <= pivote) {
+    for (int j = inicio; j <= fin - 1; j++) {
+        if (arreglo[j] < pivote) {
             i++;
-            intercambiar(arr[i], arr[j]);
+            intercambiar(arreglo[i], arreglo[j]);
         }
     }
-    intercambiar(arr[i + 1], arr[alto]);
+
+    intercambiar(arreglo[i + 1], arreglo[fin]);
     return i + 1;
 }
 void intercambiar(int& a, int& b) {
