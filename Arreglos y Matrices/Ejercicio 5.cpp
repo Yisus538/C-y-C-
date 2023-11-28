@@ -36,7 +36,7 @@ int main() {
 			printf("\nPromedio de saldos: %0.2f",prom);
 			break;
 		case 'c':
-			cant_menores=0;
+			cant_menores = 0;
 			for(i=0;i<cant;i++){
 				if(v[i]<prom)
 					cant_menores++;

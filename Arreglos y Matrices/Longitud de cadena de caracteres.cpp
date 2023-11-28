@@ -3,16 +3,15 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
 
-int main(int argc,char*argv[]){
+int main(){
 
     char palabra[]= "Hello";
     int longitud = 0;
 
     longitud = strlen(palabra);
 
-    cout<<"Numero de elementos de la cadena es: "<<longitud<<endl;
+    std::cout<<"Numero de elementos de la cadena es: "<<longitud<<std::endl;
 
 
     system("pause");

@@ -30,11 +30,10 @@ del tipo float.
 int main() {
 	
 	float v[5][4]={0}, total=0, dinero=0, vuelto=0;
-	int i=0, j=0;
 	char op=' ';
 		
 	printf("Ingrese los articulos a la factura: \n");
-	for(i=0; i<5; i++){
+	for(int i=0; i<5; i++){
 		printf("Cod.: ");
 		scanf("%f",&v[i][0]);
 		printf("P.U. $: ");
@@ -49,8 +48,8 @@ int main() {
 	printf("\nFactura");
 	printf("\n----------------------------------------------");
 	printf("\nCod\tP.U.\tCant.\tSubtotal\n");
-	for(i=0; i<5; i++){
-		for(j=0; j<4; j++){
+	for(int i=0; i<5; i++){
+		for(int j=0; j<4; j++){
 			printf("%0.2f\t",v[i][j]);
 		}
 		printf("\n");

@@ -4,9 +4,9 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-using namespace std;
 
-int main(int argc,char*argv[]){
+
+int main(){
 
     int vector[100][100]={0},filas=0,columnas=0;
 
@@ -27,11 +27,8 @@ int main(int argc,char*argv[]){
     }
     //Mostrando Matriz
     for(int i=0; i<filas; i++){
-
         for(int j=0; j<columnas; j++){
-
            printf("Fila [%d] Columna[%d] = %d \n",i,j,vector[i][j]);
-           
         }
     }
 

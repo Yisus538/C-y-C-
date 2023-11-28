@@ -5,9 +5,8 @@ del vector.
 */
 #include <stdio.h>
 #include <stdlib.h>
-using namespace std;
 
-int main(int argc,char*argv[]){
+int main(){
 
 
     int vector[5]= {1,4,3,1,2},suma=0,mayor=0;
@@ -28,7 +27,6 @@ int main(int argc,char*argv[]){
     }else{
         printf("No existe un numero que equivale a la suma de los demas.\n");
     }
-
 
     system("pause");
     return 0;

@@ -5,7 +5,6 @@ Finalmente mostrar todos los valores y su promedio.
 
 #include <stdio.h>
 
-
 int main() {
 	int i=0, sum=0, v[5]={0};
 	float prom=0;

@@ -6,7 +6,6 @@ impares.
 #include <ctime>
 #include<stdlib.h>
 
-
 int main() {
 
 	int v[5]={0}; // se igualan todas las posiciones a 0

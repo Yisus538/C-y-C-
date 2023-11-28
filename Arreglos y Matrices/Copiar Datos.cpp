@@ -5,7 +5,6 @@
 #include <iostream>
 #include <string.h>
 
-
 int main(){
 
     char palabra[100]= "",palabra2[100]="";

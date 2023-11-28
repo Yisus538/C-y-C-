@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string.h>
 
-
 int main(){
 
    char nombre[]= "Yisus";

@@ -6,7 +6,7 @@
 
 int main(){
 
-    int vector1[5]={0},vector2[5]={0},multiplicacion=0;
+    int vector1[5]={0},vector2[5]={0};
 
     for(int i=0; i<5; i++){
 

@@ -14,25 +14,25 @@ d. mostrar todos los valores.
 
 int main() {
 	
-	int v[10][10]={0}, i=0, j=0, num=0, cant=0, sum=0;
+	int v[10][10]={0}, num=0, cant=0, sum=0;
 	char op=' ';
 	srand(time(NULL));
 	
 	//Generacion del arreglo con numeros aleatorios
-	for(i=0; i<10; i++){
-		for(j=0; j<10; j++){
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
 			v[i][j] = rand() % 100+1;
 		}
 	}
 	
 	do{
 	printf("MENU DE OPCIONES\n");
-	printf("a. Promedio\nb. Buscar\nc. Mostrar Pares\nd. Mostrar\nIngrese una opción: ");
+	printf("a. Promedio\nb. Buscar\nc. Mostrar Pares\nd. Mostrar\nIngrese una opciï¿½n: ");
 	scanf(" %c",&op);
 	switch(op){
 	case 'a': 
-		for(i=0; i<10; i++){
-			for(j=0; j<10; j++){
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
 				sum=sum+v[i][j];
 			}
 		}
@@ -41,8 +41,8 @@ int main() {
 	case 'b': 
 		printf("\nIngrese el numero a buscar: ");
 		scanf("%d",&num);
-		for(i=0; i<10; i++){
-			for(j=0; j<10; j++){
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
 				if(v[i][j]==num){
 					cant++;
 				}
@@ -52,8 +52,8 @@ int main() {
 		break;
 	case 'c': 
 		printf("\nNumeros Pares\n");
-		for(i=0; i<10; i++){
-			for(j=0; j<10; j++){
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
 				if(v[i][j]%2==0){
 					printf("%d\t",v[i][j]);
 				}else{
@@ -65,8 +65,8 @@ int main() {
 		break;
 	case 'd': 
 		printf("\nNumeros \n");
-		for(i=0; i<10; i++){
-			for(j=0; j<10; j++){
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
 				printf("%d\t",v[i][j]);
 			}
 			printf("\n");
@@ -74,7 +74,7 @@ int main() {
 		break;
 	}
 	
-	printf("\n¿Desea seguir (S/N)? ");
+	printf("\nï¿½Desea seguir (S/N)? ");
 	scanf(" %c",&op);
 	
 	}while(op=='s' || op=='S');

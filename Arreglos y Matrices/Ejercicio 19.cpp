@@ -3,9 +3,9 @@
 */
 #include <iostream>
 #include <conio.h>
-using namespace std;
 
-int main(int argc,char*argv[]){
+
+int main(){
 
     int vector1[2][2]={{1,2},{3,4}};
     int vector2[2][2]={};
@@ -19,13 +19,10 @@ int main(int argc,char*argv[]){
         }
     }
     for(int i=0; i<2; i++){
-
         for(int j=0; j<2; j++){
-
-           cout<<vector2[i][j];
-           
+           std::cout<<vector2[i][j];
         }
-        cout<<"\n";
+        std::cout<<"\n";
     }
 
     getch();

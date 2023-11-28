@@ -3,9 +3,8 @@
 */
 #include <stdio.h>
 #include <conio.h>
-using namespace std;
 
-int main(int argc,char*argv[]){
+int main(){
 
     int numeros[]={1,2,3,4,5};
 
