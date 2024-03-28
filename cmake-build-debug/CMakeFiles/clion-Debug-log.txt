@@ -1,1 +1,0 @@
-CMakeLists.txt not found in C:\Users\jmanu\CLionProjects\C-y-C- Select CMakeLists.txt

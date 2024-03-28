@@ -359,9 +359,9 @@ void libreria::pimientos(){//MEJOR PROVINCIA PARA EL CULTIVO DE PIMIENTOS...
 	prom_temp_provincia(2,prom_Stafe);
 	prom_temp_provincia(3,prom_Men);
 	
-	abs((int)prom_Cba);
-	abs((int)prom_Men);
-	abs((int)prom_Stafe);
+	abs(static_cast<int>(prom_Cba));
+	abs(static_cast<int>(prom_Men));
+	abs(static_cast<int>(prom_Stafe));
 
 	diferencia1 = 23 - static_cast<float>(prom_Cba);
 	diferencia2 = 23 - static_cast<float>(prom_Stafe);//CALCULA QUE TEMPERATURA ES MAS SIMILAR A LOS 25�...
@@ -415,7 +415,7 @@ void libreria::ciud_frio(){//CALCULO DE LA CIUDAD MAS FRIA...
 			}
 			aux=aux->next;
 		}
-	}		
+	}	
 	printf("La ciudad mas fria de cordoba es %s con un promedio de: %.2f �\n",text,menor_promedio);//PRINTEO DE LA CIUDAD CON EL MENOR PROMEDIO...
 	
 	if(Empty(this->Santa_fe)){
