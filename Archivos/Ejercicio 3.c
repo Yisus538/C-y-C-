@@ -10,7 +10,7 @@ c) leer un archivo.
 void check_null(FILE*);
 
 int main() {
-	FILE *fp=NULL;
+	FILE* fp=NULL;
 	char opcion=' ', rta=' ';
 	char cadena[1000];
 	
@@ -54,7 +54,7 @@ int main() {
 			break;
 		}
 		}//cierra switch 
-		printf("\n¿Quiere seguir operando? S/N\n");
+		printf("\nï¿½Quiere seguir operando? S/N\n");
 		scanf(" %c",&rta);
 	}while(rta=='s'|| rta=='S');
 	return 0;

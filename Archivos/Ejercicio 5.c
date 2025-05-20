@@ -1,5 +1,5 @@
 /*Escribir un programa que solicite los datos de un producto (nombre del 
-producto, marca, precio unitario, fecha de elaboracion, tamaño) y lo guarde 
+producto, marca, precio unitario, fecha de elaboracion, tamaï¿½o) y lo guarde 
 en un archivo de texto con el nombre "Datos_Producto.txt".*/
 
 #include <stdio.h>
@@ -14,7 +14,7 @@ struct Producto{
 void check_null(FILE*);
 
 int main() {
-	FILE *fp = fopen("Datos_Producto.txt", "w");
+	FILE* fp = fopen("Datos_Producto.txt", "w");
 	check_null(fp);
 	struct Producto p;
 	printf("Nombre: ");
@@ -25,7 +25,7 @@ int main() {
 	scanf("%f",&p.precio_unitario);
 	printf("Fecha de Elaboracion: ");
 	scanf("%s",p.fecha_elaboracion);
-	printf("Tamaño: ");
+	printf("Tamaï¿½o: ");
 	scanf("%s",p.tamanio);
 	//grabo en el archivo
 	fprintf(fp,"%s\n%s\n%f\n%s\n%s\n", p.nombre, p.marca, p.precio_unitario, p.fecha_elaboracion, p.tamanio);
@@ -43,7 +43,7 @@ int main() {
 	return 0;
 }
 
-void check_null(FILE *fp){
+void check_null(FILE* fp){
 	if(fp==NULL){
 		printf("Imposible abrir el archivo");
 		exit(1);

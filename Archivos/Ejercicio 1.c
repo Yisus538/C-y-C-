@@ -10,7 +10,7 @@ void check_null(FILE*);
 
 int main() {
 	
-	FILE *fp=NULL;
+	FILE* fp=NULL;
 	
 	char nombre[30], apellido[10], nacionalidad[20];
 	long dni=0;
@@ -34,7 +34,7 @@ int main() {
 	fclose(fp);
 	
 	//abrir y leer el archivo
-	fp=fopen("datos_personales.txt","r");
+	fp = fopen("datos_personales.txt","r");
 	check_null(fp);
 	while(!feof(fp)){
 		fscanf(fp,"%s\n%s\n%ld\n%d\n%s\n", &nombre, &apellido, &dni, &edad, &nacionalidad);

@@ -9,7 +9,7 @@ void check_null(FILE*);
 
 int main() {
 	
-	FILE *fp=NULL;
+	FILE* fp=NULL;
 	int i=0, j=0, pares[50]={0};
 	
 	fp=fopen("pares.txt","w");

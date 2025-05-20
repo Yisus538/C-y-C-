@@ -11,7 +11,7 @@ void CHECK_NULL(FILE *);
 
 int main() {
 
-    FILE *archivo{fopen("el_quijote.txt","r")}; 
+    FILE* archivo{fopen("el_quijote.txt","r")}; 
     
     CHECK_NULL(archivo);
 
@@ -36,7 +36,7 @@ int main() {
 
     return 0;
 }
-void CHECK_NULL(FILE *archivo){
+void CHECK_NULL(FILE* archivo){
 	if(archivo==nullptr){
 		printf("Imposible abrir el archivo");
 		exit(1);
