@@ -371,7 +371,7 @@ void libreria::pimientos(){//MEJOR PROVINCIA PARA EL CULTIVO DE PIMIENTOS...
 		std::cout<<"Cordoba es la mejor provincia para cultivar pimientos"<<std::endl;
 	}
 	else if(diferencia2<diferencia3){
-		std::cout<<"SantaFe es la mejor provincia para cultivar pimientos y solo para eso sirve"<<std::endl;
+		std::cout<<"SantaFe es la mejor provincia para cultisvar pimientos y solo para eso sirve"<<std::endl;
 	}
 	else{
 		std::cout<<"Mendoza es la mejor provincia para cultivar pimientos"<<std::endl;
@@ -552,7 +552,7 @@ void libreria::ciud_calido(){//CALCULO DE LA CIUDAD MAS CALIDA...
 	if(Empty(this->Mendoza)){
 		std::cout<<"La lista Mendoza esta vacia."<<std::endl;
 	}else{		
-		city *aux{this->Mendoza};
+		city* aux{this->Mendoza};
 		
 		auxid=aux->cityId;
 		while(aux!=nullptr){//CALCULA LOS PROMEDIOS DE LAS CIUDADES COMO EN EL INCISO N�3...
