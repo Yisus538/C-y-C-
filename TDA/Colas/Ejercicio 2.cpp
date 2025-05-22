@@ -6,7 +6,7 @@
 struct Nodo{
 
     int dato;
-    Nodo *siguiente;
+    Nodo* siguiente;
 
 };
 

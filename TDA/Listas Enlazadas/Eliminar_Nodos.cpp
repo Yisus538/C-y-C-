@@ -2,12 +2,12 @@
 #include <iostream>
 #include <stdlib.h>
 
-struct Nodo{
+typedef struct Nodo{
 
     int dato;
     Nodo* siguiente;
 
-};
+}Nodo;
 
 void Insertar_Elemento(Nodo*&,Nodo*,Nodo*,int);
 void Mostrar_Elementos(Nodo*,Nodo*);

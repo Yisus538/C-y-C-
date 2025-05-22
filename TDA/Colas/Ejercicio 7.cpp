@@ -9,21 +9,21 @@ estar repetido en la cola)
 #include <iostream>
 #include <ctime>
 
-struct node{
+typedef struct node{
 	int data;
-	struct node *link;
-};
+	node* link;
+}node;
 
 int menu();
-void push(struct node**, struct node**, int);
-void pop(struct node**, struct node** );
-void print(struct node*);
-bool check_repeated(struct node*, int);
+void push(node**, node**, int);
+void pop(node**, node** );
+void print(node*);
+bool check_repeated(node*, int);
 
 int main() {
 	
-	struct node* front = nullptr;
-	struct node* back = nullptr;
+	node* front = nullptr;
+	node* back = nullptr;
 	int value=0, op=0, i=0;
 	srand(time(NULL));
 	
@@ -71,8 +71,8 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node** front, struct node** back, int d){
-	struct node *temp;
+void push(node** front, node** back, int d){
+	node* temp;
 	temp=new node();
 	if(temp==nullptr){
 		printf("No hay suficiente memoria");
@@ -89,8 +89,8 @@ void push(struct node** front, struct node** back, int d){
 	}
 }
 		
-void pop(struct node** front, struct node** back){
-	struct node* temp;
+void pop(node** front, node** back){
+	node* temp;
 	if((*front==*back)&&(*back==nullptr)){
 		printf("Vacia\n");
 		exit(0);
@@ -104,8 +104,8 @@ void pop(struct node** front, struct node** back){
 	free(temp);
 }
 			
-void print(struct node* front){
-	struct node* temp {nullptr};
+void print(node* front){
+	node* temp {nullptr};
 	temp=front;
 	printf("Impresion de la cola\n");
 	while(temp!=nullptr){
@@ -114,9 +114,9 @@ void print(struct node* front){
 	}
 }
 
-bool check_repeated(struct node* front, int value){
+bool check_repeated(node* front, int value){
 	bool repeated=false;
-	struct node* temp {nullptr};
+	node* temp {nullptr};
 	temp=front;
 	while(temp!=nullptr){
 		if(temp->data==value){

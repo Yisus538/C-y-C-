@@ -9,19 +9,19 @@ Ejercicio 2: Hacer un programa en C++, utilizando pilas que contenga el siguient
 #include <stdlib.h>
 using namespace std;
 
-struct Node{
+typedef struct Node{
 
     char data;
     Node *next;
 
-};
+}Node;
 
 void push(Node **head,int dato);
 void Empty(Node **head,int &dato);
 
 int main(int argc,char**argv){
 
-    Node *head = NULL;
+    Node* head = NULL;
     int  opc = 0;
     char rta = ' ',dato = ' ';
 
@@ -68,18 +68,18 @@ int main(int argc,char**argv){
     system("pause");
     return 0;
 }
-void push(Node **head,int dato){
+void push(Node** head,int dato){
 
-    Node *new_node = new Node();
+    Node* new_node = new Node();
     new_node->data = dato;
     new_node->next  = *(head);
     *(head) = new_node;
 
 
 }
-void Empty(Node **head,int &dato){
+void Empty(Node** head,int &dato){
 
-    Node *aux = *(head);
+    Node* aux = *(head);
     dato = aux->data;
     *(head) = aux->next; 
     delete aux;

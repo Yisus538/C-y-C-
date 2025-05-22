@@ -15,33 +15,33 @@ a Sur (NS) o Sur a Norte (SN). Luego, arme un menu de opciones que muestre lo si
 #include <ctime>
 #include <string.h>
 
-struct vehicle{
+typedef struct vehicle{
 	int patent;
 	int amount;
 	float price;
 	std::string direction;
-};
+}vehicle;
 
-struct node{
-	struct vehicle v;
-	struct node *next;
-};
+typedef struct node{
+	vehicle v;
+	node* next;
+}node;
 
 /*Prototipado de funciones*/
 int menu(void);
-void push(struct node **, struct vehicle);
-void pop(struct node **);
-void print(struct node **);
-bool isempty(struct node *);
-void print_direction(struct node **);
-void print_axis(struct node **);
+void push(node**,vehicle);
+void pop(node**);
+void print(node**);
+bool isempty(node*);
+void print_direction(node**);
+void print_axis(node**);
 
-void print_pair(struct node **);
+void print_pair(node**);
 
 int main() {
 	int op=0;
-	struct node *stack_p =NULL;
-	struct vehicle v;
+	node* stack_p =NULL;
+	vehicle v;
 	
 	do{
 		op=menu();
@@ -111,11 +111,11 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node **sp, struct vehicle v){
+void push(node **sp, vehicle v){
 
-	struct node *new_node = NULL;
+	node *new_node = NULL;
 	/* Creacion de memoria*/
-	new_node = (struct node*)malloc(sizeof(struct node));
+	new_node = (node*)malloc(sizeof(node));
 	/*Verificacion de memoria disponible*/
 	if(new_node==NULL){
 		printf("No hay memoria disponible");
@@ -129,16 +129,16 @@ void push(struct node **sp, struct vehicle v){
 	*(sp)=new_node;	
 }
 	
-bool isempty(struct node *sp){
+bool isempty(node *sp){
 	if(sp==NULL)
 		return(true);
 	else
 		return(false);
 }
 
-void pop(struct node **sp){
+void pop(node **sp){
 	if(isempty(*sp)==false){
-		struct node *temp=NULL;	
+		node *temp=NULL;	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -150,12 +150,12 @@ void pop(struct node **sp){
 	}
 }
 
-void print(struct node **sp){
+void print(node **sp){
 	if(isempty(*sp)==false){
 		std::cout<<"Impresion de la pila\n";
 		std::cout<<"Pat.\tCant.\tPrec.\tDirec.\n";
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node *temp;
+		node *temp;
 		temp=*(sp);
 		while(temp!=NULL){
 			std::cout<<temp->v.patent<<"\t"<<temp->v.amount<<"\t"<<temp->v.price<<"\t"<<temp->v.direction<<"\n";
@@ -167,8 +167,8 @@ void print(struct node **sp){
 	}
 }
 	
-void print_direction(struct node **sp){
-	struct node *temp;
+void print_direction(node **sp){
+	node *temp;
 	temp=*(sp);
 	std::cout<<"Impresion de la pila por direccion NS\n";
 	std::cout<<"Pat.\tCant.\tPrec.\n";
@@ -189,8 +189,8 @@ void print_direction(struct node **sp){
 	}
 }
 		
-void print_axis(struct node **sp){
-	struct node *temp;
+void print_axis(node **sp){
+	node *temp;
 	temp=*(sp);
 	std::cout<<"Impresion de la cola con 1 eje\n";
 	std::cout<<"Pat.\tPrec.\tDirec.\n";

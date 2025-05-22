@@ -7,7 +7,7 @@ Recuerden descargar el archivo en el mismo lugar donde corren el programa.
 #include <string.h>
 
 
-void CHECK_NULL(FILE *);
+void CHECK_NULL(FILE*);
 
 int main() {
 

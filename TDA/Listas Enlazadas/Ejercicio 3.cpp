@@ -4,17 +4,17 @@
 #include <iostream>
 #include <ctime>
 
-struct node{
+typedef struct node{
 	int data;
 	struct node *next;
-};
+}node;
 
 int main() {
 	
 
-	struct node* head{nullptr};
-	struct node* temp{ nullptr};
-	struct node *new_node{nullptr};
+	node* head{nullptr};
+	node* temp{ nullptr};
+	node* new_node{nullptr};
 	
 	int dato=0, i=0;
 	srand(time(NULL));

@@ -21,13 +21,13 @@ pares para el aprendizaje de un idioma.
 #include <iostream>
 #include <ctime>
 
-void mostrar_notas(int nota[10][2]);
-void buscar_nota_mayor(int nota[10][2]);
-void buscar_nota_menor(int nota[10][2]);
-void ordenar_por_notas(int nota[10][2]);
-int contar_aprobados(int nota[10][2]);
-int contar_desaprobados(int nota[10][2]);
-void armar_grupos(int nota[10][2]);
+void mostrar_notas(int [10][2]);
+void buscar_nota_mayor(int[10][2]);
+void buscar_nota_menor(int[10][2]);
+void ordenar_por_notas(int[10][2]);
+int contar_aprobados(int[10][2]);
+int contar_desaprobados(int[10][2]);
+void armar_grupos(int[10][2]);
 
 using namespace std;
 
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 			armar_grupos(nota);
 			break;
 		}
-		printf("\n\n¿Desea seguir (S/N)? ");
+		printf("\n\nï¿½Desea seguir (S/N)? ");
 		scanf(" %c",&op);
 		
 	}while(op=='s' || op=='S');

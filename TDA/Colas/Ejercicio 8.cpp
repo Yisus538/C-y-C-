@@ -11,30 +11,30 @@ Desarrollar las siguientes funciones:
 #include <iostream>
 #include <ctime>
 
-struct product{
+typedef struct product{
 	int code;
 	std::string name;
 	int amount;
 	float price;
-};
+}product;
 
-struct node{
-	struct product p;
-	struct node *link;
-};
+typedef struct node{
+	product p;
+	node* link;
+}node;
 
 int menu();
-void push(struct node **, struct node **, struct product);
-void pop(struct node **, struct node **);
-void print(struct node *);
-void discount(struct node *, int, int);
-void replace(struct node *, int, int);
+void push(node**, node**, product);
+void pop(node**, node**);
+void print(node*);
+void discount(node*, int, int);
+void replace(node*, int, int);
 
 int main(int argc, char *argv[]) {
 	
-	struct node* front {nullptr};
-	struct node* back {nullptr};
-	struct product p;
+	node* front {nullptr};
+	node* back {nullptr};
+	product p;
 	int op=0, code=0, amount=0;
 	do{
 		op=menu();
@@ -87,9 +87,9 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node **front, struct node **back, struct product p){
-	struct node *temp;
-	temp=(struct node *)malloc(sizeof(struct node));
+void push(node** front, node** back, product p){
+	node* temp;
+	temp=(node*)malloc(sizeof(node));
 	if(temp==nullptr){
 		std::cout<<"No hay suficiente memoria";
 		exit(0);
@@ -105,8 +105,8 @@ void push(struct node **front, struct node **back, struct product p){
 	}
 }
 		
-void pop(struct node **front, struct node **back){
-	struct node *temp;
+void pop(node** front, node** back){
+	node* temp;
 	if((*front==*back)&&(*back==nullptr)){
 		std::cout<<"Vacia\n";
 		exit(0);
@@ -120,8 +120,8 @@ void pop(struct node **front, struct node **back){
 	free(temp);
 }
 			
-void print(struct node *front){
-	struct node *temp {nullptr};
+void print(node* front){
+	node* temp {nullptr};
 	temp=front;
 	std::cout<<"Impresion de la cola\n";
 	std::cout<<"Cod.\tNombre\tCant.\tPrecio\n";
@@ -131,8 +131,8 @@ void print(struct node *front){
 	}
 }
 
-void discount(struct node *front, int code, int amount){
-	struct node *temp {nullptr};
+void discount(node* front, int code, int amount){
+	node* temp {nullptr};
 	temp=front;
 	while(temp!=nullptr){
 		if(temp->p.code==code){
@@ -142,8 +142,8 @@ void discount(struct node *front, int code, int amount){
 	}
 }
 
-void replace(struct node *front, int code, int amount){
-	struct node *temp {nullptr};
+void replace(node* front, int code, int amount){
+	node* temp {nullptr};
 	temp=front;
 	while(temp!=nullptr){
 		if(temp->p.code==code){

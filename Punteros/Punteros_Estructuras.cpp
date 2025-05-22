@@ -9,7 +9,7 @@ struct Persona{
 }persona, *puntero_persona{&persona};
 
 void Pedirdatos();
-void Mostrar(Persona *);
+void Mostrar(Persona*);
 
 int main(){
 

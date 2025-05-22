@@ -15,7 +15,7 @@ void mostrarMinuscula(char*);
 
 int main() {
 	char abc[26] = {' '};
-	char *ptr_abc=&abc[0];
+	char* ptr_abc=&abc[0];
 	
 	for(int i=0;i<26;i++){
 		abc[i]=65+i;
@@ -27,14 +27,14 @@ int main() {
 	return 0;
 }
 
-void mostrarMayuscula(char *ptr_abc){
+void mostrarMayuscula(char* ptr_abc){
 	printf("\nAbecededario en mayuscula\n");
 	for(int i=0;i<26;i++){
 		printf("%c\t",toupper(*ptr_abc+i));
 	}
 }
 
-void mostrarMinuscula(char *ptr_abc){
+void mostrarMinuscula(char* ptr_abc){
 	printf("\nAbecededario en minuscula\n");
 	for(int i=0;i<26;i++){
 		printf("%c\t",tolower(*ptr_abc+i));

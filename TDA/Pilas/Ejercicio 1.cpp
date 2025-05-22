@@ -5,12 +5,12 @@ Ejercicio 1: hacer un programa para ingresar numeros enteros a una pila hasta qu
 #include <iostream>
 #include <stdlib.h>
 
-struct Node{
+typedef struct Node{
 
     int data;
     Node* next;
 
-};
+}Node;
 
 void push(Node**,int );
 void Empty(Node**,int&);

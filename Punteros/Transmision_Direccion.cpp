@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 
-void Intercambio(float *,float *);
+void Intercambio(float*,float*);
 
 int main(){
 

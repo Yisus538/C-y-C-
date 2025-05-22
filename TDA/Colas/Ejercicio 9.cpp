@@ -15,30 +15,30 @@ a Sur (NS) o Sur a Norte (SN). Luego, arme un menu de opciones que muestre lo si
 #include <ctime>
 #include <string.h>
 
-struct vehicle{
+typedef struct vehicle{
 	int patent;
 	int amount;
 	float price;
 	std::string direction;
-};
+}vehicle;
 
-struct node{
-	struct vehicle v;
-	struct node *link;
-};
+typedef struct node{
+	vehicle v;
+	node* link;
+}node;
 
 int menu();
-void push(struct node **, struct node **, struct vehicle);
-void pop(struct node **, struct node **);
-void print(struct node *);
-void print_direction(struct node *);
-void print_axis(struct node *);
+void push(node**, node**, vehicle);
+void pop(node**, node**);
+void print(node*);
+void print_direction(node*);
+void print_axis(node*);
 
 int main() {
 	
-	struct node *front {nullptr};
-	struct node *back {nullptr};
-	struct vehicle v;
+	node* front {nullptr};
+	node* back {nullptr};
+	vehicle v;
 	int op=0;
 	do{
 		op=menu();
@@ -98,8 +98,8 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node** front, struct node** back, struct vehicle v){
-	struct node *temp;
+void push(node** front, node** back, vehicle v){
+	node* temp;
 	temp=new node();
 	if(temp==nullptr){
 		std::cout<<"No hay suficiente memoria";
@@ -115,8 +115,8 @@ void push(struct node** front, struct node** back, struct vehicle v){
 		*back=temp;
 	}
 }		
-void pop(struct node** front, struct node** back){
-	struct node *temp;
+void pop(node** front, node** back){
+	node* temp;
 	if((*front==*back)&&(*back==nullptr)){
 		std::cout<<"Vacia\n";
 		exit(0);
@@ -130,8 +130,8 @@ void pop(struct node** front, struct node** back){
 	delete temp;
 }
 			
-void print(struct node* front){
-	struct node *temp {nullptr};
+void print(node* front){
+	node* temp {nullptr};
 	temp=front;
 	std::cout<<"Impresion de la cola\n";
 	std::cout<<"Pat.\tCant.\tPrec.\tDirec.\n";
@@ -141,8 +141,8 @@ void print(struct node* front){
 	}
 }
 
-void print_direction(struct node* front){
-	struct node *temp {nullptr};
+void print_direction(node* front){
+	node* temp {nullptr};
 	temp=front;
 	std::cout<<"Impresion de la cola por direccion NS\n";
 	std::cout<<"Pat.\tCant.\tPrec.\n";
@@ -163,8 +163,8 @@ void print_direction(struct node* front){
 	}
 }
 
-void print_axis(struct node* front){
-	struct node *temp {nullptr};
+void print_axis(node* front){
+	node* temp {nullptr};
 	temp=front;
 	std::cout<<"Impresion de la cola con 1 eje\n";
 	std::cout<<"Pat.\tPrec.\tDirec.\n";

@@ -14,7 +14,7 @@ minusculas entre  97 a 122 inclusive.*/
 
 typedef struct node{
 	char data;
-	node *link;
+	node* link;
 }node;
 
 int menu();

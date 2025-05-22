@@ -12,7 +12,7 @@ int main(){
     printf("Ingrese el tamaño del arreglo: \n");
     scanf(" %d", &tam);
 
-    ptr = (int *)malloc(sizeof(int)*tam);
+    ptr = (int*)malloc(sizeof(int)*tam);
 
     for(int i = 0; i < tam; i++){
         printf("Ingrese un numero: ");

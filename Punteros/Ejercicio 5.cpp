@@ -20,7 +20,7 @@ Libreria: #include <math.h>
 int main() {
 	char op=' ';
 	float n1=0, n2=0;
-	float *ptr_n1=&n1, *ptr_n2=&n2;
+	float* ptr_n1=&n1,* ptr_n2=&n2;
 		
 	do{
 		printf("Ingrese dos numeros:\n");   
@@ -55,7 +55,7 @@ int main() {
 				printf("Resultado de la raiz cuadrada de n2: %0.2f\n",sqrt(*ptr_n2)); 
 			break;
 		}
-		printf("\n¿Desea seguir (S/N)? ");
+		printf("\nï¿½Desea seguir (S/N)? ");
 		scanf(" %c",&op);
 	}while(op=='s' || op=='S');
 	return 0;

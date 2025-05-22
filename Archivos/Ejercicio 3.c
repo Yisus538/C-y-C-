@@ -53,14 +53,14 @@ int main() {
 			fclose(fp);
 			break;
 		}
-		}//cierra switch 
-		printf("\n�Quiere seguir operando? S/N\n");
+		}
+		printf("\nQuiere seguir operando? S/N\n");
 		scanf(" %c",&rta);
 	}while(rta=='s'|| rta=='S');
 	return 0;
 }
 
-void check_null(FILE *fp){
+void check_null(FILE* fp){
 	if(fp==NULL){
 		printf("Imposible abrir el archivo");
 		exit(1);

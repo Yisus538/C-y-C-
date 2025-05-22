@@ -18,7 +18,7 @@ int main() {
 	}
 		
 	float sum=0, prom=0;
-	float *ptr_sum=&sum, *ptr_prom=&prom;
+	float* ptr_sum=&sum, *ptr_prom=&prom;
 	
 		
 	for(int i=0;i<5;i++){

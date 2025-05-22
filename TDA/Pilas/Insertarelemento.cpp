@@ -1,12 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
 
-struct Node{
+typedef struct Node{
 
     int data;
-    Node *next;
+    Node* next;
 
-};
+}Node;
 
 
 void push(Node**,int);
@@ -23,9 +23,9 @@ int main(){
     system("pause");
     return 0;
 }
-void push(Node **sp,int dato){
+void push(Node** sp,int dato){
 
-    Node *new_node = new Node();
+    Node* new_node = new Node();
     new_node->data = dato;
     new_node->next  = *(sp);
     *(sp) = new_node;

@@ -45,7 +45,7 @@ int main() {
 	return 0;
 }
 
-void check_null(FILE *fp){
+void check_null(FILE* fp){
 	if(fp==NULL){
 		printf("Imposible abrir el archivo");
 		exit(1);

@@ -9,24 +9,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node{
+typedef struct node{
 	int data;
-	struct node* next;
-};
+	node* next;
+}node;
 
 
 int menu(void);
-void push(struct node**, int);
-void pop(struct node**);
-void print(struct node**);
-bool isEmpty(struct node *);
-int add(struct node**);
-int count_nodes(struct node**);
+void push(node**, int);
+void pop(node**);
+void print(node**);
+bool isEmpty(node *);
+int add(node**);
+int count_nodes(node**);
 
 int main() {
 	
 	int op=0, value=0, i=0;
-	struct node *stack_p {nullptr};
+	node* stack_p {nullptr};
 
 	do{
 		op=menu();
@@ -75,11 +75,11 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node** sp, int value){
+void push(node** sp, int value){
 	
-	struct node *new_node {nullptr};
+	node* new_node {nullptr};
 	/* Creacion de memoria*/
-	new_node = (struct node*)malloc(sizeof(struct node));
+	new_node = (node*)malloc(sizeof(node));
 	
 	if(new_node==NULL){
 		printf("No hay memoria disponible");
@@ -93,13 +93,13 @@ void push(struct node** sp, int value){
 	*(sp)=new_node;	
 }
 	
-bool isEmpty(struct node* sp){
+bool isEmpty(node* sp){
 	return (sp==nullptr);
 }
 
-void pop(struct node** sp){
+void pop(node** sp){
 	if(isEmpty(*sp)==false){
-		struct node *temp{nullptr};	
+		node* temp{nullptr};	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -111,11 +111,11 @@ void pop(struct node** sp){
 	}
 }
 
-void print(struct node** sp){
+void print(node** sp){
 	if(isEmpty(*sp)==false){
 		printf("Pila\n");
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=nullptr){
 			printf("%d\n", temp->data);
@@ -127,11 +127,11 @@ void print(struct node** sp){
 	}
 }
 
-int add(struct node** sp){
+int add(node** sp){
 	int suma=0;
 	if(isEmpty(*sp)==false){
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node* temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=nullptr){
 			suma+=temp->data;
@@ -143,10 +143,10 @@ int add(struct node** sp){
 	}
 	return suma;
 }
-int count_nodes(struct node** sp){
+int count_nodes(node** sp){
 	int acum=0;
 	if(isEmpty(*sp)==false){
-		struct node *temp;
+		node* temp;
 		temp=(*sp);
 		while(temp!=nullptr){
 			acum+=1;

@@ -1,12 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
 
-struct Nodo{
+typedef struct Nodo{
 
     int dato;
     Nodo* siguiente;
 
-};
+}Nodo;
 
 void Insertar_Cola(Nodo*&,Nodo*&,int);
 bool cola_vacia(Nodo*);
@@ -42,7 +42,7 @@ int main(){
 }
 void Insertar_Cola(Nodo*& frente,Nodo*& fin,int dato){
 
-    Nodo *nuevo_nodo = new Nodo();
+    Nodo* nuevo_nodo = new Nodo();
     nuevo_nodo->dato = dato;
     nuevo_nodo->siguiente = nullptr;
 
@@ -56,9 +56,7 @@ void Insertar_Cola(Nodo*& frente,Nodo*& fin,int dato){
 
 }
 bool cola_vacia(Nodo* frente){
-
     return (frente == nullptr);
-
 }
 void Suprimir_Cola(Nodo*& frente,Nodo* &fin,int& dato){
 

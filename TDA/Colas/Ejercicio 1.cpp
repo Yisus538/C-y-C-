@@ -6,12 +6,12 @@
 #include <iostream>
 #include <stdlib.h>
 
-struct Nodo{
+typedef struct Nodo{
 
     char dato;
     Nodo* siguiente;
 
-};
+}Nodo;
 
 void Insertar_Cola(Nodo*&,Nodo*&,char);
 void Mostrar(Nodo*);

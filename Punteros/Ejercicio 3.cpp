@@ -8,7 +8,7 @@ puntero.*/
 
 int main(){
 	int a=10;
-	int *ptr_a;
+	int* ptr_a;
 	ptr_a=&a; //se asigna la direccion de la variable (a) al puntero (ptr_a)
 	
 	printf("Direccion de memoria de la variable: %X\n", &a);

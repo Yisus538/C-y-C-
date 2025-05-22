@@ -14,10 +14,10 @@ siguientes resultados.
 
 #include <stdio.h>
 
-int cargar_datos(int v[100][3]);
-void mostrar_listado(int v[100][3], int);
-void calcular_cantidad(int v[100][3], int);
-void calcular_ganadores(int v[100][3], int);
+int cargar_datos(int[100][3]);
+void mostrar_listado(int[100][3], int);
+void calcular_cantidad(int[100][3], int);
+void calcular_ganadores(int[100][3], int);
 
 using namespace std;
 int main(){
@@ -35,7 +35,7 @@ int cargar_datos(int v[100][3]){
 	printf("\nIngrese la cantidad de corredores: ");
 	scanf("%d",&cant);
 	for (int i = 0; i < cant; i++){
-		printf("N° Corredor: ");
+		printf("Nï¿½ Corredor: ");
 		scanf("%d", &v[i][0]);
 		printf("Tipo prueba [3km - 8km]: ");
 		scanf("%d",&v[i][1]);             
@@ -46,7 +46,7 @@ int cargar_datos(int v[100][3]){
 }
 
 void mostrar_listado(int v[100][3],int cant){
-     printf("\n\nN°\tPrueba\tTiempo [minutos]\n");
+     printf("\n\nNï¿½\tPrueba\tTiempo [minutos]\n");
      for(int i = 0; i < cant; i++){
          for (int j = 0; j < 3; j++){
               printf("%d\t",v[i][j]);              
@@ -91,6 +91,6 @@ void calcular_ganadores(int v[100][3],int cant){
 			}
 		}
 	}
-	printf("\n\nGanador de la carrera 3 km. N° Corredor: %d Tiempo: %d", ganador_3, menor_tiempo_3);
-	printf("\nGanador de la carrera 8 km. N° Corredor: %d Tiempo: %d", ganador_8, menor_tiempo_8);
+	printf("\n\nGanador de la carrera 3 km. Nï¿½ Corredor: %d Tiempo: %d", ganador_3, menor_tiempo_3);
+	printf("\nGanador de la carrera 8 km. Nï¿½ Corredor: %d Tiempo: %d", ganador_8, menor_tiempo_8);
 }

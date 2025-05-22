@@ -1,15 +1,15 @@
 #include <iostream>
 #include <stdlib.h>
 
-struct Nodo{
+typedef struct Nodo{
 
     int dato;
-    struct Nodo* siguiente;
+    Nodo* siguiente;
 
-};
+}Nodo;
 
-void Insertar_Elemento(struct Nodo*&,int);
-void Mostrar_Elemento(struct Nodo*);
+void Insertar_Elemento(Nodo*&,int);
+void Mostrar_Elemento(Nodo*);
 
 int main(){
 
@@ -30,11 +30,11 @@ int main(){
 }
 void Insertar_Elemento(Nodo*& lista,int dato){
 
-    Nodo *nuevo_nodo = new Nodo();
+    Nodo* nuevo_nodo = new Nodo();
     nuevo_nodo->dato = dato;
 
-    Nodo *aux1 = lista;
-    Nodo *aux2;
+    Nodo* aux1 = lista;
+    Nodo* aux2;
 
     while((aux1 != nullptr) && (aux1->dato < dato)){
         aux2 = aux1;

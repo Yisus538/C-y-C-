@@ -18,7 +18,7 @@ int main() {
 	
 	fp=fopen("datos_personales.txt","w");
 	check_null(fp);
-	//solicito los datos
+	
 	printf("Nombre: ");
 	scanf("%s",nombre);
 	printf("Apellido: ");
@@ -33,7 +33,7 @@ int main() {
 	fprintf(fp,"%s\n%s\n%ld\n%d\n%s\n", nombre, apellido, dni, edad, nacionalidad);
 	fclose(fp);
 	
-	//abrir y leer el archivo
+	
 	fp = fopen("datos_personales.txt","r");
 	check_null(fp);
 	while(!feof(fp)){
@@ -44,7 +44,7 @@ int main() {
 	return 0;
 }
 
-void check_null(FILE *fp){
+void check_null(FILE* fp){
 	if(fp==NULL){
 		printf("Imposible abrir el archivo");
 		exit(1);

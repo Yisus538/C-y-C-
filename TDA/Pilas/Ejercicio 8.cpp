@@ -11,33 +11,33 @@ Desarrollar las siguientes funciones:
 #include <ctime>
 #include <stdlib.h>
 
-struct product{
+typedef struct product{
 	int code;
 	std::string name;
 	int amount;
 	float price;
-};
+}product;
 
-struct node{
-	struct product p;
-	struct node *next;
-};
+typedef struct node{
+	product p;
+	node* next;
+}node;
 
 /*Prototipado de funciones*/
 int menu(void);
-void push(struct node **, struct product);
-void pop(struct node **);
-void print(struct node **);
-bool isempty(struct node *);
-void discount(struct node **, int, int);
-void replace(struct node **, int, int);
+void push(node**, product);
+void pop(node**);
+void print(node**);
+bool isempty(node*);
+void discount(node**, int, int);
+void replace(node**, int, int);
 
-void print_pair(struct node **);
+void print_pair(node**);
 
 int main() {
 	int op=0, code=0, amount=0;
-	struct node *stack_p =NULL;
-	struct product p;	
+	node* stack_p {NULL};
+	product p;	
 	
 	do{
 		op=menu();
@@ -100,11 +100,11 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node **sp, struct product p){
+void push(node** sp, product p){
 
-	struct node *new_node = NULL;
+	node* new_node = NULL;
 	/* Creacion de memoria*/
-	new_node = (struct node*)malloc(sizeof(struct node));
+	new_node = (node*)malloc(sizeof(node));
 	/*Verificacion de memoria disponible*/
 	if(new_node==NULL){
 		printf("No hay memoria disponible");
@@ -118,16 +118,16 @@ void push(struct node **sp, struct product p){
 	*(sp)=new_node;	
 }
 	
-bool isempty(struct node *sp){
+bool isempty(node* sp){
 	if(sp==NULL)
 		return(true);
 	else
 		return(false);
 }
 
-void pop(struct node **sp){
+void pop(node** sp){
 	if(isempty(*sp)==false){
-		struct node *temp=NULL;	
+		node* temp=NULL;	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -139,12 +139,12 @@ void pop(struct node **sp){
 	}
 }
 
-void print(struct node **sp){
+void print(node** sp){
 	if(isempty(*sp)==false){
 		std::cout<<"Impresion de la pila\n";
 		std::cout<<"Cod.\tNombre\tCant.\tPrecio\n";
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=NULL){
 			std::cout<<temp->p.code<<"\t"<<temp->p.name<<"\t"<<temp->p.amount<<"\t"<<temp->p.price<<"\n";
@@ -156,9 +156,9 @@ void print(struct node **sp){
 	}
 }
 	
-void discount(struct node **sp, int code, int amount){
+void discount(node** sp, int code, int amount){
 	if(isempty(*sp)==false){
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=NULL){
 			if(temp->p.code==code){
@@ -171,9 +171,9 @@ void discount(struct node **sp, int code, int amount){
 	}
 }
 			
-void replace(struct node **sp, int code, int amount){
+void replace(node** sp, int code, int amount){
 	if(isempty(*sp)==false){
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=NULL){
 			if(temp->p.code==code){

@@ -9,24 +9,24 @@ tiene que estar repetido en la pila)
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node{
+typedef struct node{
 	int data;
-	struct node *next;
-};
+	node* next;
+}node;
 
 /*Prototipado de funciones*/
 int menu(void);
-void push(struct node **, int);
-void pop(struct node **);
-void print(struct node **);
-bool isempty(struct node *);
-bool check_repeated(struct node **, int);
+void push(node**, int);
+void pop(node**);
+void print(node**);
+bool isempty(node*);
+bool check_repeated(node**, int);
 
-void print_pair(struct node **);
+void print_pair(node**);
 
 int main() {
 	int op=0, value=0, i=0;
-	struct node *stack_p {nullptr};
+	node* stack_p {nullptr};
 	srand(time(NULL));
 	for(i=0; i<5;i++){
 		value=rand()%10+1;
@@ -78,9 +78,9 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node **sp, int value){
+void push(node** sp, int value){
 
-	struct node *new_node {nullptr};
+	node* new_node {nullptr};
 	/* Creacion de memoria*/
 	new_node = new node();
 	/*Verificacion de memoria disponible*/
@@ -96,11 +96,11 @@ void push(struct node **sp, int value){
 	*(sp)=new_node;	
 }
 	
-bool isempty(struct node *sp){return (sp==NULL);}
+bool isempty(node* sp){return (sp==NULL);}
 
-void pop(struct node **sp){
+void pop(node** sp){
 	if(isempty(*sp)==false){
-		struct node *temp{nullptr};	
+		node* temp{nullptr};	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -112,11 +112,11 @@ void pop(struct node **sp){
 	}
 }
 
-void print(struct node **sp){
+void print(node** sp){
 	if(isempty(*sp)==false){
 		printf("Pila\n");
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=nullptr){
 			printf("%d\n", temp->data);
@@ -128,11 +128,11 @@ void print(struct node **sp){
 	}
 }
 
-bool check_repeated(struct node **sp, int value){
+bool check_repeated(node** sp, int value){
 	bool repeated=false;
 	if(isempty(*sp)==false){
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=nullptr){
 			if(temp->data==value){

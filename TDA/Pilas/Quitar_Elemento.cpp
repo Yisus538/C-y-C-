@@ -1,12 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
 
-struct Node{
+typedef struct Node{
 
     int data;
     Node* next;
 
-};
+}Node;
 
 void push(Node**,int dato);
 void Empty(Node**,int &dato);

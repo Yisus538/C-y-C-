@@ -12,7 +12,7 @@ Ejemplo: cadena[i] = tolower(cadena[i]); En codigo ASCII A=65
 int main() {
 	
 	char abc[26] = {' '};
-	char *ptr_abc=&abc[0];
+	char* ptr_abc=&abc[0];
 	
 	for(int i=0;i<26;i++){
 		abc[i]=65+i;

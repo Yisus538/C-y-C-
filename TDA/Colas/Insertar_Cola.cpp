@@ -2,20 +2,20 @@
 #include <stdlib.h>
 
 
-struct Nodo{
+typedef struct Nodo{
 
     int dato;
     Nodo* siguiente;
 
-};
+}Nodo;
 
 void Insertar_Cola(Nodo*&,Nodo*&,int);
 bool cola_vacia(Nodo*);
 
 int main(){
 
-    struct Nodo* frente = nullptr;
-    struct Nodo* fin = nullptr;
+    Nodo* frente = nullptr;
+    Nodo* fin = nullptr;
     int dato;
 
     std::cout<<"Digite un numero: "<<std::endl; std::cin>>dato;
@@ -27,7 +27,7 @@ int main(){
 }
 void Insertar_Cola(Nodo*& frente,Nodo*& fin,int dato){
 
-    struct Nodo* nuevo_nodo = new Nodo();
+    Nodo* nuevo_nodo = new Nodo();
     nuevo_nodo->dato = dato;
     nuevo_nodo->siguiente = nullptr;
 

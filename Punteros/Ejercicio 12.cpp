@@ -13,7 +13,7 @@ void calcularSumatoria(int*, int*);
 
 int main() {
 	int v[5]={0};
-	int *ptr_v=v;
+	int* ptr_v=v;
 	
 	srand(time(NULL));
 	printf("Valores: \n");
@@ -23,7 +23,7 @@ int main() {
 	}
 	
 	int max=0, min=0, sum=0;
-	int *ptr_max=&max, *ptr_min=&min, *ptr_sum=&sum;	
+	int* ptr_max=&max, *ptr_min=&min, *ptr_sum=&sum;	
 
 	buscarMaximo(ptr_v, ptr_max);
 	buscarMinimo(ptr_v, ptr_min);

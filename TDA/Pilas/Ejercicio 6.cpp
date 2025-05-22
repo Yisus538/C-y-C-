@@ -13,26 +13,26 @@ las minusculas entre  97 a 122 inclusive.
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node{
+typedef struct node{
 	char data;
-	struct node* next;
-};
+	node* next;
+}node;
 
 /*Prototipado de funciones*/
 int menu(void);
-void push(struct node **, char);
-void pop(struct node **);
-void print(struct node **);
-bool isempty(struct node *);
-int size(struct node **);
-void counter(struct node **);
+void push(node**, char);
+void pop(node**);
+void print(node**);
+bool isempty(node*);
+int size(node**);
+void counter(node**);
 
-void print_pair(struct node **);
+void print_pair(node**);
 
 int main() {
 	int op=0;
 	char value=' ';
-	struct node *stack_p {nullptr};
+	node* stack_p {nullptr};
 	srand(time(NULL));
 	do{
 		op=menu();
@@ -94,9 +94,9 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node** sp, char value){
+void push(node** sp, char value){
 
-	struct node *new_node {nullptr};
+	node* new_node {nullptr};
 	/* Creacion de memoria*/
 	new_node = new node();
 	/*Verificacion de memoria disponible*/
@@ -112,16 +112,16 @@ void push(struct node** sp, char value){
 	*(sp)=new_node;	
 }
 	
-bool isempty(struct node* sp){
+bool isempty(node* sp){
 	if(sp==nullptr)
 		return(true);
 	else
 		return(false);
 }
 
-void pop(struct node** sp){
+void pop(node** sp){
 	if(isempty(*sp)==false){
-		struct node *temp=NULL;	
+		node* temp=NULL;	
 		/*Asignamos en temp el stack pointer actual*/
 		temp=*(sp);
 		/*Asignamos al stack pointer, el valor siguiente del primer nodo*/
@@ -133,11 +133,11 @@ void pop(struct node** sp){
 	}
 }
 
-void print(struct node** sp){
+void print(node** sp){
 	if(isempty(*sp)==false){
 		printf("Pila\n");
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node* temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=NULL){
 			printf("%c\n", temp->data);
@@ -149,11 +149,11 @@ void print(struct node** sp){
 	}
 }
 
-int size(struct node** sp){
+int size(node** sp){
 	int size=0;
 	if(isempty(*sp)==false){
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=nullptr){
 			size++;
@@ -166,11 +166,11 @@ int size(struct node** sp){
 	return size;
 }
 
-void counter(struct node** sp){
+void counter(node** sp){
 	int cant_may=0, cant_min=0;
 	if(isempty(*sp)==false){
 		/*Comenzamos a recorrer desde el stack pointer*/
-		struct node *temp;
+		node* temp;
 		temp=*(sp);
 		while(temp!=nullptr){
 			if(temp->data>=65 && temp->data<=90){

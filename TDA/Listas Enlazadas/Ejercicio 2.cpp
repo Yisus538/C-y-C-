@@ -3,17 +3,17 @@ valores numericos. Luego muestre la lista y calcule el promedio de ellos. */
 
 #include <iostream>
 
-struct node{
+typedef struct node{
 	int data;
-	struct node *next;
-};
+	node* next;
+}node ;
 
 int main() {
 	
 
-	struct node* head{nullptr};
-	struct node* temp{nullptr};
-	struct node *new_node{nullptr};
+	node* head{nullptr};
+	node* temp{nullptr};
+	node* new_node{nullptr};
 
 	int dato=0, i=0;
 	do{

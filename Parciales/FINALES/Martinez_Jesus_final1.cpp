@@ -32,10 +32,10 @@
 #define COLUMNAS 6
 
 //Prototipo de funciones
-void inicializar(int paquetes[FILAS][COLUMNAS]);
+void inicializar(int[FILAS][COLUMNAS]);
 void mostrarPaquetesPendientes(int[FILAS][COLUMNAS]);
 void calcularPorcentajes(int [FILAS][COLUMNAS]);
-void ordenarPaquetesPorPeso(int[FILAS][COLUMNAS], int ascendente);
+void ordenarPaquetesPorPeso(int[FILAS][COLUMNAS], int);
 void mostrarMenu();
 
 int main() {

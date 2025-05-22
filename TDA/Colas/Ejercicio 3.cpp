@@ -7,21 +7,21 @@
 
 #include <iostream>
 
-struct node{
+typedef struct node{
 	int data;
-	struct node* link;
-};
+	node* link;
+}node;
 
 int menu();
-void push(struct node**, struct node**, int);
-void pop(struct node**, struct node**);
-void print(struct node*);
-int add(struct node*);
+void push(node**, node**, int);
+void pop(node**, node**);
+void print(node*);
+int add(node*);
 
 int main() {
 	
-	struct node* front {nullptr};
-	struct node* back {nullptr};
+	node* front {nullptr};
+	node* back {nullptr};
 	int value=0, op=0, i=0;
 	do{
 		op=menu();
@@ -62,10 +62,10 @@ int menu(void){
 	return op;
 }
 	
-void push(struct node** front, struct node** back, int d){
+void push(node** front,node** back, int d){
 	
-	struct node* temp;
-	temp=(struct node*)malloc(sizeof(struct node));
+	node* temp;
+	temp=(node*)malloc(sizeof(node));
 	if(temp==nullptr){
 		printf("No hay suficiente memoria");
 		exit(0);
@@ -81,8 +81,8 @@ void push(struct node** front, struct node** back, int d){
 	}
 }
 		
-void pop(struct node** front, struct node** back){
-	struct node* temp;
+void pop(node** front, node** back){
+	node* temp;
 	if((*front==*back)&&(*back==nullptr)){
 		printf("Vacia\n");
 		exit(0);
