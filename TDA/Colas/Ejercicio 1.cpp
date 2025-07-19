@@ -6,23 +6,23 @@
 #include <iostream>
 #include <stdlib.h>
 
-typedef struct Nodo{
+typedef struct node{
 
-    char dato;
-    Nodo* siguiente;
+    char data;
+    node* next;
 
-}Nodo;
+}node;
 
-void Insertar_Cola(Nodo*&,Nodo*&,char);
-void Mostrar(Nodo*);
-bool Cola_Vacia(Nodo*);
-void suprimir_cola(Nodo*&,Nodo*&,char&);
+void Insertar_Cola(node*&,node*&,char);
+void Mostrar(node*);
+bool Cola_Vacia(node*);
+void suprimir_cola(node*&,node*&,char&);
 
 int main(){
 
-    Nodo* frente {nullptr};
-    Nodo* fin {nullptr};
-    char dato;
+    node* front {nullptr};
+    node* back {nullptr};
+    char data;
     int i = 0,opc;
 
     do{
@@ -35,19 +35,19 @@ int main(){
         switch(opc){
             case 1: 
                 do{
-                    std::cout<<"Ingrese el caracter: "<<std::endl; std::cin>>dato;
-                    Insertar_Cola(frente,fin,dato);
+                    std::cout<<"Ingrese el caracter: "<<std::endl; std::cin>>data;
+                    Insertar_Cola(front,back,data);
                     i++;
                 }while(i!=5);
                 system("cls");
             break;
             case 2: std::cout<<"Mostrando elementos de la cola"<<std::endl;
-                while(frente != NULL){
-                    suprimir_cola(frente,fin,dato);
-                    if(frente != NULL){
-                        std::cout<<dato<<" , ";
+                while(front != NULL){
+                    suprimir_cola(front,back,data);
+                    if(front != NULL){
+                        std::cout<<data<<" , ";
                     }else{
-                        std::cout<<dato<<" . ";
+                        std::cout<<data<<" . ";
                     }
                 }
                 std::cout<<"\n";
@@ -60,35 +60,35 @@ int main(){
     system("pause");
     return 0;
 }
-void Insertar_Cola(Nodo*& frente,Nodo*& fin,char dato){
+void Insertar_Cola(node*& front,node*& back,char data){
 
-    Nodo* nuevo_nodo = new Nodo();
-    nuevo_nodo->dato = dato;
-    nuevo_nodo->siguiente = nullptr;
+    node* nuevo_nodo = new node();
+    nuevo_nodo->data = data;
+    nuevo_nodo->next = nullptr;
     
 
-    if(Cola_Vacia(frente)){
-        frente = nuevo_nodo;
+    if(Cola_Vacia(front)){
+        front = nuevo_nodo;
     }else{
-        fin->siguiente = nuevo_nodo;
+        back->next = nuevo_nodo;
     }
-    fin = nuevo_nodo;
+    back = nuevo_nodo;
 
-    std::cout<<"Elemento "<<dato<<" ingresado correctamente."<<std::endl;
+    std::cout<<"Elemento "<<data<<" ingresado correctamente."<<std::endl;
 }
-bool Cola_Vacia(Nodo* frente){
-    return (frente == nullptr);
+bool Cola_Vacia(node* front){
+    return (front == nullptr);
 }
-void suprimir_cola(Nodo*& frente,Nodo*& fin,char& dato){
+void suprimir_cola(node*& front,node*& back,char& data){
 
-    dato = frente->dato;
-    Nodo* aux = frente;
+    data = front->data;
+    node* aux = front;
 
-    if(frente == fin){
-        frente = NULL;
-        fin = NULL;
+    if(front == back){
+        front = NULL;
+        back = NULL;
     }else{
-        frente = frente->siguiente;
+        front = front->next;
     }
     delete aux;
 

@@ -3,69 +3,69 @@
 #include <stdlib.h>
 
 
-struct Nodo{
+typedef struct node{
 
-    int dato;
-    Nodo* siguiente;
+    int data;
+    node* next;
 
-};
+}node;
 
-void Insertar_Cola(Nodo*&,Nodo*&,int);
-bool Cola_Vacia(Nodo*);
-void Suprimir_Nodo(Nodo*&,Nodo*&,int&);
+void Insertar_Cola(node*&,node*&,int);
+bool Cola_Vacia(node*);
+void Suprimir_node(node*&,node*&,int&);
 
 int main(){
 
-    Nodo* frente  {nullptr};
-    Nodo* fin {nullptr};
-    int dato = 0,i = 0;
+    node* front  {nullptr};
+    node* back {nullptr};
+    int data = 0,i = 0;
 
     do{
-        std::cout<<"Ingrese el dato: "<<std::endl; std::cin>>dato;
-        Insertar_Cola(frente,fin,dato);
+        std::cout<<"Ingrese el data: "<<std::endl; std::cin>>data;
+        Insertar_Cola(front,back,data);
         i++;
     }while(i!=5);
 
-    while(frente != NULL){
-        Suprimir_Nodo(frente,fin,dato);
+    while(front != NULL){
+        Suprimir_Nodo(front,back,data);
 
-        if(frente != NULL){
-            std::cout<<dato<<" , ";
+        if(front != NULL){
+            std::cout<<data<<" , ";
         }else{
-            std::cout<<dato<<" . ";
+            std::cout<<data<<" . ";
         }
     }
 
     system("pause");
     return 0;
 }
-void Insertar_Cola(Nodo*& frente,Nodo*& fin,int dato){
+void Insertar_Cola(node*& front,node*& back,int data){
 
-    Nodo* nuevo_nodo = new Nodo();
-    nuevo_nodo->dato = dato;
-    nuevo_nodo->siguiente = nullptr;
+    node* new_node = new node();
+    new_node->data = data;
+    new_node->next = nullptr;
 
-    if(Cola_Vacia(frente)){
-        frente = nuevo_nodo;
+    if(Cola_Vacia(front)){
+        front = new_node;
     }else{
-        fin->siguiente = nuevo_nodo;
+        back->next = new_node;
     }
 
-    fin = nuevo_nodo;
+    back = new_node;
 }
-bool Cola_Vacia(Nodo* frente){
-    return (frente==nullptr);
+bool Cola_Vacia(node* front){
+    return (front==nullptr);
 }
-void Suprimir_Nodo(Nodo*& frente,Nodo*& fin,int& dato){
+void Suprimir_Nodo(node*& front,node*& back,int& data){
 
-    dato = frente->dato;
-    Nodo *aux = frente;
+    data = front->data;
+    node* aux = front;
 
-    if(frente==fin){
-        frente = nullptr;
-        fin = nullptr;
+    if(front==back){
+        front = nullptr;
+        back = nullptr;
     }else{
-        frente = frente->siguiente;
+        front = front->next;
     }
     delete aux;
 }

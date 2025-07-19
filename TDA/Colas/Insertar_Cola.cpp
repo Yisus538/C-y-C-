@@ -2,43 +2,43 @@
 #include <stdlib.h>
 
 
-typedef struct Nodo{
+typedef struct node{
 
-    int dato;
-    Nodo* siguiente;
+    int data;
+    node* next;
 
-}Nodo;
+}node;
 
-void Insertar_Cola(Nodo*&,Nodo*&,int);
-bool cola_vacia(Nodo*);
+void Insertar_Cola(node*&,node*&,int);
+bool cola_vacia(node*);
 
 int main(){
 
-    Nodo* frente = nullptr;
-    Nodo* fin = nullptr;
-    int dato;
+    node* front = nullptr;
+    node* back = nullptr;
+    int data;
 
-    std::cout<<"Digite un numero: "<<std::endl; std::cin>>dato;
-    Insertar_Cola(frente,fin,dato);    
-    std::cout<<"Elemento "<<dato<< " insertado en cola directamente."<< std::endl;
+    std::cout<<"Digite un numero: "<<std::endl; std::cin>>data;
+    Insertar_Cola(front,back,data);    
+    std::cout<<"Elemento "<<data<< " insertado en cola directamente."<< std::endl;
 
     system("pause");
     return 0;
 }
-void Insertar_Cola(Nodo*& frente,Nodo*& fin,int dato){
+void Insertar_Cola(node*& front,node*& back,int data){
 
-    Nodo* nuevo_nodo = new Nodo();
-    nuevo_nodo->dato = dato;
-    nuevo_nodo->siguiente = nullptr;
+    node* new_node = new node();
+    new_node->data = data;
+    new_node->next = nullptr;
 
-    if(cola_vacia(frente)){
-       frente = nuevo_nodo;
+    if(cola_vacia(front)){
+       front = new_node;
     }else{
-        fin->siguiente = nuevo_nodo;
+        back->next = new_node;
     }
-    fin = nuevo_nodo;
+    back = new_node;
 }
 //Funcion para determinar si la cola esta vacia  no
-bool cola_vacia(Nodo* frente){
-    return (frente == NULL);
+bool cola_vacia(node* front){
+    return (front == NULL);
 }

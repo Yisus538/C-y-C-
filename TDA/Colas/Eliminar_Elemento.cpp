@@ -1,73 +1,73 @@
 #include <iostream>
 #include <stdlib.h>
 
-typedef struct Nodo{
+typedef struct node{
 
-    int dato;
-    Nodo* siguiente;
+    int data;
+    node* next;
 
-}Nodo;
+}node;
 
-void Insertar_Cola(Nodo*&,Nodo*&,int);
-bool cola_vacia(Nodo*);
-void Suprimir_Cola(Nodo*&,Nodo*&,int &);
+void Insertar_Cola(node*&,node*&,int);
+bool cola_vacia(node*);
+void Suprimir_Cola(node*&,node*&,int &);
 
 
 int main(){
 
-    Nodo* frente  {nullptr};
-    Nodo* fin {nullptr};
-    int dato,i = 0;
+    node* front  {nullptr};
+    node* back {nullptr};
+    int data,i = 0;
 
     do{
-        std::cout<<"Ingrese un dato: "<<std::endl; std::cin>>dato;
-        Insertar_Cola(frente,fin,dato);
+        std::cout<<"Ingrese un data: "<<std::endl; std::cin>>data;
+        Insertar_Cola(front,back,data);
         i++;
     }while(i!=5);
 
  
-    while(frente != nullptr){
+    while(front != nullptr){
      
-        Suprimir_Cola(frente,fin,dato);
+        Suprimir_Cola(front,back,data);
 
-        if(frente != nullptr){
-            std::cout<<dato<<" , ";
+        if(front != nullptr){
+            std::cout<<data<<" , ";
         }else{
-            std::cout<<dato<<" . ";
+            std::cout<<data<<" . ";
         }
     }
 
     system("pause");
     return 0;
 }
-void Insertar_Cola(Nodo*& frente,Nodo*& fin,int dato){
+void Insertar_Cola(node*& front,node*& back,int data){
 
-    Nodo* nuevo_nodo = new Nodo();
-    nuevo_nodo->dato = dato;
-    nuevo_nodo->siguiente = nullptr;
+    node* nuevo_node = new node();
+    nuevo_node->data = data;
+    nuevo_node->next = nullptr;
 
-    if(cola_vacia(frente)){
-        frente = nuevo_nodo;
+    if(cola_vacia(front)){
+        front = nuevo_node;
     }else{
-        fin->siguiente = nuevo_nodo;
+        back->next = nuevo_node;
     }
-    fin = nuevo_nodo;
-    std::cout<<"El Elemento "<<dato<<" a sido ingresado."<<std::endl;
+    back = nuevo_node;
+    std::cout<<"El Elemento "<<data<<" a sido ingresado."<<std::endl;
 
 }
-bool cola_vacia(Nodo* frente){
-    return (frente == nullptr);
+bool cola_vacia(node* front){
+    return (front == nullptr);
 }
-void Suprimir_Cola(Nodo*& frente,Nodo* &fin,int& dato){
+void Suprimir_Cola(node*& front,node* &back,int& data){
 
-    dato = frente->dato;
-    Nodo* aux = frente;
+    data = front->data;
+    node* aux = front;
 
-    if(frente == fin){
-        frente = nullptr;
-        fin = nullptr;
+    if(front == back){
+        front = nullptr;
+        back = nullptr;
     }else{
-        frente = frente->siguiente;
+        front = front->next;
     }
     delete aux;
     
